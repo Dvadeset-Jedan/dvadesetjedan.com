@@ -19,6 +19,6 @@ Push to `main` to trigger deployment to Github Pages
 
 ##
 
-[Preview](https://djo1e.github.io/dvadesetjedan-web/)
+[Preview](https://dvadeset-jedan.github.io/dvadesetjedan.com/)
 
 
