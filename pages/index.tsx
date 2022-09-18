@@ -7,11 +7,10 @@ export default function Index() {
   return (
     <main className="bg-dark">
       <ExportedImage
-        src="images/bitcoin-island.jpg"
+        src="images/bitcoin-island.webp"
         width={1440}
         height={720}
         layout="responsive"
-        unoptimized
         priority
         placeholder="blur"
         alt=""
