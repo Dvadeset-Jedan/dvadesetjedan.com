@@ -1,7 +1,25 @@
 import ExportedImage from "next-image-export-optimizer";
 import { MeetupPreview } from "./meetup-preview";
+import events from "../content/events.json";
+import { format } from "date-fns";
+
+function getPastEvents() {
+  return events
+    .filter((event) => new Date(event.date) < new Date())
+    .sort((a, z) => z.date.localeCompare(a.date));
+}
+
+function getNextEvent() {
+  const futureEvents = events
+    .filter((event) => new Date(event.date) > new Date())
+    .sort((a, z) => a.date.localeCompare(z.date));
+  return futureEvents[0];
+}
 
 export function MeetupsSection() {
+  const pastEvents = getPastEvents();
+  const nextEvent = getNextEvent();
+
   return (
     <section>
       <h2 className="text-[3.5rem] font-medium mb-14">Meetups</h2>
@@ -10,6 +28,7 @@ export function MeetupsSection() {
         width={1024}
         height={512}
         layout="responsive"
+        placeholder="blur"
         alt=""
       />
       <div className="w-5/6 m-auto">
@@ -20,34 +39,32 @@ export function MeetupsSection() {
         </p>
       </div>
       <div className="mt-24 md:px-10 xl:px-28">
-        <h3 className="text-[2rem] font-medium mb-8">Next meetup</h3>
-        <MeetupPreview
-          date="Monday, August 16, 2022"
-          title='Cafe "Zona Industriale"'
-          location="Njegoševa 49, Beograd 11000, Serbia"
-        />
+        {nextEvent && (
+          <>
+            <h3 className="text-[2rem] font-medium mb-8">Next meetup</h3>
+            <MeetupPreview
+              date={format(new Date(nextEvent.date), "EEEE, MMMM dd, yyyy")}
+              title={nextEvent.title}
+              location={nextEvent.location}
+              imgSrc={nextEvent.imgSrc}
+              url={nextEvent.url}
+            />
+          </>
+        )}
         <h3 className="text-[2rem] font-medium mt-24 mb-8">Previous meetups</h3>
-        <div className="mb-8">
-          <MeetupPreview
-            date="Monday, August 16, 2022"
-            title="Kavantura"
-            location="Horvaćanska cesta 23a, 10000, Zagreb, Croatia"
-          />
-        </div>
-        <div className="mb-8">
-          <MeetupPreview
-            date="Monday, July 4, 2022"
-            title="Ovčice"
-            location="Put Firula 4, 21000, Split, Croatia"
-          />
-        </div>
-        <div className="mb-8">
-          <MeetupPreview
-            date="Monday, June 24, 2022"
-            title="Caffe Caffe"
-            location="Sveti Stefan, Montenegro"
-          />
-        </div>
+        {pastEvents
+          .filter((_, i) => i < 3)
+          .map((event) => (
+            <div className="mb-8" key={new Date(event.date).toString()}>
+              <MeetupPreview
+                date={format(new Date(event.date), "EEEE, MMMM dd, yyyy")}
+                title={event.title}
+                location={event.location}
+                imgSrc={event.imgSrc}
+                url={event.url}
+              />
+            </div>
+          ))}
       </div>
     </section>
   );
