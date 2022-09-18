@@ -1,4 +1,4 @@
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 
 export function MeetupPreview({
   date,
@@ -17,15 +17,7 @@ export function MeetupPreview({
     <a href={url} target="_blank" rel="noreferrer">
       <div className="flex items-center">
         <div style={{ width: 180, height: 180 }}>
-          <ExportedImage
-            src={imgSrc}
-            width={180}
-            height={180}
-            layout="fixed"
-            alt=""
-            placeholder="blur"
-            unoptimized
-          />
+          <Image src={imgSrc} width={180} height={180} layout="fixed" alt="" />
         </div>
         <div className="ml-12">
           <p className="font-medium text-purple">{date}</p>

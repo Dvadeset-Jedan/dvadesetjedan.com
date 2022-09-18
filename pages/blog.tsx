@@ -1,4 +1,4 @@
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 import { BlogPreview } from "../components/blog-preview";
 import { LinkedinIcon } from "../components/icons/linkedin";
 import { TwitterIcon } from "../components/icons/twitter";
@@ -7,15 +7,13 @@ export default function Blog() {
   return (
     <main className="bg-dark">
       <div className="relative">
-        <ExportedImage
+        <Image
           src="images/magic-internet-money.png"
           width={1440}
           height={600}
           layout="responsive"
           alt=""
           priority
-          unoptimized
-          placeholder="blur"
         />
         <div className="absolute z-10 text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <h1 className="text-[56px] leading-[70px]">Magic internet money</h1>

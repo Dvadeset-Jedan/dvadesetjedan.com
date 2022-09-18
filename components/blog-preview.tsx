@@ -1,4 +1,4 @@
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 
 interface BlogPreviewProps {
   title: string;
@@ -10,14 +10,7 @@ export function BlogPreview({ title, author, translator }: BlogPreviewProps) {
   return (
     <div className="flex flex-col">
       <div className="relative">
-        <ExportedImage
-          src="images/blog-preview.png"
-          width={497}
-          height={314}
-          layout="responsive"
-          alt=""
-          unoptimized
-        />
+        <Image src="images/blog-preview.png" width={497} height={314} layout="responsive" alt="" />
         <div className="absolute top-0 left-0 w-full h-full bg-[rgba(122,62,89,0.3)]" />
       </div>
       <div className="px-10 pt-12 pb-14 bg-dark brightness-110">
@@ -39,13 +32,12 @@ export function BlogPreview({ title, author, translator }: BlogPreviewProps) {
 export function SmallerBlogPreview({ title, author, translator }: BlogPreviewProps) {
   return (
     <div className="flex flex-col">
-      <ExportedImage
+      <Image
         src="images/blog-preview.png"
         width={360}
         height={250}
         layout="responsive"
         alt="preview"
-        unoptimized
       />
       <div className="mt-6">
         <h1 className="font-medium text-21">{title}</h1>

@@ -1,4 +1,4 @@
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 import { MeetupPreview } from "./meetup-preview";
 import events from "../content/events.json";
 import { format } from "date-fns";
@@ -23,14 +23,7 @@ export function MeetupsSection() {
   return (
     <section>
       <h2 className="text-[3.5rem] font-medium mb-14">Meetups</h2>
-      <ExportedImage
-        src="images/meetup-cover.png"
-        width={1024}
-        height={512}
-        layout="responsive"
-        placeholder="blur"
-        alt=""
-      />
+      <Image src="images/meetup-cover.png" width={1024} height={512} layout="responsive" alt="" />
       <div className="w-5/6 m-auto">
         <p className="mt-16 text-2xl font-medium text-center">
           We currently have over 100 members and meet up regularly. The meetups are very easy going

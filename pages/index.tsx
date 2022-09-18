@@ -1,4 +1,4 @@
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 import { BlogSection } from "../components/blog-section";
 import { MeetupsSection } from "../components/meetups-section";
 import { PodcastSection } from "../components/podcast-section";
@@ -6,13 +6,12 @@ import { PodcastSection } from "../components/podcast-section";
 export default function Index() {
   return (
     <main className="bg-dark">
-      <ExportedImage
+      <Image
         src="images/bitcoin-island.webp"
         width={1440}
         height={720}
         layout="responsive"
         priority
-        placeholder="blur"
         alt=""
         objectFit="cover"
       />

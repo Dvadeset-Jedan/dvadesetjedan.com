@@ -1,4 +1,4 @@
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 import { Episode } from "../utils/types";
 import { useRef, useState } from "react";
 import { PlayIcon } from "./icons/play";
@@ -20,15 +20,7 @@ export function EpisodePlayer({ episode }: { episode: Episode }) {
   return (
     <div className="flex bg-dark brightness-110">
       <div>
-        <ExportedImage
-          src="images/player.jpg"
-          width={270}
-          height={270}
-          layout="fixed"
-          alt=""
-          unoptimized
-          placeholder="blur"
-        />
+        <Image src="images/player.jpg" width={270} height={270} layout="fixed" alt="" />
       </div>
       <div className="flex justify-between w-full pl-6 pr-6 xl:pr-8 xl:pl-8 py-7">
         <div>
