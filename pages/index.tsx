@@ -15,6 +15,7 @@ export default function Index() {
         priority
         placeholder="blur"
         alt=""
+        objectFit="cover"
       />
       <div className="px-8 pb-16 sm:px-20 lg:pb-20 lg:px-52">
         <div className="flex justify-center">

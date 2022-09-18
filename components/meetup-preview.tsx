@@ -24,6 +24,7 @@ export function MeetupPreview({
             layout="fixed"
             alt=""
             placeholder="blur"
+            unoptimized
           />
         </div>
         <div className="ml-12">

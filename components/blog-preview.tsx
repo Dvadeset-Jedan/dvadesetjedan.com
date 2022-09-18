@@ -16,6 +16,7 @@ export function BlogPreview({ title, author, translator }: BlogPreviewProps) {
           height={314}
           layout="responsive"
           alt=""
+          unoptimized
         />
         <div className="absolute top-0 left-0 w-full h-full bg-[rgba(122,62,89,0.3)]" />
       </div>
@@ -44,6 +45,7 @@ export function SmallerBlogPreview({ title, author, translator }: BlogPreviewPro
         height={250}
         layout="responsive"
         alt="preview"
+        unoptimized
       />
       <div className="mt-6">
         <h1 className="font-medium text-21">{title}</h1>
