@@ -26,6 +26,7 @@ export function Footer() {
         <li className="h-min">
           <Link href="https://youtube.com/">
             <a href={urls.discord} target="_blank" rel="noreferrer">
+              <span className="sr-only">Discord Logo</span>
               <DiscordIcon />
             </a>
           </Link>
@@ -33,22 +34,26 @@ export function Footer() {
         <li className="block ml-3 lg:ml-6 h-min">
           <Link href="https://youtube.com/">
             <a href={urls.youtube} target="_blank" rel="noreferrer">
+              <span className="sr-only">Youtube Logo</span>
               <YoutubeIcon />
             </a>
           </Link>
         </li>
         <li className="ml-3 lg:ml-6 h-min">
           <a href={urls.spotify} target="_blank" rel="noreferrer">
+            <span className="sr-only">Spotify Logo</span>
             <SpotifyIcon />
           </a>
         </li>
         <li className="ml-3 lg:ml-6 h-min">
           <a href={urls.github} target="_blank" rel="noreferrer">
+            <span className="sr-only">Github Logo</span>
             <GithubIcon />
           </a>
         </li>
         <li className="ml-3 lg:ml-6 h-min">
           <a href={urls.telegram} target="_blank" rel="noreferrer">
+            <span className="sr-only">Telegram Logo</span>
             <TelegramIcon />
           </a>
         </li>

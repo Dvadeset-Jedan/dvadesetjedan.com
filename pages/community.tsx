@@ -1,4 +1,4 @@
-import { BlogPreview, SmallerBlogPreview } from "../components/blog-preview";
+import { SmallerBlogPreview } from "../components/blog-preview";
 
 export default function Community() {
   return (

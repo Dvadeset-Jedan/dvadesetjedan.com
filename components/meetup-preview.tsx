@@ -1,18 +1,7 @@
 import Image from "next/image";
+import { EventType } from "../utils/types";
 
-export function MeetupPreview({
-  date,
-  title,
-  location,
-  imgSrc,
-  url,
-}: {
-  date: string;
-  title: string;
-  location: string;
-  imgSrc: string;
-  url: string;
-}) {
+export function MeetupPreview({ url, imgSrc, date, title, location }: EventType) {
   return (
     <a href={url} target="_blank" rel="noreferrer">
       <div className="flex items-center">

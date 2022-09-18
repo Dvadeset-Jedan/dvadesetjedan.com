@@ -1,3 +1,5 @@
+import events from "../content/events.json";
+
 export interface Episode {
   block: any;
   category: string;
@@ -18,3 +20,5 @@ export interface Episode {
   };
   participants: string[];
 }
+
+export type EventType = typeof events[number];

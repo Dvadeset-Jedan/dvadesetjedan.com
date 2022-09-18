@@ -14,6 +14,7 @@ export function Header() {
         <BarcodeHeaderIcon />
         <Link href={routes.home}>
           <a className="ml-3">
+            <span className="sr-only">DvadesetJedan</span>
             <TextLogoIcon />
           </a>
         </Link>

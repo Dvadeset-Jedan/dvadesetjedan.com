@@ -36,11 +36,8 @@ export function MeetupsSection() {
           <>
             <h3 className="text-[2rem] font-medium mb-8">Next meetup</h3>
             <MeetupPreview
+              {...nextEvent}
               date={format(new Date(nextEvent.date), "EEEE, MMMM dd, yyyy")}
-              title={nextEvent.title}
-              location={nextEvent.location}
-              imgSrc={nextEvent.imgSrc}
-              url={nextEvent.url}
             />
           </>
         )}
@@ -50,11 +47,8 @@ export function MeetupsSection() {
           .map((event) => (
             <div className="mb-8" key={new Date(event.date).toString()}>
               <MeetupPreview
+                {...event}
                 date={format(new Date(event.date), "EEEE, MMMM dd, yyyy")}
-                title={event.title}
-                location={event.location}
-                imgSrc={event.imgSrc}
-                url={event.url}
               />
             </div>
           ))}

@@ -29,6 +29,7 @@ export function EpisodePlayer({ episode }: { episode: Episode }) {
             Bitcoin is for everyone
           </p>
           <button onClick={togglePlay} className="mt-8">
+            <span className="sr-only">Play</span>
             <PlayIcon />
           </button>
           <audio ref={audioPlayer} autoPlay={false} src={episode.enclosure.url} />
