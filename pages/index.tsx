@@ -2,11 +2,18 @@ import Image from "next/image";
 import { BlogSection } from "../components/blog-section";
 import { MeetupsSection } from "../components/meetups-section";
 import { PodcastSection } from "../components/podcast-section";
-// import fs from "fs-extra";
-// import matter from "gray-matter";
-// import md from "markdown-it";
+import matter from "gray-matter";
+import fs from "fs";
+import { Frontmatter } from "../utils/types";
 
-export default function Index({ content }: { content: string }) {
+type Props = {
+  translations: {
+    content: string;
+    frontmatter: Frontmatter;
+  }[];
+};
+
+export default function Index({ translations }: Props) {
   return (
     <main className="bg-dark">
       <div className="max-w-full">
@@ -36,22 +43,25 @@ export default function Index({ content }: { content: string }) {
         </div>
         <MeetupsSection />
         <PodcastSection />
-        <BlogSection />
-        {/* <div className="mx-auto tracking-wide prose first-letter:text-4xl first-letter:tracking-wide text-21 text-gray"> */}
-        {/*   <div dangerouslySetInnerHTML={{ __html: md().render(content) }} /> */}
-        {/* </div> */}
+        <BlogSection content={translations} />
       </div>
     </main>
   );
 }
 
-// export async function getStaticProps() {
-//   const fileName = fs.readFileSync(`content/never-stop-learning.md`, "utf-8");
-//   const { data: frontmatter, content } = matter(fileName);
-//   return {
-//     props: {
-//       frontmatter,
-//       content,
-//     },
-//   };
-// }
+export async function getStaticProps() {
+  const translationsRaw = fs.readdirSync("content/translations");
+  const translations = translationsRaw.map((fileName: string) => {
+    const readFile = fs.readFileSync(`content/translations/${fileName}`, "utf-8");
+    const { data: frontmatter, content } = matter(readFile);
+
+    return {
+      content,
+      frontmatter,
+    };
+  });
+
+  return {
+    props: { translations },
+  };
+}

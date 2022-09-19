@@ -23,6 +23,8 @@ export default function Community() {
             title="Inaliable Property Rights"
             author="Dergigi"
             translator="Pavlenex"
+            meta="Technology is a marvelous thing. We are so quick to accept things as they stand, rarely
+          taking the time to reflect on how magical these modern miracles are in actuality."
           />
         ))}
       </div>

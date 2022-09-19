@@ -71,7 +71,13 @@ export default function Blog() {
           </button>
         </div>
         <h2 className="mb-10 text-[2.5rem] font-medium text-white mt-11">You also might like</h2>
-        <BlogPreview title="Inaliable Property Rights" author="Dergigi" translator="Pavlenex" />
+        <BlogPreview
+          title="Inaliable Property Rights"
+          author="Dergigi"
+          translator="Pavlenex"
+          meta="Technology is a marvelous thing. We are so quick to accept things as they stand, rarely
+          taking the time to reflect on how magical these modern miracles are in actuality."
+        />
       </div>
     </main>
   );

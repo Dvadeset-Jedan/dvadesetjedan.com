@@ -6,8 +6,7 @@ export default function Document() {
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=optional"
-          rel="preload"
-          as="font"
+          rel="stylesheet"
         />
       </Head>
       <body>

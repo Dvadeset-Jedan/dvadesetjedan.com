@@ -4,9 +4,10 @@ interface BlogPreviewProps {
   title: string;
   author: string;
   translator: string;
+  meta: string;
 }
 
-export function BlogPreview({ title, author, translator }: BlogPreviewProps) {
+export function BlogPreview({ title, author, translator, meta }: BlogPreviewProps) {
   return (
     <div className="flex flex-col">
       <div className="relative">
@@ -19,11 +20,8 @@ export function BlogPreview({ title, author, translator }: BlogPreviewProps) {
           Written by <span className="text-purple">{author}</span>, translated by{" "}
           <span className="text-purple">{translator}</span>
         </p>
-        <p className="mt-8 text-lg text-gray">
-          It can’t be said often enough: Bitcoin is confusing. However, it’s not complicated like a
-          Rube Goldberg machine is complicated.
-        </p>
-        <button className="mt-8 text-lg text-purple">Continue...</button>
+        <div className="mx-auto mt-8 text-lg text-gray">{meta}</div>
+        <button className="mt-8 text-lg leading-[1.875rem] text-purple">Continue...</button>
       </div>
     </div>
   );

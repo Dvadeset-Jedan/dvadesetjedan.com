@@ -22,3 +22,11 @@ export interface Episode {
 }
 
 export type EventType = typeof events[number];
+
+export type Frontmatter = {
+  author: string;
+  tags: string[];
+  title: string;
+  meta: string;
+  translator: string;
+};

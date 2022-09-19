@@ -1,10 +1,14 @@
 const dev = process.env.NODE_ENV !== "production";
+// Github pages sets the URL subdirectory as the repo name
+// this is a lazy fix
+// will be removed after we move to a custom domain
+const prefix = dev ? "/" : "/dvadesetjedan.com/";
 
 export const routes = {
-  home: dev ? "/" : "/dvadesetjedan.com/",
-  blog: dev ? "/blog" : "/dvadesetjedan.com/blog",
-  community: dev ? "/community" : "/dvadesetjedan.com/community",
-  podcast: dev ? "/podcast" : "/dvadesetjedan.com/podcast",
+  home: `${prefix}`,
+  blog: `${prefix}blog`,
+  community: `${prefix}community`,
+  podcast: `${prefix}podcast`,
 } as const;
 
 export type Routes = keyof typeof routes;
