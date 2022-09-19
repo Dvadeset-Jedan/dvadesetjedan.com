@@ -2,9 +2,9 @@ import Image from "next/image";
 import { BlogSection } from "../components/blog-section";
 import { MeetupsSection } from "../components/meetups-section";
 import { PodcastSection } from "../components/podcast-section";
-import fs from "fs-extra";
-import matter from "gray-matter";
-import md from "markdown-it";
+// import fs from "fs-extra";
+// import matter from "gray-matter";
+// import md from "markdown-it";
 
 export default function Index({ content }: { content: string }) {
   return (
@@ -37,21 +37,21 @@ export default function Index({ content }: { content: string }) {
         <MeetupsSection />
         <PodcastSection />
         <BlogSection />
-        <div className="mx-auto tracking-wide prose first-letter:text-4xl first-letter:tracking-wide text-21 text-gray">
-          <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-        </div>
+        {/* <div className="mx-auto tracking-wide prose first-letter:text-4xl first-letter:tracking-wide text-21 text-gray"> */}
+        {/*   <div dangerouslySetInnerHTML={{ __html: md().render(content) }} /> */}
+        {/* </div> */}
       </div>
     </main>
   );
 }
 
-export async function getStaticProps() {
-  const fileName = fs.readFileSync(`content/never-stop-learning.md`, "utf-8");
-  const { data: frontmatter, content } = matter(fileName);
-  return {
-    props: {
-      frontmatter,
-      content,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const fileName = fs.readFileSync(`content/never-stop-learning.md`, "utf-8");
+//   const { data: frontmatter, content } = matter(fileName);
+//   return {
+//     props: {
+//       frontmatter,
+//       content,
+//     },
+//   };
+// }
