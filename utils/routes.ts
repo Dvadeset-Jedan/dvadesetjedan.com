@@ -6,7 +6,7 @@ const prefix = dev ? "/" : "/dvadesetjedan.com/";
 
 export const routes = {
   home: `${prefix}`,
-  blog: `${prefix}blog`,
+  blog: (slug: string) => `${prefix}blog/${slug}`,
   community: `${prefix}community`,
   podcast: `${prefix}podcast`,
 } as const;

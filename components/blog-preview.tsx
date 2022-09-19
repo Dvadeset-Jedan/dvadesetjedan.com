@@ -1,13 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
+import { routes } from "../utils/routes";
 
 interface BlogPreviewProps {
   title: string;
   author: string;
   translator: string;
   meta: string;
+  slug: string;
 }
 
-export function BlogPreview({ title, author, translator, meta }: BlogPreviewProps) {
+export function BlogPreview({ title, author, translator, meta, slug }: BlogPreviewProps) {
   return (
     <div className="flex flex-col">
       <div className="relative">
@@ -20,8 +23,10 @@ export function BlogPreview({ title, author, translator, meta }: BlogPreviewProp
           Written by <span className="text-purple">{author}</span>, translated by{" "}
           <span className="text-purple">{translator}</span>
         </p>
-        <div className="mx-auto mt-8 text-lg text-gray">{meta}</div>
-        <button className="mt-8 text-lg leading-[1.875rem] text-purple">Continue...</button>
+        <div className="mx-auto mt-8 mb-8 text-lg text-gray">{meta}</div>
+        <Link href={routes.blog(slug)}>
+          <a className="text-lg leading-[1.875rem] text-purple">Continue...</a>
+        </Link>
       </div>
     </div>
   );

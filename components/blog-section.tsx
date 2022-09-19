@@ -31,6 +31,7 @@ export function BlogSection({ content }: BlogSectionProps) {
               author={c.frontmatter.author}
               translator={c.frontmatter.translator}
               meta={c.frontmatter.meta}
+              slug={c.frontmatter.slug}
             />
           </div>
         ))}

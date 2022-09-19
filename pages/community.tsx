@@ -25,6 +25,7 @@ export default function Community() {
             translator="Pavlenex"
             meta="Technology is a marvelous thing. We are so quick to accept things as they stand, rarely
           taking the time to reflect on how magical these modern miracles are in actuality."
+            slug="never-stop-learning"
           />
         ))}
       </div>
