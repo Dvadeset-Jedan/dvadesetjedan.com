@@ -6,6 +6,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { Frontmatter } from "../../utils/types";
 import md from "markdown-it";
+import { GetStaticPaths } from "next";
 
 export default function Blog({
   content,
@@ -14,7 +15,7 @@ export default function Blog({
   content: string;
   frontmatter: Frontmatter;
 }) {
-  const { title, author, translator } = frontmatter;
+  const { title, author, translator } = frontmatter || {};
 
   return (
     <main className="bg-dark">
@@ -65,13 +66,13 @@ export default function Blog({
   );
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const translationsRaw = fs.readdirSync("content/translations");
   return {
     paths: translationsRaw.map((t) => ({ params: { slug: t.replace(".md", "") } })),
-    fallback: false,
+    fallback: "blocking",
   };
-}
+};
 
 export async function getStaticProps({ params: { slug } }: { params: { slug: string } }) {
   const fileName = fs.readFileSync(`content/translations/${slug}.md`, "utf-8");
