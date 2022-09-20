@@ -9,7 +9,7 @@ module.exports = {
     });
     return config;
   },
-  assetPrefix: dev ? "" : "./",
+  assetPrefix: "./",
   images: {
     loader: "akamai",
     path: "",
