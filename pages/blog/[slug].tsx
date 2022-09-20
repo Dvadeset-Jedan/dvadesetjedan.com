@@ -70,7 +70,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const translationsRaw = fs.readdirSync("content/translations");
   return {
     paths: translationsRaw.map((t) => ({ params: { slug: t.replace(".md", "") } })),
-    fallback: "blocking",
+    fallback: false,
   };
 };
 
