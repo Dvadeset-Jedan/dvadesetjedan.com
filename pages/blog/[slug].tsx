@@ -21,7 +21,7 @@ export default function Blog({
     <main className="bg-dark">
       <div className="relative">
         <Image
-          src="images/magic-internet-money.png"
+          src="/dvadesetjedan.com/images/magic-internet-money.png"
           width={1440}
           height={600}
           layout="responsive"

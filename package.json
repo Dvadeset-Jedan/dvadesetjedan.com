@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "preexport": "yarn build",
+    "export": "next export",
+    "prestart": "yarn export",
+    "start": "serve out",
+    "lint": "next lint"
   },
   "dependencies": {
     "classnames": "^2.3.1",
@@ -17,7 +19,8 @@
     "next": "12.3.0",
     "raw-loader": "^4.0.2",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "serve": "^14.0.1"
   },
   "devDependencies": {
     "@types/markdown-it": "^12.2.3",

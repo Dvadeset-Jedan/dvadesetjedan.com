@@ -1,5 +1,6 @@
 //next.config.js
 const dev = process.env.NODE_ENV !== "production";
+const GH_PAGES_SUBDIRECTORY = dev ? "" : "/dvadesetjedan.com";
 
 module.exports = {
   webpack: function (config) {
@@ -9,9 +10,9 @@ module.exports = {
     });
     return config;
   },
-  assetPrefix: "./",
+  basePath: GH_PAGES_SUBDIRECTORY,
   images: {
     loader: "akamai",
-    path: "",
+    path: "/",
   },
 };
