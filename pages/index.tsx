@@ -5,6 +5,7 @@ import { PodcastSection } from "../components/podcast-section";
 import matter from "gray-matter";
 import fs from "fs";
 import { Frontmatter } from "../utils/types";
+import { images } from "../utils/images";
 
 type Props = {
   translations: {
@@ -18,7 +19,7 @@ export default function Index({ translations }: Props) {
     <main className="bg-dark">
       <div className="max-w-full">
         <Image
-          src="images/bitcoin-island.webp"
+          src={images.bitcoinIsland}
           width={1440}
           height={720}
           layout="responsive"

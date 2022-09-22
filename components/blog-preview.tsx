@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { images } from "../utils/images";
 import { routes } from "../utils/routes";
 
 interface BlogPreviewProps {
@@ -14,7 +15,7 @@ export function BlogPreview({ title, author, translator, meta, slug }: BlogPrevi
   return (
     <div className="flex flex-col">
       <div className="relative">
-        <Image src="images/blog-preview.png" width={497} height={314} layout="responsive" alt="" />
+        <Image src={images.blogPreview} width={497} height={314} layout="responsive" alt="" />
         <div className="absolute top-0 left-0 w-full h-full bg-[rgba(122,62,89,0.3)]" />
       </div>
       <div className="px-10 pt-12 pb-14 bg-dark brightness-110">
@@ -35,13 +36,7 @@ export function BlogPreview({ title, author, translator, meta, slug }: BlogPrevi
 export function SmallerBlogPreview({ title, author, translator }: BlogPreviewProps) {
   return (
     <div className="flex flex-col">
-      <Image
-        src="images/blog-preview.png"
-        width={360}
-        height={250}
-        layout="responsive"
-        alt="preview"
-      />
+      <Image src={images.blogPreview} width={360} height={250} layout="responsive" alt="preview" />
       <div className="mt-6">
         <h1 className="font-medium text-21">{title}</h1>
         <p className="mt-4 text-sm text-gray">
