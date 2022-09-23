@@ -1,7 +1,7 @@
 ---
 title: "Perspektive na Bitcoin u latinskoj Americi"
 author: "Jimmy Song"
-meta: "Ovo je kratko razmišljanje bazirano na nekim jučerašnjim konverzacijama, a predugo za Tweet."
+meta: "Ovo je kratko razmišljanje bazirano na nekim jučerašnjim konverzacijama, a predugo za Tweet. Dio zadovoljstva, i frustracije, putovanja je da različita mjesta imaju vrlo različite perspektive..."
 translator: "Matija"
 slug: "latin-american-bitcoin-perspective"
 tags:

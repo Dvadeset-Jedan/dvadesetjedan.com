@@ -18,20 +18,20 @@ export function BlogSection({ content }: BlogSectionProps) {
         <BarcodeSectionIcon />
       </div>
       <div className="flex flex-col md:flex-row">
-        {content.map((c, i) => (
+        {content?.map(({ frontmatter: { title, author, translator, meta, slug } }, i) => (
           <div
-            className={classNames("w-1/2", {
+            className={classNames("md:w-1/2", {
               "md:mr-8": content.length !== i + 1,
               "mt-16 md:mt-0": content.length === i + 1,
             })}
-            key={c.frontmatter.title}
+            key={title}
           >
             <BlogPreview
-              title={c.frontmatter.title}
-              author={c.frontmatter.author}
-              translator={c.frontmatter.translator}
-              meta={c.frontmatter.meta}
-              slug={c.frontmatter.slug}
+              title={title}
+              author={author}
+              translator={translator}
+              meta={meta}
+              slug={slug}
             />
           </div>
         ))}

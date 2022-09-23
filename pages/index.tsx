@@ -17,7 +17,7 @@ type Props = {
 export default function Index({ translations }: Props) {
   return (
     <main className="bg-dark">
-      <div className="max-w-full">
+      <div className="max-w-screen">
         <Image
           src={images.bitcoinIsland}
           width={1440}
