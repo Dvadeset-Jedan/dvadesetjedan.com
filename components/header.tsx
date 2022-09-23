@@ -32,14 +32,16 @@ export function Header() {
           </Link>
         </li>
         <li className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20">
-          <a
-            className={classNames("hover:text-purple", {
-              // "text-purple": router.asPath === routes.blog,
-              "text-purple": false,
-            })}
-          >
-            02. Blog
-          </a>
+          <Link href="#">
+            <a
+              className={classNames("hover:text-purple", {
+                // "text-purple": router.asPath === routes.blog,
+                "text-purple": false,
+              })}
+            >
+              02. Blog
+            </a>
+          </Link>
         </li>
         <li className="font-medium text-right text-19">
           <Link href={routes.community}>
