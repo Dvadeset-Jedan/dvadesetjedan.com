@@ -8,6 +8,7 @@ import { Frontmatter } from "../../utils/types";
 import md from "markdown-it";
 import { GetStaticPaths } from "next";
 import { images } from "../../utils/images";
+import classNames from "classnames";
 
 export default function Blog({
   content,
@@ -31,7 +32,15 @@ export default function Blog({
           priority
         />
         <div className="absolute z-10 text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-[56px] leading-[70px]">{title}</h1>
+          <h1
+            className={classNames(
+              "md:text-[56px] md:leading-[70px]",
+              title.length > 30 ? "text-[40px]" : "text-[56px]",
+              title.length > 30 ? "leading-[60px]" : "leading-[70px]"
+            )}
+          >
+            {title}
+          </h1>
           <p className="mt-2 text-lg">
             Written by <span className="text-purple">{author}</span>, translated by{" "}
             <span className="text-purple">{translator}</span>
