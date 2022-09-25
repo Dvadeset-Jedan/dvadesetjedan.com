@@ -3,6 +3,7 @@ import { MeetupPreview } from "./meetup-preview";
 import events from "../content/events.json";
 import { format } from "date-fns";
 import { images } from "../utils/images";
+import { GH_PAGES_SUBDIRECTORY } from "../utils/constants";
 
 function getPastEvents() {
   return events
@@ -38,6 +39,7 @@ export function MeetupsSection() {
             <h3 className="text-[2rem] font-medium mb-8">Next meetup</h3>
             <MeetupPreview
               {...nextEvent}
+              imgSrc={`${GH_PAGES_SUBDIRECTORY}/${nextEvent.imgSrc}`}
               date={format(new Date(nextEvent.date), "EEEE, MMMM dd, yyyy")}
             />
           </>
@@ -49,6 +51,7 @@ export function MeetupsSection() {
             <div className="mb-8" key={new Date(event.date).toString()}>
               <MeetupPreview
                 {...event}
+                imgSrc={`${GH_PAGES_SUBDIRECTORY}/${event.imgSrc}`}
                 date={format(new Date(event.date), "EEEE, MMMM dd, yyyy")}
               />
             </div>

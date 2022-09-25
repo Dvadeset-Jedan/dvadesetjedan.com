@@ -7,6 +7,7 @@ import matter from "gray-matter";
 import { Frontmatter } from "../../utils/types";
 import md from "markdown-it";
 import { GetStaticPaths } from "next";
+import { images } from "../../utils/images";
 
 export default function Blog({
   content,
@@ -21,7 +22,7 @@ export default function Blog({
     <main className="bg-dark">
       <div className="relative">
         <Image
-          src="/dvadesetjedan.com/images/magic-internet-money.png"
+          src={images.magicInternetMoney}
           width={1440}
           height={600}
           layout="responsive"

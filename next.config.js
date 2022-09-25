@@ -1,6 +1,5 @@
 //next.config.js
-const dev = process.env.NODE_ENV !== "production";
-const basePath = dev ? "" : "/dvadesetjedan.com";
+const basePath = process.env.NEXT_PUBLIC_IS_DEVELOPMENT ? "" : "/dvadesetjedan.com";
 
 module.exports = {
   webpack: function (config) {
