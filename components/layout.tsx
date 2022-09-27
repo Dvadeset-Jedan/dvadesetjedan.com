@@ -1,4 +1,4 @@
-import { ReactNode, useRef } from "react";
+import { ReactNode } from "react";
 import { Footer } from "./footer";
 import { Header } from "./header";
 

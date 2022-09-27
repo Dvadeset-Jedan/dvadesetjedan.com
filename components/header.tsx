@@ -35,7 +35,7 @@ export function Header() {
           <Link href={routes.podcast}>
             <a
               className={classNames("hover:text-purple", {
-                "text-purple": router.asPath === routes.podcast,
+                "text-purple": router.asPath.includes(routes.podcast),
               })}
             >
               Podcast

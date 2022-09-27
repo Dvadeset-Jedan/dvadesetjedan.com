@@ -1,24 +1,17 @@
 import events from "../content/events.json";
 
 export interface Episode {
-  block: any;
-  category: string;
-  categoryName: string;
-  title: string;
-  titlePlain: string;
+  created: string;
+  createdUnixTimestamp: number;
+  podcastEpisodeUuid: string;
   description: string;
-  content: string;
+  descriptionPreview: string;
   duration: number;
+  episodeId: string;
+  title: string;
+  spotifyUrl: string;
   slug: string;
-  image: string;
-  guid: string;
-  date: string;
-  enclosure: {
-    url: string;
-    length: string;
-    type: string;
-  };
-  participants: string[];
+  anchorUrl: string;
 }
 
 export type EventType = typeof events[number];

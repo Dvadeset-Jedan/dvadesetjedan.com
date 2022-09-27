@@ -1,4 +1,3 @@
-import { EpisodePlayer } from "./episode-player";
 import { EpisodePreview } from "./episode-preview";
 import { BarcodeSectionIcon } from "./icons/barcode-section";
 import episodes from "../content/episodes.json";
@@ -12,7 +11,7 @@ export function PodcastSection() {
         <h2 className="text-[3.5rem] font-medium">Latest podcast</h2>
         <BarcodeSectionIcon />
       </div>
-      <EpisodePlayer episode={episode} />
+      {/* <EpisodePlayer episode={episode} /> */}
       <div className="px-8 lg:px-14 xl:px-24">
         <div className="mt-8">
           {/* <EpisodePreview */}
