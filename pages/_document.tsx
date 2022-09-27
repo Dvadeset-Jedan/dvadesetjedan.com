@@ -8,6 +8,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <body>
         <Main />

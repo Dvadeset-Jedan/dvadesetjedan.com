@@ -37,9 +37,6 @@ export default function Index({ translations }: Props) {
             <p className="text-2xl font-medium mt-9">
               DvadesetJedan is a local bitcoin community for Serbia, Croatia, Bosnia and Montenegro.
             </p>
-            <button className="px-16 py-6 mb-32 text-xl font-medium uppercase sm:mb-40 mt-14 bg-gradient-to-r from-purpleGradient to-lightOrangeGradient">
-              join us
-            </button>
           </div>
         </div>
         <MeetupsSection />

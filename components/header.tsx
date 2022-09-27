@@ -21,13 +21,24 @@ export function Header() {
       </div>
       <ul className="flex mt-8 ml-8 md:mt-0">
         <li className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20">
-          <Link href="#">
+          <Link href={routes.home}>
+            <a
+              className={classNames("hover:text-purple", {
+                "text-purple": router.asPath === routes.home,
+              })}
+            >
+              Overview
+            </a>
+          </Link>
+        </li>
+        <li className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20">
+          <Link href={routes.podcast}>
             <a
               className={classNames("hover:text-purple", {
                 "text-purple": router.asPath === routes.podcast,
               })}
             >
-              01. Podcast
+              Podcast
             </a>
           </Link>
         </li>
@@ -35,11 +46,10 @@ export function Header() {
           <Link href="#">
             <a
               className={classNames("hover:text-purple", {
-                // "text-purple": router.asPath === routes.blog,
-                "text-purple": false,
+                "text-purple": router.asPath === routes.meetups,
               })}
             >
-              02. Blog
+              Meetups
             </a>
           </Link>
         </li>
@@ -47,10 +57,10 @@ export function Header() {
           <Link href={routes.community}>
             <a
               className={classNames("hover:text-purple", {
-                "text-purple": router.asPath === routes.community,
+                "text-purple": router.asPath.includes(routes.blog("")),
               })}
             >
-              03. Community
+              Blog
             </a>
           </Link>
         </li>

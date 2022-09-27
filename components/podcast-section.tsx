@@ -15,16 +15,16 @@ export function PodcastSection() {
       <EpisodePlayer episode={episode} />
       <div className="px-8 lg:px-14 xl:px-24">
         <div className="mt-8">
-          <EpisodePreview
-            date="Episode #20"
-            location="Discussing the implications of hyperbitcoinization."
-          />
+          {/* <EpisodePreview */}
+          {/*   date="Episode #20" */}
+          {/*   location="Discussing the implications of hyperbitcoinization." */}
+          {/* /> */}
         </div>
         <div className="mt-8">
-          <EpisodePreview
-            date="Episode #19"
-            location="Why proof of work is essential to a new form of money."
-          />
+          {/* <EpisodePreview */}
+          {/*   date="Episode #19" */}
+          {/*   location="Why proof of work is essential to a new form of money." */}
+          {/* /> */}
         </div>
       </div>
     </section>

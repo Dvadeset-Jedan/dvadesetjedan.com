@@ -9,6 +9,7 @@ module.exports = {
       current: "currentColor",
       black: colors.black,
       white: colors.white,
+      neutral: colors.neutral,
       dark: "#1C1D27",
       lightDark: "#535873",
       purple: "#AF8EFF",
