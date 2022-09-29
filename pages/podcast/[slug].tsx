@@ -38,37 +38,10 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
         </div>
       </div>
       <div className="w-5/6 m-auto mb-20 lg:w-3/5">
-        <h2 className="text-[2.5rem] font-bold mb-14 mt-20">Show notes</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dignissim egestas at orci,
-          est suspendisse. Viverra faucibus gravida congue magna amet nibh. Faucibus enim egestas
-          non vehicula. Eget libero auctor vulputate auctor.
-        </p>
-        <p className="mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dignissim egestas at orci,
-          est suspendisse. Viverra faucibus gravida congue magna amet nibh. Faucibus enim egestas
-          non vehicula. Eget libero auctor vulputate auctor.
-        </p>
-        <p className="mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dignissim egestas at orci,
-          est suspendisse. Viverra faucibus gravida congue magna amet nibh. Faucibus enim egestas
-          non vehicula. Eget libero auctor vulputate auctor.
-        </p>
-        <p className="mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dignissim egestas at orci,
-          est suspendisse. Viverra faucibus gravida congue magna amet nibh. Faucibus enim egestas
-          non vehicula. Eget libero auctor vulputate auctor.
-        </p>
-        <p className="mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dignissim egestas at orci,
-          est suspendisse. Viverra faucibus gravida congue magna amet nibh. Faucibus enim egestas
-          non vehicula. Eget libero auctor vulputate auctor.
-        </p>
-        <p className="mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae dignissim egestas at orci,
-          est suspendisse. Viverra faucibus gravida congue magna amet nibh. Faucibus enim egestas
-          non vehicula. Eget libero auctor vulputate auctor.
-        </p>
+        <div className="h-[400px]">
+          <h2 className="text-[2.5rem] font-bold mb-14 mt-20">Show notes</h2>
+          <p className="italic">Coming soon - Notes are currently being converted to Markdown</p>
+        </div>
         <h2 className="text-[2.5rem] font-bold mb-14 mt-32">Episodes you might enjoy</h2>
         {episodes.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
