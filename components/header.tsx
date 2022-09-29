@@ -54,10 +54,10 @@ export function Header() {
           </Link>
         </li>
         <li className="font-medium text-right text-19">
-          <Link href={routes.community}>
+          <Link href={routes.blog}>
             <a
               className={classNames("hover:text-purple", {
-                "text-purple": router.asPath.includes(routes.blog("")),
+                "text-purple": router.asPath.includes(routes.blog),
               })}
             >
               Blog

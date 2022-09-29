@@ -20,14 +20,14 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
   return (
     <main className="text-center bg-dark">
       <div className="py-10 lg:py-20 bg-dark brightness-110">
-        <div className="w-4/5 m-auto xl:w-3/5">
+        <div className="w-[90%] m-auto xl:w-3/5">
           <h1 className="text-[2.5rem] font-semibold">{episode?.title}</h1>
           <p className="mt-3 text-lg text-gray">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor ultrices
             pulvinar eu sem enim dolor tellus. Ante aenean varius cras ac ante feugiat.
           </p>
         </div>
-        <div className="w-5/6 m-auto mt-20 lg:w-3/5">
+        <div className="w-[90%] m-auto mt-20 lg:w-3/5">
           {episode && (
             <iframe
               src={`https://anchor.fm/dvadesetjedan/embed/episodes/${episode.slug}`}
@@ -37,7 +37,7 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
           )}
         </div>
       </div>
-      <div className="w-5/6 m-auto mb-20 lg:w-3/5">
+      <div className="w-[90%] m-auto mb-20 lg:w-3/5">
         <div className="h-[400px]">
           <h2 className="text-[2.5rem] font-bold mb-14 mt-20">Show notes</h2>
           <p className="italic">Coming soon - Notes are currently being converted to Markdown</p>

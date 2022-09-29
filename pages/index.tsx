@@ -4,17 +4,12 @@ import { MeetupsSection } from "../components/meetups-section";
 import { PodcastSection } from "../components/podcast-section";
 import matter from "gray-matter";
 import fs from "fs";
-import { Frontmatter } from "../utils/types";
 import { images } from "../utils/images";
+import { InferGetStaticPropsType } from "next";
 
-type Props = {
-  translations: {
-    content: string;
-    frontmatter: Frontmatter;
-  }[];
-};
+export type BlogProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-export default function Index({ translations }: Props) {
+export default function Index({ posts }: BlogProps) {
   return (
     <main className="bg-dark">
       <div className="max-w-screen">
@@ -41,16 +36,15 @@ export default function Index({ translations }: Props) {
         </div>
         <MeetupsSection />
         <PodcastSection />
-        <BlogSection content={translations} />
+        <BlogSection posts={posts} />
       </div>
     </main>
   );
 }
 
 export async function getStaticProps() {
-  const translationsRaw = fs.readdirSync("content/translations");
-  const translations = translationsRaw.map((fileName: string) => {
-    const readFile = fs.readFileSync(`content/translations/${fileName}`, "utf-8");
+  const posts = fs.readdirSync("content/posts").map((fileName: string) => {
+    const readFile = fs.readFileSync(`content/posts/${fileName}`, "utf-8");
     const { data: frontmatter, content } = matter(readFile);
 
     return {
@@ -60,6 +54,6 @@ export async function getStaticProps() {
   });
 
   return {
-    props: { translations },
+    props: { posts },
   };
 }

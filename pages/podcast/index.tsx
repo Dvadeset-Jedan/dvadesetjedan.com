@@ -12,14 +12,14 @@ export default function Podcast() {
   return (
     <main className="text-center bg-dark">
       <div className="py-20 bg-dark brightness-110">
-        <div className="m-auto xl:w-3/5">
+        <div className="w-[90%] m-auto xl:w-3/5">
           <h1 className="text-[2.5rem] font-semibold">Dvadeset Jedan - Bitcoin Only Podcast</h1>
           <p className="mt-3 text-lg text-gray">{`${lastEpisode.descriptionPreview.slice(
             0,
             300
           )}...`}</p>
         </div>
-        <div className="w-5/6 m-auto mt-20 lg:w-3/5">
+        <div className="m-auto mt-20 w-[90%] lg:w-3/5">
           <iframe
             src={`https://anchor.fm/dvadesetjedan/embed/episodes/${lastEpisode.slug}`}
             scrolling="no"

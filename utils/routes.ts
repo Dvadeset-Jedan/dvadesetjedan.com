@@ -1,10 +1,10 @@
 export const routes = {
   home: "/",
-  blog: (slug: string) => `/blog/${slug}`,
-  community: "/community",
+  blog: "/blog",
+  blogArticle: (slug: string) => `${routes.blog}/${slug}`,
   meetups: "/meetups",
   podcast: "/podcast",
-  podcastEpisode: (slug: string) => `/podcast/${slug}`,
+  podcastEpisode: (slug: string) => `${routes.podcast}/${slug}`,
 } as const;
 
 export type RouteKeyType = keyof typeof routes;

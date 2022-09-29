@@ -4,20 +4,19 @@ import { LinkedinIcon } from "../../components/icons/linkedin";
 import { TwitterIcon } from "../../components/icons/twitter";
 import fs from "fs";
 import matter from "gray-matter";
-import { Frontmatter } from "../../utils/types";
 import md from "markdown-it";
-import { GetStaticPaths } from "next";
+import { GetStaticPaths, InferGetStaticPropsType } from "next";
 import { images } from "../../utils/images";
 import classNames from "classnames";
+import { useRouter } from "next/router";
+import { Frontmatter } from "../../utils/types";
 
-export default function Blog({
-  content,
-  frontmatter,
-}: {
-  content: string;
-  frontmatter: Frontmatter;
-}) {
-  const { title, author, translator } = frontmatter || {};
+export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter();
+  const post = posts.find((post) => post.frontmatter.slug === router.query.slug)!;
+  const suggestedPost = posts.find((post) => post.frontmatter.slug !== router.query.slug);
+
+  const { title, author, translator } = post.frontmatter || {};
 
   return (
     <main className="bg-dark">
@@ -48,7 +47,7 @@ export default function Blog({
         </div>
       </div>
       <div className="relative pb-20 mx-12 mt-16 tracking-wide text-21 md:mx-36 lg:mx-56 xl:mx-72 2xl:mx-96 text-gray leading-9 first-letter:text-4xl first-letter:tracking-wide">
-        <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
+        <div dangerouslySetInnerHTML={{ __html: md().render(post.content) }} />
 
         <div className="top-0 left-0 flex mt-10 md:mt-0 md:flex-col md:items-end md:absolute xl:items-center xl:justify-end md:-right-28 lg:-right-40 xl:flex-row xl:-right-64 2xl:-right-80">
           <button className="px-3 text-sm font-medium border text-gray border-gray">
@@ -62,35 +61,37 @@ export default function Blog({
             <LinkedinIcon />
           </button>
         </div>
-        <h2 className="mb-10 text-[2.5rem] font-medium text-white mt-11">You also might like</h2>
-        <BlogPreview
-          title="Inaliable Property Rights"
-          author="Dergigi"
-          translator="Pavlenex"
-          meta="Technology is a marvelous thing. We are so quick to accept things as they stand, rarely
-          taking the time to reflect on how magical these modern miracles are in actuality."
-          slug="never-stop-learning"
-        />
+        {suggestedPost && (
+          <>
+            <h2 className="mb-10 text-[2.5rem] font-medium text-white mt-20">More from the blog</h2>
+            <BlogPreview {...suggestedPost.frontmatter} />
+          </>
+        )}
       </div>
     </main>
   );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const translationsRaw = fs.readdirSync("content/translations");
+  const posts = fs.readdirSync("content/posts");
   return {
-    paths: translationsRaw.map((t) => ({ params: { slug: t.replace(".md", "") } })),
+    paths: posts.map((t) => ({ params: { slug: t.replace(".md", "") } })),
     fallback: false,
   };
 };
 
-export async function getStaticProps({ params: { slug } }: { params: { slug: string } }) {
-  const fileName = fs.readFileSync(`content/translations/${slug}.md`, "utf-8");
-  const { data: frontmatter, content } = matter(fileName);
-  return {
-    props: {
-      frontmatter,
+export async function getStaticProps() {
+  const posts = fs.readdirSync("content/posts").map((fileName: string) => {
+    const readFile = fs.readFileSync(`content/posts/${fileName}`, "utf-8");
+    const { data: frontmatter, content } = matter(readFile);
+
+    return {
       content,
-    },
+      frontmatter: frontmatter as Frontmatter,
+    };
+  });
+
+  return {
+    props: { posts },
   };
 }
