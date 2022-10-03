@@ -6,10 +6,9 @@ import matter from "gray-matter";
 import fs from "fs";
 import { images } from "../utils/images";
 import { InferGetStaticPropsType } from "next";
+import { Frontmatter } from "../utils/types";
 
-export type BlogProps = InferGetStaticPropsType<typeof getStaticProps>;
-
-export default function Index({ posts }: BlogProps) {
+export default function Index({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <main className="bg-dark">
       <div className="max-w-screen">
@@ -23,13 +22,11 @@ export default function Index({ posts }: BlogProps) {
           objectFit="cover"
         />
       </div>
-      <div className="px-8 pb-16 sm:px-20 lg:pb-20 lg:px-52">
+      <div className="pb-16 lg:pb-20 w-[90%] lg:w-4/5 2xl:w-2/3 mx-auto">
         <div className="flex justify-center">
           <div className="text-center">
-            <h1 className="text-[3.75rem] lg:text-[5rem] leading-[6.25rem] mt-16 lg:mt-28">
-              Where ideas thrive
-            </h1>
-            <p className="text-2xl font-medium mt-9">
+            <h1 className="mt-16 text-6xl font-semibold lg:mt-28">Where ideas thrive</h1>
+            <p className="font-medium text-21 mt-9">
               DvadesetJedan is a local bitcoin community for Serbia, Croatia, Bosnia and Montenegro.
             </p>
           </div>
@@ -49,7 +46,7 @@ export async function getStaticProps() {
 
     return {
       content,
-      frontmatter,
+      frontmatter: frontmatter as Frontmatter,
     };
   });
 

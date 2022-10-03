@@ -1,30 +1,40 @@
 import { EpisodePreview } from "./episode-preview";
-import { BarcodeSectionIcon } from "./icons/barcode-section";
 import episodes from "../content/episodes.json";
+import { routes } from "../utils/routes";
+import Link from "next/link";
+
+function truncate(text: string, length: number) {
+  if (text.length > length) {
+    return `${text.slice(0, length)}...`;
+  }
+
+  return text;
+}
 
 export function PodcastSection() {
-  const [episode] = episodes;
-
   return (
-    <section>
-      <div className="flex items-center justify-between mt-40 mb-20">
-        <h2 className="text-[3.5rem] font-medium">Latest podcast</h2>
-        <BarcodeSectionIcon />
+    <section className="mt-32">
+      <h2 className="text-[2.5rem] font-bold mb-14 text-center">Recent Podcast Episodes</h2>
+      <div className="lg:px-20">
+        {episodes.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
+          <EpisodePreview
+            key={slug}
+            title={truncate(title, 100)}
+            description={truncate(descriptionPreview, 220)}
+            href={routes.podcastEpisode(slug)}
+          />
+        ))}
       </div>
-      {/* <EpisodePlayer episode={episode} /> */}
-      <div className="px-8 lg:px-14 xl:px-24">
-        <div className="mt-8">
-          {/* <EpisodePreview */}
-          {/*   date="Episode #20" */}
-          {/*   location="Discussing the implications of hyperbitcoinization." */}
-          {/* /> */}
-        </div>
-        <div className="mt-8">
-          {/* <EpisodePreview */}
-          {/*   date="Episode #19" */}
-          {/*   location="Why proof of work is essential to a new form of money." */}
-          {/* /> */}
-        </div>
+      <div className="flex justify-center w-full mt-16">
+        <Link href={routes.podcast}>
+          <a
+            className="px-6 py-3 border rounded-full text-purple border-purple"
+            target="_blank"
+            rel="noreferrer"
+          >
+            All episodes
+          </a>
+        </Link>
       </div>
     </section>
   );

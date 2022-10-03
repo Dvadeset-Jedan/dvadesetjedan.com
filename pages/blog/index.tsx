@@ -1,7 +1,6 @@
 import { SmallerBlogPreview } from "../../components/blog-preview";
 import fs from "fs";
 import matter from "gray-matter";
-import { BlogProps } from "..";
 import { InferGetStaticPropsType } from "next";
 import { Frontmatter } from "../../utils/types";
 
@@ -21,8 +20,8 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           </button>
         </div>
       </div>
-      <div className="px-20 py-20 lg:px-32 xl:px-40 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-[1.875rem] gap-y-16">
-        {posts.map(({ content, frontmatter }, index) => (
+      <div className="px-10 py-20 sm:px-28 xl:px-28 grid grid-cols-1 sm:grid-cols-2 justify-items-center xl:grid-cols-3 gap-x-[1.875rem] gap-y-16">
+        {posts.map(({ frontmatter }, index) => (
           <SmallerBlogPreview key={index} {...frontmatter} />
         ))}
       </div>

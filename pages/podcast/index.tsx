@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import { EpisodePreview } from "../../components/episode-preview";
 import episodes from "../../content/episodes.json";
@@ -19,13 +20,16 @@ export default function Podcast() {
             300
           )}...`}</p>
         </div>
-        <div className="m-auto mt-20 w-[90%] lg:w-3/5">
+        <div className="m-auto mt-20 mb-4 w-[90%] lg:w-3/5">
           <iframe
             src={`https://anchor.fm/dvadesetjedan/embed/episodes/${lastEpisode.slug}`}
             scrolling="no"
             className="w-full h-[10.6rem]"
           />
         </div>
+        <Link href={routes.podcastEpisode(lastEpisode.slug)}>
+          <a className="font-medium text-purple">Episode page</a>
+        </Link>
       </div>
       <div className="m-auto my-20 lg:w-1/2">
         <h2 className="text-[2.5rem] font-bold mb-14">Previous Episodes</h2>

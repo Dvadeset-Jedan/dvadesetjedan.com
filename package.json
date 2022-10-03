@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.2",
     "classnames": "^2.3.1",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",

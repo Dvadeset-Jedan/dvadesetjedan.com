@@ -1,7 +1,9 @@
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { images } from "../utils/images";
 import { routes } from "../utils/routes";
+import { useMediaQuery } from "../utils/use-media-query";
 
 interface BlogPreviewProps {
   title: string;
@@ -41,15 +43,18 @@ export function BlogPreview({ title, author, translator, meta, slug }: BlogPrevi
 }
 
 export function SmallerBlogPreview({ title, author, translator, slug }: BlogPreviewProps) {
+  const query = useMediaQuery("sm");
+  const sizes = query ? { width: 320, height: 200 } : { width: 600, height: 350 };
+
   return (
-    <div className="flex flex-col">
+    <div className={classNames("flex flex-col", query ? "w-[300px]" : "w-[600px]")}>
       <Image
         src={images.blogPreview}
         className="rounded-2xl"
-        width={360}
-        height={250}
-        layout="responsive"
-        alt="preview"
+        width={sizes.width}
+        height={sizes.height}
+        layout="fixed"
+        alt=""
       />
       <div className="mt-6">
         <h1 className="font-medium text-21">{title}</h1>
