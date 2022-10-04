@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { images } from "../utils/images";
 import { routes } from "../utils/routes";
-import { useMediaQuery } from "../utils/use-media-query";
 
 interface BlogPreviewProps {
   title: string;
@@ -43,17 +42,14 @@ export function BlogPreview({ title, author, translator, meta, slug }: BlogPrevi
 }
 
 export function SmallerBlogPreview({ title, author, translator, slug }: BlogPreviewProps) {
-  const isMobile = useMediaQuery("sm");
-  const sizes = isMobile ? { width: 600, height: 350 } : { width: 320, height: 200 };
-
   return (
-    <div className={classNames("flex flex-col", isMobile ? "w-[600px]" : "w-[300px]")}>
+    <div className={classNames("flex flex-col")}>
       <Image
         src={images.blogPreview}
         className="rounded-2xl"
-        width={sizes.width}
-        height={sizes.height}
-        layout="fixed"
+        width="320"
+        height="200"
+        layout="responsive"
         alt=""
       />
       <div className="mt-6">

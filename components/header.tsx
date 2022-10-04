@@ -2,18 +2,15 @@ import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { routes } from "../utils/routes";
-import { FlyoutMenu } from "../components/flyout-menu";
 import { BarcodeHeaderIcon } from "./icons/barcode-header";
 import { TextLogoIcon } from "./icons/text-logo";
-import { useMediaQuery } from "../utils/use-media-query";
 
 export function Header() {
   const router = useRouter();
-  const isMobile = useMediaQuery("sm");
 
   return (
     <>
-      <header className="relative flex items-center justify-between w-full px-8 py-8 sm:px-5 md:flex-row lg:px-12 md:py-14 bg-dark">
+      <header className="flex items-center justify-between w-full px-8 py-8 sm:px-5 md:flex-row lg:px-12 md:py-14 bg-dark">
         <div className="flex items-center">
           <BarcodeHeaderIcon />
           <Link href={routes.home}>
@@ -23,9 +20,7 @@ export function Header() {
             </a>
           </Link>
         </div>
-        {/* {isMobile && <FlyoutMenu />} */}
 
-        {/* {!isMobile && ( */}
         <ul className="flex mt-8 ml-8 md:mt-0">
           <li className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20">
             <Link href={routes.home}>
@@ -72,7 +67,6 @@ export function Header() {
             </Link>
           </li>
         </ul>
-        {/* )} */}
       </header>
     </>
   );
