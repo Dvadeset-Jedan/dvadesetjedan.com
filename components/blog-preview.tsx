@@ -43,7 +43,7 @@ export function BlogPreview({ title, author, translator, meta, slug }: BlogPrevi
 
 export function SmallerBlogPreview({ title, author, translator, slug }: BlogPreviewProps) {
   return (
-    <div className={classNames("flex flex-col")}>
+    <div className={"flex flex-col"}>
       <Image
         src={images.blogPreview}
         className="rounded-2xl"
@@ -53,17 +53,17 @@ export function SmallerBlogPreview({ title, author, translator, slug }: BlogPrev
         alt=""
       />
       <div className="mt-6">
-        <h1 className="font-medium text-21">{title}</h1>
-        <p className="mt-4 text-sm text-gray">
+        <h1 className="text-3xl font-medium md:text-21">{title}</h1>
+        <p className="mt-4 text-xl md:text-sm text-gray">
           Written by <span className="text-purple">{author}</span>, translated by{" "}
           <span className="text-purple">{translator}</span>
         </p>
-        <p className="mt-6 mb-4 text-md text-gray">
+        <p className="mt-6 mb-4 text-2xl md:text-md text-gray">
           It can’t be said often enough: Bitcoin is confusing. However, it’s not complicated like a
           Rube Goldberg machine is complicated.
         </p>
         <Link href={routes.blogArticle(slug)}>
-          <a className="text-sm text-purple">Continue...</a>
+          <a className="text-2xl md:text-sm text-purple">Continue...</a>
         </Link>
       </div>
     </div>

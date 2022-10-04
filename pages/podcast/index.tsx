@@ -7,8 +7,8 @@ import { routes } from "../../utils/routes";
 export default function Podcast() {
   const [showAllEpisodes, setShowAllEpisodes] = useState(false);
   const [lastEpisode, ...otherEpisodes] = episodes;
-  const newerEpisodes = otherEpisodes.splice(0, 10);
-  const olderEpisodes = otherEpisodes.splice(10);
+  const newerEpisodes = [...otherEpisodes].splice(0, 10);
+  const olderEpisodes = [...otherEpisodes].splice(10);
 
   return (
     <main className="text-center bg-dark">

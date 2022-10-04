@@ -14,9 +14,9 @@ export function MeetupPreview({ url, imgSrc, date, venue, address }: EventType) 
           className="rounded-2xl"
         />
         <div className="flex flex-col">
-          <p className="mt-6 font-medium text-purple">{date}</p>
-          <p className="mt-2 font-medium text-21">{venue}</p>
-          <p className="mt-2 font-medium text-gray">{address}</p>
+          <p className="mt-6 text-2xl font-medium md:text-base text-purple">{date}</p>
+          <p className="mt-2 text-3xl font-medium md:text-2xl">{venue}</p>
+          <p className="mt-2 text-2xl font-medium md:text-base text-gray">{address}</p>
         </div>
       </div>
     </a>

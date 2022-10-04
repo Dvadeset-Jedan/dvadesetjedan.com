@@ -14,19 +14,19 @@ export function EpisodePreview({
   return (
     <Link href={href}>
       <a className="flex items-center px-10 py-6 cursor-pointer bg-dark hover:brightness-110 rounded-2xl">
-        <div className="w-32 h-32">
+        <div className="w-40 h-40">
           <Image
             src={images.dvadesetJedan}
             className="rounded-2xl"
-            width={128}
-            height={128}
+            width={160}
+            height={160}
             layout="fixed"
             alt=""
           />
         </div>
         <div className="ml-4 text-left xl:ml-6">
-          <p className="font-semibold text-21">{title}</p>
-          <p className="mt-2 text-sm font-medium text-gray">{description}</p>
+          <p className="text-3xl font-semibold truncate md:text-xl">{title}</p>
+          <p className="mt-2 text-2xl font-medium md:text-sm text-gray">{description}</p>
         </div>
       </a>
     </Link>

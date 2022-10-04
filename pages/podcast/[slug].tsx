@@ -43,7 +43,7 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
           <p className="italic">Coming soon - Notes are currently being converted to Markdown</p>
         </div>
         <h2 className="text-[2.5rem] font-bold mb-14 mt-32">Episodes you might enjoy</h2>
-        {episodes.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
+        {[...episodes].splice(0, 3).map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
             key={slug}
             title={`${title.slice(0, 100)}...`}

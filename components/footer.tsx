@@ -15,7 +15,7 @@ export function Footer() {
           <BarcodeFooterIcon />
         </span>
 
-        <ul className="flex justify-between w-full ml-0 text-sm lg:justify-start lg:w-auto lg:ml-8 text-gray">
+        <ul className="flex justify-between w-full ml-0 text-lg md:text-sm lg:justify-start lg:w-auto lg:ml-8 text-gray">
           <li>Copyright © 2022</li>
           <li className="ml-4 lg:ml-6">Some link</li>
           <li className="ml-4 lg:ml-6">Terms of Service</li>

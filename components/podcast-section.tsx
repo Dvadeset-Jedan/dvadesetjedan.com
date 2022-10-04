@@ -1,7 +1,7 @@
 import { EpisodePreview } from "./episode-preview";
-import episodes from "../content/episodes.json";
 import { routes } from "../utils/routes";
 import Link from "next/link";
+import { Episode } from "../utils/types";
 
 function truncate(text: string, length: number) {
   if (text.length > length) {
@@ -11,16 +11,18 @@ function truncate(text: string, length: number) {
   return text;
 }
 
-export function PodcastSection() {
+export function PodcastSection({ episodes }: { episodes: Episode[] }) {
   return (
     <section className="mt-32">
-      <h2 className="text-[2.5rem] font-bold mb-14 text-center">Recent Podcast Episodes</h2>
+      <h2 className="text-5xl md:text-[2.5rem] font-bold mb-14 text-center">
+        Recent Podcast Episodes
+      </h2>
       <div className="lg:px-20">
-        {episodes.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
+        {[...episodes]?.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
             key={slug}
-            title={truncate(title, 100)}
-            description={truncate(descriptionPreview, 220)}
+            title={truncate(title, 40)}
+            description={truncate(descriptionPreview, 140)}
             href={routes.podcastEpisode(slug)}
           />
         ))}
@@ -28,7 +30,7 @@ export function PodcastSection() {
       <div className="flex justify-center w-full mt-16">
         <Link href={routes.podcast}>
           <a
-            className="px-6 py-3 border rounded-full text-purple border-purple"
+            className="px-6 py-3 text-2xl border rounded-full md:text-base text-purple border-purple"
             target="_blank"
             rel="noreferrer"
           >
