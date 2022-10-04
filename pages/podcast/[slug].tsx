@@ -46,8 +46,8 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
         {[...episodes].splice(0, 3).map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
             key={slug}
-            title={`${title.slice(0, 100)}...`}
-            description={`${descriptionPreview.slice(0, 125)}...`}
+            title={`${title.slice(0, 30)}...`}
+            description={`${descriptionPreview.slice(0, 140)}...`}
             href={routes.podcastEpisode(slug)}
           />
         ))}

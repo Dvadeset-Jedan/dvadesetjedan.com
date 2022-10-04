@@ -3,7 +3,7 @@ import { routes } from "../utils/routes";
 import Link from "next/link";
 import { Episode } from "../utils/types";
 
-function truncate(text: string, length: number) {
+export function truncate(text: string, length: number) {
   if (text.length > length) {
     return `${text.slice(0, length)}...`;
   }
@@ -21,7 +21,7 @@ export function PodcastSection({ episodes }: { episodes: Episode[] }) {
         {[...episodes]?.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
             key={slug}
-            title={truncate(title, 40)}
+            title={truncate(title, 30)}
             description={truncate(descriptionPreview, 140)}
             href={routes.podcastEpisode(slug)}
           />
