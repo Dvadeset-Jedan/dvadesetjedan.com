@@ -43,11 +43,11 @@ export function BlogPreview({ title, author, translator, meta, slug }: BlogPrevi
 }
 
 export function SmallerBlogPreview({ title, author, translator, slug }: BlogPreviewProps) {
-  const query = useMediaQuery("sm");
-  const sizes = query ? { width: 320, height: 200 } : { width: 600, height: 350 };
+  const isMobile = useMediaQuery("sm");
+  const sizes = isMobile ? { width: 600, height: 350 } : { width: 320, height: 200 };
 
   return (
-    <div className={classNames("flex flex-col", query ? "w-[300px]" : "w-[600px]")}>
+    <div className={classNames("flex flex-col", isMobile ? "w-[600px]" : "w-[300px]")}>
       <Image
         src={images.blogPreview}
         className="rounded-2xl"

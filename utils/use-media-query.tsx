@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 type TailwindBreakpointSizes = "sm" | "md" | "lg" | "xl" | "2xl";
-const TAILWINDS_BREAKPOINT_MAPS: Record<TailwindBreakpointSizes, `(min-width: ${string}px)`> = {
-  sm: "(min-width: 640px)",
-  md: "(min-width: 768px)",
-  lg: "(min-width: 1024px)",
-  xl: "(min-width: 1280px)",
-  "2xl": "(min-width: 1536px)",
+const TAILWINDS_BREAKPOINT_MAPS: Record<TailwindBreakpointSizes, `(max-width: ${string}px)`> = {
+  sm: "(max-width: 640px)",
+  md: "(max-width: 768px)",
+  lg: "(max-width: 1024px)",
+  xl: "(max-width: 1280px)",
+  "2xl": "(max-width: 1536px)",
 };
 
 export function useMediaQuery(size: TailwindBreakpointSizes): boolean {

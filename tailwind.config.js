@@ -32,7 +32,11 @@ module.exports = {
       19: "1.1875rem",
       21: "1.3125rem",
     },
-    extend: {},
+    extend: {
+      screens: {
+        xs: "420px",
+      },
+    },
   },
   plugins: [],
 };

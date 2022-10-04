@@ -22,7 +22,7 @@ export default function Index({ posts }: InferGetStaticPropsType<typeof getStati
           objectFit="cover"
         />
       </div>
-      <div className="pb-16 lg:pb-20 w-[90%] lg:w-4/5 2xl:w-2/3 mx-auto">
+      <div className="pb-16 lg:pb-20 w-[90%] lg:w-[85%] 2xl:w-2/3 mx-auto">
         <div className="flex justify-center">
           <div className="text-center">
             <h1 className="mt-16 text-6xl font-semibold lg:mt-28">Where ideas thrive</h1>

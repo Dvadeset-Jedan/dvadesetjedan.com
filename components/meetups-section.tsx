@@ -34,9 +34,9 @@ export function MeetupsSection() {
           </a>
         </div>
       </div>
-      <div className="mt-32 3xl:px-20">
+      <div className="px-12 mt-32 3xl:px-20">
         <h3 className="mb-14 text-[2.5rem] font-medium text-center">Recent Meetups</h3>
-        <div className="flex justify-between">
+        <div className="justify-between grid grid-cols-1 gap-y-20 sm:gap-20 sm:grid-cols-2 md:grid-cols-3">
           {pastEvents.splice(0, 3).map((event) => (
             <MeetupPreview
               key={new Date(event.date).toString()}
