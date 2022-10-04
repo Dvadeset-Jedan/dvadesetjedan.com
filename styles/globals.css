@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-#__next {
-  min-width: 100vh;
+#__next, html {
+  min-width: 100vw;
+  display: flex;
 }
 
 @layer base {
