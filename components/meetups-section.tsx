@@ -35,7 +35,7 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
         </div>
       </div>
       <div className="px-12 mt-32 3xl:px-20">
-        <h3 className="mb-14 text-5xl md:text-[2.5rem] font-medium text-center">Recent Meetups</h3>
+        <h3 className="mb-14 text-5xl md:text-[2.5rem] font-bold text-center">Recent Meetups</h3>
         <div className="justify-between grid grid-cols-1 gap-y-20 sm:gap-20 sm:grid-cols-2 md:grid-cols-3">
           {[...pastEvents].splice(0, 3).map((event) => (
             <MeetupPreview

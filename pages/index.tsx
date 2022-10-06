@@ -41,7 +41,7 @@ export default function Index({
         </div>
         <MeetupsSection events={events} />
         <PodcastSection episodes={episodes} />
-        <BlogSection posts={posts} />
+        <BlogSection title="From the blog" posts={posts} />
       </div>
     </main>
   );
