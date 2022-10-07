@@ -38,7 +38,10 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
         </div>
       </div>
       <div className="relative mx-12 mt-16 text-4xl tracking-wide md:text-21 md:mx-36 lg:mx-56 xl:mx-72 2xl:mx-96 text-gray leading-[3.5rem] md:leading-9 first-letter:text-6xl first-letter:tracking-wide">
-        <div dangerouslySetInnerHTML={{ __html: md().render(post.content) }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
+          suppressHydrationWarning
+        />
 
         <div className="top-0 left-0 flex mt-10 md:mt-0 md:flex-col md:items-end md:absolute xl:items-center xl:justify-end md:-right-28 lg:-right-40 xl:flex-row xl:-right-64 2xl:-right-80">
           <button

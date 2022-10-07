@@ -1,16 +1,46 @@
+import { Popover } from "@headlessui/react";
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { routes } from "../utils/routes";
 import { BarcodeHeaderIcon } from "./icons/barcode-header";
+import { BarsIcon } from "./icons/bars";
 import { TextLogoIcon } from "./icons/text-logo";
+import { XMarkIcon } from "./icons/x-mark";
+
+function useLinks() {
+  const router = useRouter();
+
+  return [
+    {
+      name: "Overview",
+      route: routes.home,
+      active: router.asPath === routes.home,
+    },
+    {
+      name: "Podcast",
+      route: routes.podcast,
+      active: router.asPath.includes(routes.podcast),
+    },
+    {
+      name: "Meetups",
+      route: routes.meetups,
+      active: router.asPath === routes.meetups,
+    },
+    {
+      name: "Blog",
+      route: routes.blog,
+      active: router.asPath === routes.meetups,
+    },
+  ] as const;
+}
 
 export function Header() {
-  const router = useRouter();
+  const links = useLinks();
 
   return (
     <>
-      <header className="flex items-center justify-between w-full px-8 py-8 sm:px-5 md:flex-row lg:px-12 md:py-14 bg-dark">
+      <div className="relative flex items-center justify-between w-full px-8 py-8 sm:px-5 md:flex-row lg:px-12 md:py-14 bg-dark">
         <div className="flex items-center">
           <BarcodeHeaderIcon />
           <Link href={routes.home}>
@@ -21,53 +51,54 @@ export function Header() {
           </Link>
         </div>
 
-        <ul className="flex mt-8 ml-8 md:mt-0">
-          <li className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20">
-            <Link href={routes.home}>
-              <a
-                className={classNames("hover:text-purple", {
-                  "text-purple": router.asPath === routes.home,
-                })}
-              >
-                Overview
-              </a>
-            </Link>
-          </li>
-          <li className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20">
-            <Link href={routes.podcast}>
-              <a
-                className={classNames("hover:text-purple", {
-                  "text-purple": router.asPath.includes(routes.podcast),
-                })}
-              >
-                Podcast
-              </a>
-            </Link>
-          </li>
-          <li className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20">
-            <Link href="#">
-              <a
-                className={classNames("hover:text-purple", {
-                  "text-purple": router.asPath === routes.meetups,
-                })}
-              >
-                Meetups
-              </a>
-            </Link>
-          </li>
-          <li className="font-medium text-right text-19">
-            <Link href={routes.blog}>
-              <a
-                className={classNames("hover:text-purple", {
-                  "text-purple": router.asPath.includes(routes.blog),
-                })}
-              >
-                Blog
-              </a>
-            </Link>
-          </li>
+        <ul className="hidden mt-8 ml-8 md:flex md:mt-0">
+          {links.map(({ name, route, active }) => (
+            <li
+              key={name}
+              className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20"
+            >
+              <Link href={route}>
+                <a
+                  className={classNames("hover:text-purple", {
+                    "text-purple": active,
+                  })}
+                >
+                  {name}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
-      </header>
+        <div className="absolute top-0 left-0 w-full h-full md:hidden">
+          <Popover className="relative z-10 flex justify-end w-full h-full">
+            {({ open }) => (
+              <>
+                <Popover.Button className="relative z-10 p-4 mt-4 mr-4 h-min">
+                  {open ? <XMarkIcon /> : <BarsIcon />}
+                </Popover.Button>
+
+                <Popover.Panel className="absolute w-screen h-screen bg-dark opacity-[95%] backdrop-blur-xl z-5">
+                  <ul className="flex flex-col mt-28">
+                    {links.map(({ name, route, active }) => (
+                      <li key={name} className="mt-10 text-center">
+                        <Link href={route}>
+                          <a
+                            className={classNames("font-medium text-5xl hover:text-purple", {
+                              "text-purple": active,
+                            })}
+                          >
+                            {name}
+                          </a>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </Popover.Panel>
+              </>
+            )}
+          </Popover>
+        </div>
+      </div>
     </>
   );
 }
