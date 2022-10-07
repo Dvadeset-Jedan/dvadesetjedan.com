@@ -25,8 +25,8 @@ export function EpisodePreview({
           />
         </div>
         <div className="ml-4 text-left xl:ml-6">
-          <p className="text-3xl font-semibold truncate md:text-xl">{title}</p>
-          <p className="mt-2 text-2xl font-medium md:text-sm text-gray">{description}</p>
+          <p className="text-4xl font-semibold truncate md:text-xl">{title}</p>
+          <p className="mt-2 text-3xl font-medium md:text-sm text-gray">{description}</p>
         </div>
       </a>
     </Link>

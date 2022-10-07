@@ -36,6 +36,7 @@ function useLinks() {
 }
 
 export function Header() {
+  const router = useRouter();
   const links = useLinks();
 
   return (
@@ -71,25 +72,27 @@ export function Header() {
         </ul>
         <div className="absolute top-0 left-0 w-full h-full md:hidden">
           <Popover className="relative z-10 flex justify-end w-full h-full">
-            {({ open }) => (
+            {({ open, close }) => (
               <>
                 <Popover.Button className="relative z-10 p-4 mt-4 mr-4 h-min">
                   {open ? <XMarkIcon /> : <BarsIcon />}
                 </Popover.Button>
 
-                <Popover.Panel className="absolute w-screen h-screen bg-dark opacity-[95%] backdrop-blur-xl z-5">
+                <Popover.Panel className="absolute w-full h-screen bg-dark/90 backdrop-blur-md z-5">
                   <ul className="flex flex-col mt-28">
                     {links.map(({ name, route, active }) => (
                       <li key={name} className="mt-10 text-center">
-                        <Link href={route}>
-                          <a
-                            className={classNames("font-medium text-5xl hover:text-purple", {
-                              "text-purple": active,
-                            })}
-                          >
-                            {name}
-                          </a>
-                        </Link>
+                        <button
+                          className={classNames("font-medium text-5xl hover:text-purple", {
+                            "text-purple": active,
+                          })}
+                          onClick={() => {
+                            router.push(route);
+                            close();
+                          }}
+                        >
+                          {name}
+                        </button>
                       </li>
                     ))}
                   </ul>

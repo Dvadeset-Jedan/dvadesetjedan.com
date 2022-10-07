@@ -14,8 +14,10 @@ export default function Podcast() {
     <main className="text-center bg-dark">
       <div className="py-20 bg-dark brightness-110">
         <div className="w-[90%] m-auto xl:w-3/5">
-          <h1 className="text-[2.5rem] font-semibold">Dvadeset Jedan - Bitcoin Only Podcast</h1>
-          <p className="mt-3 text-lg text-gray">{`${lastEpisode.descriptionPreview.slice(
+          <h1 className="text-5xl font-semibold md:text-2xl">
+            Dvadeset Jedan - Bitcoin Only Podcast
+          </h1>
+          <p className="mt-3 text-3xl md:text-lg text-gray">{`${lastEpisode.descriptionPreview.slice(
             0,
             300
           )}...`}</p>
@@ -28,16 +30,16 @@ export default function Podcast() {
           />
         </div>
         <Link href={routes.podcastEpisode(lastEpisode.slug)}>
-          <a className="font-medium text-purple">Episode page</a>
+          <a className="text-2xl font-medium md:text-base text-purple">Episode page</a>
         </Link>
       </div>
       <div className="m-auto my-20 lg:w-1/2">
-        <h2 className="text-[2.5rem] font-bold mb-14">Previous Episodes</h2>
+        <h2 className="text-5xl md:text-[2.5rem] font-bold mb-14">Previous Episodes</h2>
         {newerEpisodes.map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
             key={slug}
-            title={`${title.slice(0, 100)}...`}
-            description={`${descriptionPreview.slice(0, 125)}...`}
+            title={`${title.slice(0, 40)}...`}
+            description={`${descriptionPreview.slice(0, 100)}...`}
             href={routes.podcastEpisode(slug)}
           />
         ))}
@@ -45,8 +47,8 @@ export default function Podcast() {
           olderEpisodes.map(({ slug, title, descriptionPreview }) => (
             <EpisodePreview
               key={slug}
-              title={`${title.slice(0, 100)}...`}
-              description={`${descriptionPreview.slice(0, 125)}...`}
+              title={`${title.slice(0, 40)}...`}
+              description={`${descriptionPreview.slice(0, 100)}...`}
               href={routes.podcastEpisode(slug)}
             />
           ))}
@@ -54,7 +56,7 @@ export default function Podcast() {
           <div className="flex justify-center w-full mt-16">
             <button
               onClick={() => setShowAllEpisodes(true)}
-              className="px-6 py-3 border rounded-full text-purple border-purple"
+              className="px-6 py-3 text-2xl border rounded-full md:text-base text-purple border-purple"
             >
               All episodes
             </button>
