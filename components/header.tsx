@@ -31,7 +31,7 @@ function useLinks() {
     {
       name: "Blog",
       route: routes.blog,
-      active: router.asPath === routes.meetups,
+      active: router.asPath.includes(routes.blog),
     },
   ] as const;
 }
@@ -80,11 +80,11 @@ export function Header({
             {({ open, close }) => (
               <>
                 <DispatchPopoverState open={open} setDisableScroll={setDisableScroll} />
-                <Popover.Button className="relative z-10 p-4 mt-3.5 mr-0.5 h-min">
+                <Popover.Button className="relative z-20 p-4 mt-3.5 mr-0.5 h-min">
                   {open ? <XMarkIcon /> : <BarsIcon />}
                 </Popover.Button>
 
-                <Popover.Panel className="absolute w-full h-screen bg-dark/90 backdrop-blur-md z-5">
+                <Popover.Panel className="absolute z-10 w-full h-screen bg-dark/90 backdrop-blur-md z-5">
                   <ul className="flex flex-col mt-28 h-[60%] justify-evenly">
                     {links.map(({ name, route, active }) => (
                       <li key={name} className="text-center">

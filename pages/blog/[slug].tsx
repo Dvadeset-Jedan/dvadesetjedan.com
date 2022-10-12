@@ -15,7 +15,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
   const router = useRouter();
   const post = posts.find((post) => post.frontmatter?.slug === router.query.slug)!;
 
-  const { title, author, translator } = post.frontmatter || {};
+  const { title, author, translator } = post?.frontmatter || {};
 
   return (
     <main className="pb-20 bg-dark">
@@ -29,19 +29,21 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           alt=""
           priority
         />
-        <div className="absolute z-10 text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-5xl">{title}</h1>
-          <p className="mt-2 text-2xl md:text-lg whitespace-nowrap">
+        <div className="absolute z-5 text-center w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <h1 className="text-2xl md:text-4xl xl:text-5xl">{title}</h1>
+          <p className="mt-2 text-sm md:text-lg">
             Written by <span className="text-purple">{author}</span>, translated by{" "}
             <span className="text-purple">{translator}</span>
           </p>
         </div>
       </div>
-      <div className="relative mx-12 mt-16 text-4xl tracking-wide md:text-21 md:mx-36 lg:mx-56 xl:mx-72 2xl:mx-96 text-gray leading-[3.5rem] md:leading-9 first-letter:text-6xl first-letter:tracking-wide">
-        <div
-          dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
-          suppressHydrationWarning
-        />
+      <div className="relative w-[85%] mx-auto mt-16 text-xl tracking-wide md:text-21 md:mx-36 lg:mx-56 xl:mx-72 2xl:mx-96 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
+        {post?.content && (
+          <div
+            dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
+            suppressHydrationWarning
+          />
+        )}
 
         <div className="top-0 left-0 flex mt-10 md:mt-0 md:flex-col md:items-end md:absolute xl:items-center xl:justify-end md:-right-28 lg:-right-40 xl:flex-row xl:-right-64 2xl:-right-80">
           <button

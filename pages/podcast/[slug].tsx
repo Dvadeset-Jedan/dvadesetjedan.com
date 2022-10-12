@@ -21,8 +21,8 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
     <main className="text-center bg-dark">
       <div className="py-10 lg:py-20 bg-dark brightness-110">
         <div className="w-[90%] m-auto xl:w-3/5">
-          <h1 className="text-4xl font-semibold">{episode?.title}</h1>
-          <p className="mt-3 text-2xl md:text-xl text-gray">
+          <h1 className="text-2xl font-semibold">{episode?.title}</h1>
+          <p className="mt-3 text-xl md:text-xl text-gray">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor ultrices
             pulvinar eu sem enim dolor tellus. Ante aenean varius cras ac ante feugiat.
           </p>
@@ -37,23 +37,20 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
           )}
         </div>
       </div>
-      <div className="m-auto mb-20 lg:w-3/5">
+      <div className="w-[90%] m-auto mb-20 lg:w-3/5">
         <div className="h-[400px]">
-          <h2 className="text-5xl md:text-[2.5rem] font-bold mb-14 mt-20">Show notes</h2>
-          <p className="text-2xl italic">Coming soon ⏳</p>
-          <p className="text-xl italic font-thin">
-            Notes are currently being converted to Markdown
-          </p>
+          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-20">Show notes</h2>
+          <p className="text-lg italic text-gray">⏳ Coming soon...</p>
         </div>
 
-        <h2 className="text-5xl md:text-[2.5rem] font-bold mb-14 mt-32">
+        <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-32">
           Episodes you might enjoy
         </h2>
         {[...episodes].splice(0, 3).map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
             key={slug}
             title={`${title.slice(0, 40)}...`}
-            description={`${descriptionPreview.slice(0, 100)}...`}
+            description={`${descriptionPreview.slice(0, 125)}...`}
             href={routes.podcastEpisode(slug)}
           />
         ))}

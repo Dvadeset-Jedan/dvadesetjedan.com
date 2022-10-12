@@ -15,7 +15,6 @@ export default function Index({
   episodes,
   events,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log("posts", posts);
   return (
     <main className="bg-dark">
       <Image
@@ -30,7 +29,7 @@ export default function Index({
       <div className="pb-16 lg:pb-20 w-[90%] lg:w-[85%] 2xl:w-2/3 mx-auto">
         <div className="flex justify-center">
           <div className="text-center">
-            <h1 className="mt-16 text-4xl font-semibold md:text-6xl lg:mt-28">
+            <h1 className="mt-10 text-3xl font-semibold md:text-6xl lg:mt-28">
               Where ideas thrive
             </h1>
             <p className="text-xl font-medium md:text-2xl mt-9">
