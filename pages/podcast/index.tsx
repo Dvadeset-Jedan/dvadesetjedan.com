@@ -15,7 +15,7 @@ export default function Podcast() {
     <main className="text-center bg-dark">
       <div className="py-16 bg-dark brightness-110">
         <div className="w-[90%] m-auto xl:w-3/5">
-          <h1 className="text-2xl font-semibold md:text-2xl">
+          <h1 className="text-2xl font-semibold md:text-4xl">
             Dvadeset Jedan - Bitcoin Only Podcast
           </h1>
           <p className="mt-3 text-xl md:text-lg text-gray">{`${lastEpisode.descriptionPreview.slice(

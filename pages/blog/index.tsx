@@ -8,7 +8,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
   return (
     <main className="bg-dark">
       <div className="flex w-[90%] md:w-auto flex-col items-center justify-center mx-auto py-20 text-center bg-dark brightness-110">
-        <h1 className="text-3xl md:text-[2.5rem]">DvadesetJedan Blog</h1>
+        <h1 className="text-3xl font-semibold md:text-4xl">DvadesetJedan Blog</h1>
         <p className="mt-4 mt-6 text-lg md:text-lg text-gray">
           Original resources and translations of popular content from the Bitcoin community.
         </p>
