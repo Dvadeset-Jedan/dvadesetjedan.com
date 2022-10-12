@@ -26,7 +26,7 @@ export default function Index({
         alt=""
         objectFit="cover"
       />
-      <div className="pb-16 lg:pb-20 w-[90%] lg:w-[85%] 2xl:w-2/3 mx-auto">
+      <div className="pb-16 lg:pb-20 w-[90%] lg:w-[85%] 2xl:w-[75%] mx-auto">
         <div className="flex justify-center">
           <div className="text-center">
             <h1 className="mt-10 text-3xl font-semibold md:text-6xl lg:mt-28">

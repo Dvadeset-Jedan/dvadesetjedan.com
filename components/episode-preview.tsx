@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { images } from "../utils/images";
+import { truncate } from "./podcast-section";
 
 export function EpisodePreview({
   title,
@@ -25,8 +26,11 @@ export function EpisodePreview({
           />
         </div>
         <div className="overflow-x-hidden text-left xl:ml-6">
-          <p className="text-xl font-semibold truncate md:text-xl">{title}</p>
-          <p className="mt-2 text-lg font-medium md:text-sm text-gray">{description}</p>
+          <p className="hidden text-xl font-semibold truncate md:block md:text-3xl">{title}</p>
+          <p className="text-xl font-semibold truncate md:hidden md:text-3xl">
+            {truncate(title, 30)}
+          </p>
+          <p className="mt-2 text-lg font-medium md:text-xl text-gray">{description}</p>
         </div>
       </a>
     </Link>

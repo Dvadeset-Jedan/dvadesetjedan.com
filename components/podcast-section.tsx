@@ -21,7 +21,7 @@ export function PodcastSection({ episodes }: { episodes: Episode[] }) {
         {[...episodes]?.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
             key={slug}
-            title={truncate(title, 30)}
+            title={title}
             description={truncate(descriptionPreview, 140)}
             href={routes.podcastEpisode(slug)}
           />

@@ -37,7 +37,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           </p>
         </div>
       </div>
-      <div className="relative w-[85%] mx-auto mt-16 text-xl tracking-wide md:text-21 md:mx-36 lg:mx-56 xl:mx-72 2xl:mx-96 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
+      <div className="relative w-[85%] md:w-auto mx-auto mt-16 text-xl tracking-wide md:text-21 md:mx-36 lg:mx-56 xl:mx-72 2xl:mx-96 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
         {post?.content && (
           <div
             dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
