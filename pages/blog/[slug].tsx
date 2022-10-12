@@ -11,11 +11,19 @@ import { Frontmatter } from "../../utils/types";
 import { BlogSection } from "../../components/blog-section";
 import copy from "copy-to-clipboard";
 
+function getTwitterShareURL(title: string, slug: string) {
+  return `https://twitter.com/intent/tweet?text=${title} https://dvadeset-jedan.github.io/dvadesetjedan.com/blog/${slug}`;
+}
+
+function getLinkedinShareURL(slug: string) {
+  return `https://www.linkedin.com/sharing/share-offsite/?url=https://dvadeset-jedan.github.io/dvadesetjedan.com/blog/${slug}`;
+}
+
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   const post = posts.find((post) => post.frontmatter?.slug === router.query.slug)!;
 
-  const { title, author, translator } = post?.frontmatter || {};
+  const { title, author, translator, slug } = post?.frontmatter || {};
 
   return (
     <main className="pb-20 bg-dark">
@@ -53,12 +61,18 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
             <span className="block md:hidden lg:block">Copy link</span>
             <span className="hidden md:block lg:hidden">©️</span>
           </button>
-          <button className="border ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 border-gray h-[2.375rem] w-[2.375rem] flex items-center justify-center">
+          <a
+            href={getTwitterShareURL(title, slug)}
+            className="border ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 border-gray h-[2.375rem] w-[2.375rem] flex items-center justify-center"
+          >
             <TwitterIcon />
-          </button>
-          <button className="h-[2.375rem] ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 w-[2.375rem] flex items-center justify-center border border-gray">
+          </a>
+          <a
+            href={getLinkedinShareURL(slug)}
+            className="h-[2.375rem] ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 w-[2.375rem] flex items-center justify-center border border-gray"
+          >
             <LinkedinIcon />
-          </button>
+          </a>
         </div>
       </div>
       <div className="flex justify-center mx-10 md:mx-16">
