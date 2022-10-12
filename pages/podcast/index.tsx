@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { EpisodePreview } from "../../components/episode-preview";
+import { PodcastActions } from "../../components/podcast-actions";
 import episodes from "../../content/episodes.json";
 import { routes } from "../../utils/routes";
 
@@ -21,6 +22,7 @@ export default function Podcast() {
             0,
             300
           )}...`}</p>
+          <PodcastActions title="Subscribe on" />
         </div>
         <div className="m-auto mt-20 mb-4 w-[90%] lg:w-3/5">
           <iframe

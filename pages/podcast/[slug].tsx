@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { EpisodePreview } from "../../components/episode-preview";
+import { PodcastActions } from "../../components/podcast-actions";
 import episodesJSON from "../../content/episodes.json";
 import { routes } from "../../utils/routes";
 import { Episode } from "../../utils/types";
@@ -22,10 +23,6 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
       <div className="py-10 lg:py-20 bg-dark brightness-110">
         <div className="w-[90%] m-auto xl:w-3/5">
           <h1 className="text-2xl font-semibold">{episode?.title}</h1>
-          <p className="mt-3 text-xl md:text-xl text-gray">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor ultrices
-            pulvinar eu sem enim dolor tellus. Ante aenean varius cras ac ante feugiat.
-          </p>
         </div>
         <div className="w-[90%] m-auto mt-20 lg:w-3/5">
           {episode && (
@@ -36,6 +33,7 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
             />
           )}
         </div>
+        <PodcastActions title="Listen on" />
       </div>
       <div className="w-[90%] m-auto mb-20 lg:w-3/5">
         <div className="h-[400px]">
