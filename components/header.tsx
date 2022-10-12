@@ -2,6 +2,7 @@ import { Popover } from "@headlessui/react";
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { routes } from "../utils/routes";
 import { BarcodeHeaderIcon } from "./icons/barcode-header";
 import { BarsIcon } from "./icons/bars";
@@ -35,7 +36,11 @@ function useLinks() {
   ] as const;
 }
 
-export function Header() {
+export function Header({
+  setDisableScroll,
+}: {
+  setDisableScroll: Dispatch<SetStateAction<boolean>>;
+}) {
   const router = useRouter();
   const links = useLinks();
 
@@ -74,16 +79,17 @@ export function Header() {
           <Popover className="relative z-10 flex justify-end w-full h-full">
             {({ open, close }) => (
               <>
+                <DispatchPopoverState open={open} setDisableScroll={setDisableScroll} />
                 <Popover.Button className="relative z-10 p-4 mt-3.5 mr-0.5 h-min">
                   {open ? <XMarkIcon /> : <BarsIcon />}
                 </Popover.Button>
 
                 <Popover.Panel className="absolute w-full h-screen bg-dark/90 backdrop-blur-md z-5">
-                  <ul className="flex flex-col mt-28">
+                  <ul className="flex flex-col mt-28 h-[60%] justify-evenly">
                     {links.map(({ name, route, active }) => (
-                      <li key={name} className="mt-10 text-center">
+                      <li key={name} className="text-center">
                         <button
-                          className={classNames("font-medium text-5xl hover:text-purple", {
+                          className={classNames("font-medium text-4xl hover:text-purple", {
                             "text-purple": active,
                           })}
                           onClick={() => {
@@ -104,4 +110,18 @@ export function Header() {
       </div>
     </>
   );
+}
+
+function DispatchPopoverState({
+  open,
+  setDisableScroll,
+}: {
+  open: boolean;
+  setDisableScroll: Dispatch<SetStateAction<boolean>>;
+}) {
+  useEffect(() => {
+    setDisableScroll(open);
+  }, [open, setDisableScroll]);
+
+  return null;
 }
