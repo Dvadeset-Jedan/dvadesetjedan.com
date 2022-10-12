@@ -4,7 +4,7 @@ import { Header } from "./header";
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="relative flex flex-col w-full h-full">
       <Header />
       {children}
       <Footer />

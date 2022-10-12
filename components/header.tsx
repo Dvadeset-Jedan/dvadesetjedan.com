@@ -41,13 +41,13 @@ export function Header() {
 
   return (
     <>
-      <div className="relative flex items-center justify-between w-full px-8 py-8 sm:px-5 md:flex-row lg:px-12 md:py-14 bg-dark">
+      <div className="relative flex items-center justify-between w-full px-4 py-8 sm:px-5 md:flex-row lg:px-12 md:py-14 bg-dark">
         <div className="flex items-center">
-          <BarcodeHeaderIcon />
+          <BarcodeHeaderIcon className="w-12 md:w-auto" />
           <Link href={routes.home}>
             <a className="ml-3">
               <span className="sr-only">DvadesetJedan</span>
-              <TextLogoIcon />
+              <TextLogoIcon className="w-52 md:w-auto" />
             </a>
           </Link>
         </div>
@@ -74,7 +74,7 @@ export function Header() {
           <Popover className="relative z-10 flex justify-end w-full h-full">
             {({ open, close }) => (
               <>
-                <Popover.Button className="relative z-10 p-4 mt-4 mr-4 h-min">
+                <Popover.Button className="relative z-10 p-4 mt-3.5 mr-0.5 h-min">
                   {open ? <XMarkIcon /> : <BarsIcon />}
                 </Popover.Button>
 

@@ -7,7 +7,7 @@ import { Frontmatter } from "../../utils/types";
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <main className="bg-dark">
-      <div className="flex flex-col items-center justify-center py-20 text-center bg-dark brightness-110">
+      <div className="flex w-[90%] flex-col items-center justify-center mx-auto py-20 text-center bg-dark brightness-110">
         <h1 className="text-5xl md:text-[2.5rem]">DvadesetJedan Blog</h1>
         <p className="mt-4 mt-6 text-2xl md:text-lg text-gray">
           Original resources and translations of popular content from the Bitcoin community.

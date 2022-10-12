@@ -9,13 +9,13 @@ import { YoutubeIcon } from "./icons/youtube";
 
 export function Footer() {
   return (
-    <footer className="flex flex-col justify-between px-20 pb-16 md:px-10 md:flex-row pt-11 bg-dark brightness-110">
+    <footer className="flex flex-col justify-between px-10 pb-16 md:px-10 md:flex-row pt-11 bg-dark brightness-110">
       <div className="flex items-center">
         <span className="hidden lg:block">
           <BarcodeFooterIcon />
         </span>
 
-        <ul className="flex justify-between w-full ml-0 text-2xl md:text-xl lg:justify-start lg:w-auto lg:ml-8 text-gray">
+        <ul className="flex justify-between w-full ml-0 text-lg md:text-xl lg:justify-start lg:w-auto lg:ml-8 text-gray">
           <li>Copyright © 2022</li>
           <li className="ml-4 lg:ml-6">Terms of Service</li>
           <li className="ml-4 lg:ml-6">Privacy Policy</li>

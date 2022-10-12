@@ -14,7 +14,7 @@ export function truncate(text: string, length: number) {
 export function PodcastSection({ episodes }: { episodes: Episode[] }) {
   return (
     <section className="mt-32">
-      <h2 className="text-5xl md:text-[2.5rem] font-bold mb-14 text-center">
+      <h2 className="text-3xl md:text-[2.5rem] font-bold mb-14 text-center">
         Recent Podcast Episodes
       </h2>
       <div className="lg:px-20">
@@ -30,7 +30,7 @@ export function PodcastSection({ episodes }: { episodes: Episode[] }) {
       <div className="flex justify-center w-full mt-16">
         <Link href={routes.podcast}>
           <a
-            className="px-6 py-3 text-2xl border rounded-full md:text-base text-purple border-purple"
+            className="px-6 py-3 text-xl border rounded-full md:text-base text-purple border-purple"
             target="_blank"
             rel="noreferrer"
           >

@@ -1,6 +1,13 @@
-export function BarcodeHeaderIcon() {
+export function BarcodeHeaderIcon({ className }: { className?: string }) {
   return (
-    <svg width="91" height="35" viewBox="0 0 91 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="91"
+      height="35"
+      viewBox="0 0 91 35"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
       <path
         d="M0 34.3704V0.0546875H1.74487V34.3704H0ZM3.48973 34.3704V0.0546875H5.2346V34.3704H3.48973ZM6.97946 34.3704V0.0546875H12.2141V34.3704H6.97946ZM19.1935 34.3704V0.0546875H20.9384V34.3704H19.1935ZM22.6833 34.3704V0.0546875H27.9179V34.3704H22.6833Z"
         fill="url(#paint0_linear_72_27176)"
