@@ -7,7 +7,9 @@
     "address": "Radnička 3, Čukarica Beograd",
     "city": "Belgrade",
     "country": "Serbia",
-    "imgSrc": "images/dogma.webp"
+    "imgSrc": "images/dogma.webp",
+    "positionX": 760,
+    "positionY": 305
   },
   {
     "title": "🥳🎉 Veliki internacionalni Bitcoin meetup / International Bitcoin Meetup 🎉🥳",
