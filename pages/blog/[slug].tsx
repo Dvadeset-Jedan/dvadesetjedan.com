@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { Frontmatter } from "../../utils/types";
 import { BlogSection } from "../../components/blog-section";
 import copy from "copy-to-clipboard";
+import styles from "../../styles/blog.module.scss";
 
 function getTwitterShareURL(title: string, slug: string) {
   return `https://twitter.com/intent/tweet?text=${title} https://dvadeset-jedan.github.io/dvadesetjedan.com/blog/${slug}`;
@@ -23,7 +24,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
   const router = useRouter();
   const post = posts.find((post) => post.frontmatter?.slug === router.query.slug)!;
 
-  const { title, author, translator, slug } = post?.frontmatter || {};
+  const { title, author, translator, slug, authorURL, translatorURL } = post?.frontmatter || {};
 
   return (
     <main className="pb-20 bg-dark">
@@ -38,10 +39,16 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           priority
         />
         <div className="absolute z-5 text-center w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-2xl md:text-4xl xl:text-5xl">{title}</h1>
+          <h1 className="text-[1.75rem] md:text-4xl xl:text-5xl">{title}</h1>
           <p className="mt-2 text-sm md:text-lg">
-            Written by <span className="text-purple">{author}</span>, translated by{" "}
-            <span className="text-purple">{translator}</span>
+            Written by{" "}
+            <a className="text-purple" href={authorURL}>
+              {author}
+            </a>
+            , translated by{" "}
+            <a className="text-purple" href={translatorURL}>
+              {translator}
+            </a>
           </p>
         </div>
       </div>
@@ -50,6 +57,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           <div
             dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
             suppressHydrationWarning
+            className={styles.markdown}
           />
         )}
 

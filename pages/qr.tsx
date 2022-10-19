@@ -6,7 +6,7 @@ export default function QR() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace(routes.blogArticle("never-stop-learning"));
+    router.replace(routes.blogArticle("dear-family-dear-friends"));
   }, [router]);
 
   return <div className="h-full bg-dark" />;

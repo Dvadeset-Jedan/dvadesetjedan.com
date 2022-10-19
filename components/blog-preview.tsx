@@ -3,16 +3,17 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { images } from "../utils/images";
 import { routes } from "../utils/routes";
+import { Frontmatter } from "../utils/types";
 
-interface BlogPreviewProps {
-  title: string;
-  author: string;
-  translator: string;
-  meta: string;
-  slug: string;
-}
-
-export function SmallerBlogPreview({ title, author, translator, slug, meta }: BlogPreviewProps) {
+export function SmallerBlogPreview({
+  title,
+  author,
+  authorURL,
+  translator,
+  translatorURL,
+  slug,
+  meta,
+}: Frontmatter) {
   const router = useRouter();
 
   return (
@@ -37,8 +38,14 @@ export function SmallerBlogPreview({ title, author, translator, slug, meta }: Bl
           {title}
         </h1>
         <p className="mt-4 text-lg md:text-md text-gray">
-          Written by <span className="text-purple">{author}</span>, translated by{" "}
-          <span className="text-purple">{translator}</span>
+          Written by{" "}
+          <a className="text-purple" href={authorURL}>
+            {author}
+          </a>
+          , translated by{" "}
+          <a className="text-purple" href={translatorURL}>
+            {translator}
+          </a>
         </p>
         <p className="mt-6 mb-4 text-xl md:text-xl text-gray">{meta}</p>
         <Link href={routes.blogArticle(slug)}>

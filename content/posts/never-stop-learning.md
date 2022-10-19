@@ -1,8 +1,10 @@
 ---
 title: "Nikad ne prestani učiti"
 author: "Yves Bennaim"
+authorURL: "https://bennaim.com/"
 meta: "U novinama i na televiziji, Bitcoin je često prezentiran kao zlatni novčić sa “B” simbolom na licu. Zbog toga, mnogo ljudi koji ne znaju što je Bitcoin misle da tako zapravo i izgleda..."
 translator: "Matija"
+translatorURL: ""
 slug: "never-stop-learning"
 tags:
     - translation
