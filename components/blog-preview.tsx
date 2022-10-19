@@ -13,6 +13,7 @@ export function SmallerBlogPreview({
   translatorURL,
   slug,
   meta,
+  imgSrc,
 }: Frontmatter) {
   const router = useRouter();
 
@@ -20,7 +21,7 @@ export function SmallerBlogPreview({
     <article className="flex flex-col">
       <div>
         <Image
-          src={images.blogPreview}
+          src={imgSrc || images.blogPreview}
           className="cursor-pointer rounded-2xl"
           width="320"
           height="200"

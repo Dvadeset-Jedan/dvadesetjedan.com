@@ -27,5 +27,6 @@ export type Frontmatter = {
   meta: string;
   translator: string;
   translatorURL: string;
+  imgSrc: string;
   slug: ArticleSlug;
 };

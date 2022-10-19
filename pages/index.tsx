@@ -15,7 +15,6 @@ export default function Index({
   episodes,
   events,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log("posts", posts);
   return (
     <main className="bg-dark">
       <Image
