@@ -9,4 +9,5 @@ export const images = {
   meetupCover: `${GH_PAGES_SUBDIRECTORY}/images/meetup-cover.webp`,
   meetup: `${GH_PAGES_SUBDIRECTORY}/images/meetup.webp`,
   player: `${GH_PAGES_SUBDIRECTORY}/images/player.webp`,
+  dearFamilyDearFriends: `${GH_PAGES_SUBDIRECTORY}/images/content/dear-family.jpeg`,
 } as const;

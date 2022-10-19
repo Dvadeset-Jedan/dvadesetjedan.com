@@ -6,12 +6,12 @@ meta: "Pišem ovo pismo jer sam uveren u dve stvari: (1) naš trenutni novac je 
 translator: "Tink"
 translatorURL: "https://europeanbitcoiners.com/author/tink/"
 slug: "dear-family-dear-friends"
-imgSrc: '/images/content/dear-family.jpeg' 
+img: 'dearFamilyDearFriends' 
 tags:
     - translation
 ---
 
-### Pismo svima vama koji još uvek nemaju bitkoin. 
+### Pismo svima vama koji još uvek nemate bitkoin. 
 
 &nbsp; 
 ![Draga Porodica, Dragi Priatelji...](https://europeanbitcoiners.com/content/images/size/w1200/2022/05/1-cWyKZog6yUOGhxqDzqj6Rw.jpeg)
