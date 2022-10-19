@@ -45,7 +45,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
             <a className="text-purple" href={authorURL}>
               {author}
             </a>
-            , translated by{" "}
+            , Prevod{" "}
             <a className="text-purple" href={translatorURL}>
               {translator}
             </a>

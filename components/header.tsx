@@ -14,7 +14,7 @@ function useLinks() {
 
   return [
     {
-      name: "Overview",
+      name: "Početna",
       route: routes.home,
       active: router.asPath === routes.home,
     },
@@ -24,7 +24,7 @@ function useLinks() {
       active: router.asPath.includes(routes.podcast),
     },
     {
-      name: "Meetups",
+      name: "Sastanci",
       route: routes.meetups,
       active: router.asPath === routes.meetups,
     },
