@@ -33,7 +33,7 @@ export default function Index({
               DvadesetJedan je balkanska bitcoin zajednica
             </h1>
             <p className="text-xl font-medium md:text-2xl mt-9">
-            DvadesetJedan je neformalna grupa Bitcoin entuzijasta sa ex-yu prostora koja okuplja stotine bitcoinera iz regiona s ciljem edukacije, podsticanja preduzetništva i druženja kroz različite projekte.
+            DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja okuplja stotine bitcoinera iz regiona s ciljem edukacije, podsticanja preduzetništva i druženja kroz različite projekte.
             </p>
           </div>
         </div>
