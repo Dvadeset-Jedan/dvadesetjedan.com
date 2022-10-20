@@ -10,7 +10,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
       <div className="flex w-[90%] md:w-auto flex-col items-center justify-center mx-auto py-20 text-center bg-dark brightness-110">
         <h1 className="text-3xl font-semibold md:text-4xl">DvadesetJedan Blog</h1>
         <p className="mt-4 mt-6 text-lg md:text-lg text-gray">
-          Original resources and translations of popular content from the Bitcoin community.
+          Naš blog je najbolji resurs za učenje o bitcoin-u. Pročitaj tekstove koje smo sami kreirali, ali i prevode popularnih sadržaja širom ekosistema.
         </p>
         {/* <p className="mt-6 text-xl md:text-sm text-gray"> */}
         {/*   Get notified when we translate a new resource: */}

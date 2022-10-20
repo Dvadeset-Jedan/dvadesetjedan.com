@@ -31,12 +31,12 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
             target="_blank"
             rel="noreferrer"
           >
-            Pronađi naredni skup
+            Naredni događaj
           </a>
         </div>
       </div>
       <div className="px-4 mt-32 3xl:px-20">
-        <h3 className="mb-14 text-3xl md:text-[2.5rem] font-bold text-center">Recent Meetups</h3>
+        <h3 className="mb-14 text-3xl md:text-[2.5rem] font-bold text-center">Nedavni Događaji</h3>
         <div className="justify-between grid grid-cols-1 gap-y-10 sm:gap-20 sm:grid-cols-2 md:grid-cols-3">
           {[...pastEvents].splice(0, 3).map((event) => (
             <div key={new Date(event.date).toString()}>
