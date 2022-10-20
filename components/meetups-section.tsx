@@ -19,7 +19,7 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
       <Image src={images.meetupCover} width={1024} height={512} layout="responsive" alt="" />
       <div className="w-5/6 m-auto">
         <p className="mb-16 text-xl font-medium text-center md:text-2xl mt-14">
-          Grupa trenuto ima na stotine članova i organizuje redovne sastanke širom reguiona.
+          Grupa trenuto ima na stotine članova i organizuje redovne sastanke širom regiona.
           Dobrodošli su svi, bez obzira na nivo znanja o bitcoin-u.
           Posebno volimo početnike, koje ćemo vrlo rado uputiti kako započeti.
           Nekli od nas rade u bitcoin industriji, neki su samo entuzijasti, neki imaju biznise koji su vezani za bitcoin.
