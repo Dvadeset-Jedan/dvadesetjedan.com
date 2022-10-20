@@ -22,7 +22,7 @@ export default function Podcast() {
             0,
             300
           )}...`}</p>
-          <PodcastActions title="Subscribe on" />
+          <PodcastActions title="Slušajte nas na" />
         </div>
         <div className="m-auto mt-20 mb-4 w-[90%] lg:w-3/5">
           <iframe

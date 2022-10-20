@@ -37,12 +37,12 @@ export default function Podcast({ episodes }: { episodes: Episode[] }) {
       </div>
       <div className="w-[90%] m-auto mb-20 lg:w-3/5">
         <div className="h-[400px]">
-          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-20">Show notes</h2>
-          <p className="text-lg italic text-gray">⏳ Coming soon...</p>
+          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-20">Beleške iz podcasta</h2>
+          <p className="text-lg italic text-gray">⏳ Stiže uskoro...</p>
         </div>
 
         <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-32">
-          Episodes you might enjoy
+          Epizode u kojima ćeš uživati
         </h2>
         {[...episodes].splice(0, 3).map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview

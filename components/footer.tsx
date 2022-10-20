@@ -17,8 +17,8 @@ export function Footer() {
 
         <ul className="flex justify-between w-full ml-0 text-md lg:justify-start lg:w-auto lg:ml-8 text-gray">
           <li>Copyright © 2022</li>
-          <li className="ml-4 lg:ml-6">Terms of Service</li>
-          <li className="ml-4 lg:ml-6">Privacy Policy</li>
+          <li className="ml-4 lg:ml-6">Uslovi korišćenja</li>
+          <li className="ml-4 lg:ml-6">Pravila o privatnosti</li>
         </ul>
       </div>
       <ul className="flex items-center mt-10 justify-evenly lg:justify-start md:mt-0">
