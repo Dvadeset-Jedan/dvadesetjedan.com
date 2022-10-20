@@ -21,8 +21,8 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
         <p className="mb-16 text-xl font-medium text-center md:text-2xl mt-14">
           Grupa trenuto ima na stotine članova i organizuje redovne sastanke širom regiona.
           Dobrodošli su svi, bez obzira na nivo znanja o bitcoin-u.
-          Posebno volimo početnike, koje ćemo vrlo rado uputiti kako započeti.
-          Nekli od nas rade u bitcoin industriji, neki su samo entuzijasti, neki imaju biznise koji su vezani za bitcoin.
+          Posebno volimo početnike, sa kojima ćemo vrlo rado podeliti znanje.
+          Neki od nas rade u bitcoin industriji, neki su samo entuzijasti, neki imaju biznise koji su vezani za bitcoin.
         </p>
         <div className="flex justify-center w-full">
           <a
