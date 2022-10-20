@@ -32,11 +32,11 @@ export default function Podcast() {
           />
         </div>
         <Link href={routes.podcastEpisode(lastEpisode.slug)}>
-          <a className="text-xl font-medium md:text-base text-purple">Episode page</a>
+          <a className="text-xl font-medium md:text-base text-purple">Sve epizode</a>
         </Link>
       </div>
       <div className="w-[90%] m-auto my-20 lg:w-1/2">
-        <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14">Previous Episodes</h2>
+        <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14">Pretodne Epizode</h2>
         {newerEpisodes.map(({ slug, title, descriptionPreview }) => (
           <EpisodePreview
             key={slug}
@@ -60,7 +60,7 @@ export default function Podcast() {
               onClick={() => setShowAllEpisodes(true)}
               className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple"
             >
-              All episodes
+              Sve epizode
             </button>
           </div>
         )}
