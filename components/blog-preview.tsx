@@ -39,18 +39,18 @@ export function SmallerBlogPreview({
           {title}
         </h1>
         <p className="mt-4 text-lg md:text-md text-gray">
-          Written by{" "}
+          Autor{" "}
           <a className="text-purple" href={authorURL}>
             {author}
           </a>
-          , translated by{" "}
+          , Prevod{" "}
           <a className="text-purple" href={translatorURL}>
             {translator}
           </a>
         </p>
         <p className="mt-6 mb-4 text-xl md:text-xl text-gray">{meta}</p>
         <Link href={routes.blogArticle(slug)}>
-          <a className="text-lg md:text-sm text-purple">Continue...</a>
+          <a className="text-lg md:text-sm text-purple">Pročitaj više...</a>
         </Link>
       </div>
     </article>

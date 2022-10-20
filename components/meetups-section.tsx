@@ -19,9 +19,10 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
       <Image src={images.meetupCover} width={1024} height={512} layout="responsive" alt="" />
       <div className="w-5/6 m-auto">
         <p className="mb-16 text-xl font-medium text-center md:text-2xl mt-14">
-          We currently have over 100 members and meet up regularly. The meetups are very easy going
-          where we discuss bitcoin and other subjects. Everyone is welcome! All you have to do is
-          show up and be yourself.
+          Grupa trenutno ima na stotine članova i organizuje redovne sastanke širom regiona.
+          Dobrodošli su svi, bez obzira na nivo znanja o bitcoin-u.
+          Posebno volimo početnike, sa kojima ćemo vrlo rado podeliti znanje.
+          Neki od nas rade u bitcoin industriji, neki su samo entuzijasti, neki imaju biznise koji su vezani za bitcoin.
         </p>
         <div className="flex justify-center w-full">
           <a
@@ -30,7 +31,7 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
             target="_blank"
             rel="noreferrer"
           >
-            Find our next meetup
+            Pronađi naredni skup
           </a>
         </div>
       </div>
@@ -55,7 +56,7 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
           target="_blank"
           rel="noreferrer"
         >
-          All meetups
+          Pregledaj događaje
         </a>
       </div>
     </section>

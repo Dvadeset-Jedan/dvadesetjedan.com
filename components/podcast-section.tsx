@@ -15,7 +15,7 @@ export function PodcastSection({ episodes }: { episodes: Episode[] }) {
   return (
     <section className="mt-32">
       <h2 className="text-3xl md:text-[2.5rem] font-bold mb-14 text-center">
-        Recent Podcast Episodes
+        Nedavne epizode podcasta
       </h2>
       <div className="lg:px-20">
         {[...episodes]?.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
@@ -34,7 +34,7 @@ export function PodcastSection({ episodes }: { episodes: Episode[] }) {
             target="_blank"
             rel="noreferrer"
           >
-            All episodes
+            Sve epizode
           </a>
         </Link>
       </div>

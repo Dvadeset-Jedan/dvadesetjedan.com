@@ -30,16 +30,16 @@ export default function Index({
         <div className="flex justify-center">
           <div className="text-center">
             <h1 className="mt-10 text-3xl font-semibold md:text-6xl lg:mt-28">
-              Where ideas thrive
+              DvadesetJedan je balkanska bitcoin zajednica
             </h1>
             <p className="text-xl font-medium md:text-2xl mt-9">
-              DvadesetJedan is a local bitcoin community for Serbia, Croatia, Bosnia and Montenegro.
+            DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja okuplja stotine bitcoinera iz regiona s ciljem edukacije, podsticanja preduzetništva i druženja kroz različite projekte.
             </p>
           </div>
         </div>
         <MeetupsSection events={events} />
         <PodcastSection episodes={episodes} />
-        <BlogSection title="From the blog" posts={posts} />
+        <BlogSection title="Bitcoin Blog" posts={posts} />
       </div>
     </main>
   );
