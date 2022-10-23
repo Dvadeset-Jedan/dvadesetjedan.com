@@ -1,15 +1,27 @@
 import Link from "next/link";
+import React from "react";
 import { useState } from "react";
 import { EpisodePreview } from "../../components/episode-preview";
 import { PodcastActions } from "../../components/podcast-actions";
-import episodes from "../../content/episodes.json";
 import { routes } from "../../utils/routes";
+import { usePodcastEpisodes } from "./podcast.api";
+
+export function getSlug(link: string | undefined) {
+  const CUT_OfF_PREFIX = "episodes/";
+  const slug = link?.slice(link.indexOf(CUT_OfF_PREFIX) + CUT_OfF_PREFIX.length);
+  return slug || "";
+}
 
 export default function Podcast() {
   const [showAllEpisodes, setShowAllEpisodes] = useState(false);
+
+  const { episodes = [], isLoading } = usePodcastEpisodes();
+
   const [lastEpisode, ...otherEpisodes] = episodes;
   const newerEpisodes = [...otherEpisodes].splice(0, 10);
   const olderEpisodes = [...otherEpisodes].splice(10);
+
+  if (isLoading) return <div className="h-[40rem] bg-dark" />;
 
   return (
     <main className="text-center bg-dark">
@@ -18,7 +30,7 @@ export default function Podcast() {
           <h1 className="text-2xl font-semibold md:text-4xl">
             Dvadeset Jedan - Bitcoin Only Podcast
           </h1>
-          <p className="mt-3 text-xl md:text-lg text-gray">{`${lastEpisode.descriptionPreview.slice(
+          <p className="mt-3 text-xl md:text-lg text-gray">{`${lastEpisode.contentSnippet.slice(
             0,
             300
           )}...`}</p>
@@ -26,7 +38,7 @@ export default function Podcast() {
         </div>
         <div className="m-auto mt-20 mb-4 w-[90%] lg:w-3/5">
           <iframe
-            src={`https://anchor.fm/dvadesetjedan/embed/episodes/${lastEpisode.slug}`}
+            src={`https://anchor.fm/dvadesetjedan/embed/episodes/${getSlug(lastEpisode.link)}`}
             scrolling="no"
             className="w-full h-[10.6rem]"
           />
@@ -36,22 +48,22 @@ export default function Podcast() {
         </Link>
       </div>
       <div className="w-[90%] m-auto my-20 lg:w-1/2">
-        <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14">Pretodne Epizode</h2>
-        {newerEpisodes.map(({ slug, title, descriptionPreview }) => (
+        <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14">Prethodne epizode</h2>
+        {newerEpisodes.map(({ link, title, contentSnippet }) => (
           <EpisodePreview
-            key={slug}
-            title={`${title.slice(0, 40)}...`}
-            description={`${descriptionPreview.slice(0, 100)}...`}
-            href={routes.podcastEpisode(slug)}
+            key={getSlug(link)}
+            title={`${title?.slice(0, 40)}...`}
+            description={`${contentSnippet.slice(0, 100)}...`}
+            href={routes.podcastEpisode(getSlug(link))}
           />
         ))}
         {showAllEpisodes &&
-          olderEpisodes.map(({ slug, title, descriptionPreview }) => (
+          olderEpisodes.map(({ link, title, contentSnippet }) => (
             <EpisodePreview
-              key={slug}
-              title={`${title.slice(0, 40)}...`}
-              description={`${descriptionPreview.slice(0, 100)}...`}
-              href={routes.podcastEpisode(slug)}
+              key={getSlug(link)}
+              title={`${title?.slice(0, 40)}...`}
+              description={`${contentSnippet.slice(0, 100)}...`}
+              href={routes.podcastEpisode(getSlug(link))}
             />
           ))}
         {!showAllEpisodes && (

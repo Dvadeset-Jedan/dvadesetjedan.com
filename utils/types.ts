@@ -1,5 +1,4 @@
 import events from "../content/events.json";
-import episodes from "../content/episodes.json";
 import { ArticleSlug } from "./routes";
 
 export interface Episode {
@@ -17,7 +16,6 @@ export interface Episode {
 }
 
 export type EventType = typeof events[number];
-export type EpisodeType = typeof episodes[number];
 
 export type Frontmatter = {
   author: string;

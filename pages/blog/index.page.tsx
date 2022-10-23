@@ -12,15 +12,6 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
         <p className="mt-4 mt-6 text-lg md:text-lg text-gray">
           Naš blog je najbolji resurs za učenje o bitcoin-u. Pročitaj tekstove koje smo sami kreirali, ali i prevode popularnih sadržaja širom ekosistema.
         </p>
-        {/* <p className="mt-6 text-xl md:text-sm text-gray"> */}
-        {/*   Get notified when we translate a new resource: */}
-        {/* </p> */}
-        {/* <div className="mt-6"> */}
-        {/*   <input type="text" placeholder="Email" className="pl-6 py-4 bg-[#292A37] w-[480px]" /> */}
-        {/*   <button className="px-8 py-4 ml-4 bg-gradient-to-r from-purpleGradient to-lightOrangeGradient"> */}
-        {/*     Notify me */}
-        {/*   </button> */}
-        {/* </div> */}
       </div>
       <div className="w-[90%] mx-auto">
         <div className="py-20 grid grid-cols-1 sm:grid-cols-2 justify-items-center xl:grid-cols-3 gap-x-[1.875rem] gap-y-16">
