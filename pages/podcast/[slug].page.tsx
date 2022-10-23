@@ -1,15 +1,12 @@
+import { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import { PodcastActions } from "../../components/podcast-actions";
 import { getSlug } from "./index.page";
-import { usePodcastEpisodes } from "./podcast.api";
+import { fetchPodcastEpisodes } from "./podcast.api";
 
-export default function Podcast() {
+export default function Podcast({ episodes }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
-  const { episode, isLoading } = usePodcastEpisodes({
-    episodeSlug: router.query.slug as string,
-  });
-
-  if (isLoading) return <div className="h-[40rem] bg-dark" />;
+  const episode = episodes.find((e: any) => getSlug(e.link) === router.query.slug);
 
   return (
     <main className="text-center bg-dark">
@@ -40,4 +37,21 @@ export default function Podcast() {
       </div>
     </main>
   );
+}
+
+export async function getStaticPaths() {
+  const res = await fetchPodcastEpisodes();
+  const paths = res?.items?.map((e) => ({
+    params: { id: getSlug(e.link), slug: getSlug(e.link) },
+  }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps() {
+  const res = await fetchPodcastEpisodes();
+  return {
+    props: {
+      episodes: res.items,
+    },
+  };
 }

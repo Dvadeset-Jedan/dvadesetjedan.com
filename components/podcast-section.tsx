@@ -1,7 +1,8 @@
 import { EpisodePreview } from "./episode-preview";
 import { routes } from "../utils/routes";
 import Link from "next/link";
-import { Episode } from "../utils/types";
+import { getSlug } from "../pages/podcast/index.page";
+import { Episode } from "../pages/podcast/podcast.types";
 
 export function truncate(text: string, length: number) {
   if (text.length > length) {
@@ -18,22 +19,18 @@ export function PodcastSection({ episodes }: { episodes: Episode[] }) {
         Nedavne epizode podcasta
       </h2>
       <div className="lg:px-20">
-        {[...episodes]?.splice(0, 3).map(({ slug, title, descriptionPreview }) => (
+        {[...(episodes || [])]?.splice(0, 3).map(({ link, title, contentSnippet }) => (
           <EpisodePreview
-            key={slug}
+            key={getSlug(link)}
             title={title}
-            description={truncate(descriptionPreview, 140)}
-            href={routes.podcastEpisode(slug)}
+            description={truncate(contentSnippet, 140)}
+            href={routes.podcastEpisode(getSlug(link))}
           />
         ))}
       </div>
       <div className="flex justify-center w-full mt-16">
         <Link href={routes.podcast}>
-          <a
-            className="px-6 py-3 text-xl border rounded-full md:text-base text-purple border-purple"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className="px-6 py-3 text-xl border rounded-full md:text-base text-purple border-purple">
             Sve epizode
           </a>
         </Link>

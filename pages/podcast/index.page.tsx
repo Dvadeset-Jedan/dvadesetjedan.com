@@ -1,10 +1,11 @@
+import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import { EpisodePreview } from "../../components/episode-preview";
 import { PodcastActions } from "../../components/podcast-actions";
 import { routes } from "../../utils/routes";
-import { usePodcastEpisodes } from "./podcast.api";
+import { fetchPodcastEpisodes } from "./podcast.api";
 
 export function getSlug(link: string | undefined) {
   const CUT_OfF_PREFIX = "episodes/";
@@ -12,16 +13,12 @@ export function getSlug(link: string | undefined) {
   return slug || "";
 }
 
-export default function Podcast() {
+export default function Podcast({ episodes }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [showAllEpisodes, setShowAllEpisodes] = useState(false);
-
-  const { episodes = [], isLoading } = usePodcastEpisodes();
 
   const [lastEpisode, ...otherEpisodes] = episodes;
   const newerEpisodes = [...otherEpisodes].splice(0, 10);
   const olderEpisodes = [...otherEpisodes].splice(10);
-
-  if (isLoading) return <div className="h-[40rem] bg-dark" />;
 
   return (
     <main className="text-center bg-dark">
@@ -79,4 +76,13 @@ export default function Podcast() {
       </div>
     </main>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetchPodcastEpisodes();
+  return {
+    props: {
+      episodes: res.items,
+    },
+  };
 }
