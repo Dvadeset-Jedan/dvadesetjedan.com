@@ -14,4 +14,5 @@ module.exports = {
     loader: "akamai",
     path: "/",
   },
+  pageExtensions: ["page.tsx"],
 };
