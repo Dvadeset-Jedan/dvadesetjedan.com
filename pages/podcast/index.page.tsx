@@ -41,7 +41,7 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
           />
         </div>
         <Link href={routes.podcastEpisode(getSlug(lastEpisode.link))}>
-          <a className="text-xl font-medium md:text-base text-purple">Sve epizode</a>
+          <a className="text-xl font-medium md:text-base text-purple">Detalji epizode</a>
         </Link>
       </div>
       <div className="w-[90%] m-auto my-20 lg:w-1/2">

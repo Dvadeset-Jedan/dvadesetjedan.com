@@ -11,6 +11,9 @@ import { Frontmatter } from "../../utils/types";
 import { BlogSection } from "../../components/blog-section";
 import copy from "copy-to-clipboard";
 import styles from "../../styles/blog.module.scss";
+import { Flag } from "../../components/flag";
+import { useState } from "react";
+import React from "react";
 
 function getTwitterShareURL(title: string, slug: string) {
   return `https://twitter.com/intent/tweet?text=${title} https://dvadeset-jedan.github.io/dvadesetjedan.com/blog/${slug}`;
@@ -20,11 +23,36 @@ function getLinkedinShareURL(slug: string) {
   return `https://www.linkedin.com/sharing/share-offsite/?url=https://dvadeset-jedan.github.io/dvadesetjedan.com/blog/${slug}`;
 }
 
+function CopyURLButton() {
+  const [copied, setCopied] = useState(false);
+
+  React.useEffect(() => {
+    if (copied) {
+      const timeout = setTimeout(() => setCopied(false), 3500);
+      return () => clearTimeout(timeout);
+    }
+  }, [copied]);
+
+  return (
+    <button
+      className="px-3 text-sm font-medium border text-gray border-gray hover:border-purple hover:text-purple"
+      onClick={() => {
+        setCopied(true);
+        copy(location.href);
+      }}
+    >
+      <span className="block md:hidden lg:block">{copied ? "Kopirano 🙌" : "Kopiraj URL"}</span>
+      <span className="hidden md:block lg:hidden">©️</span>
+    </button>
+  );
+}
+
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   const post = posts.find((post) => post.frontmatter?.slug === router.query.slug)!;
 
-  const { title, author, translator, slug, authorURL, translatorURL } = post?.frontmatter || {};
+  const { title, author, translator, slug, authorURL, translatorURL, flag } =
+    post?.frontmatter || {};
 
   return (
     <main className="pb-20 bg-dark">
@@ -41,14 +69,15 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
         <div className="absolute z-5 text-center w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <h1 className="text-[1.75rem] md:text-4xl xl:text-5xl">{title}</h1>
           <p className="mt-2 text-sm md:text-lg">
-            Written by{" "}
+            Autor{" "}
             <a className="text-purple" href={authorURL}>
               {author}
             </a>
             , Prevod{" "}
-            <a className="text-purple" href={translatorURL}>
+            <a className="mr-1 text-purple" href={translatorURL}>
               {translator}
             </a>
+            <Flag country={flag} />
           </p>
         </div>
       </div>
@@ -62,24 +91,18 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
         )}
 
         <div className="top-0 left-0 flex mt-10 md:mt-0 md:flex-col md:items-end md:absolute xl:items-center xl:justify-end md:-right-28 lg:-right-40 xl:flex-row xl:-right-64 2xl:-right-80">
-          <button
-            className="px-3 text-sm font-medium border text-gray border-gray"
-            onClick={() => copy(location.href)}
-          >
-            <span className="block md:hidden lg:block">Copy link</span>
-            <span className="hidden md:block lg:hidden">©️</span>
-          </button>
+          <CopyURLButton />
           <a
             href={getTwitterShareURL(title, slug)}
-            className="border ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 border-gray h-[2.375rem] w-[2.375rem] flex items-center justify-center"
+            className="border ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 border-gray h-[2.375rem] w-[2.375rem] flex items-center justify-center hover:border-purple group"
           >
-            <TwitterIcon />
+            <TwitterIcon className="group-hover:text-purple" />
           </a>
           <a
             href={getLinkedinShareURL(slug)}
-            className="h-[2.375rem] ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 w-[2.375rem] flex items-center justify-center border border-gray"
+            className="h-[2.375rem] ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 w-[2.375rem] flex items-center justify-center border border-gray hover:border-purple group"
           >
-            <LinkedinIcon />
+            <LinkedinIcon className="group-hover:text-purple" />
           </a>
         </div>
       </div>

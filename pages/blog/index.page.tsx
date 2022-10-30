@@ -3,19 +3,67 @@ import fs from "fs";
 import matter from "gray-matter";
 import { InferGetStaticPropsType } from "next";
 import { Frontmatter } from "../../utils/types";
+import { useRouter } from "next/router";
+import { Flag, FlagType } from "../../components/flag";
+import classNames from "classnames";
+
+const languageOptions: { label: string; value: FlagType | "all" }[] = [
+  { label: "Svi prevodi", value: "all" },
+  { label: "Srpski", value: "serbia" },
+  { label: "Hrvatski", value: "croatia" },
+  { label: "Makedonski", value: "macedonia" },
+  { label: "Slovenački", value: "slovenia" },
+  { label: "Crnogorski", value: "montenegro" },
+  { label: "Bosanski", value: "bosnia" },
+];
 
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const router = useRouter();
+  const lang = router.query.lang as FlagType | "all";
+
+  const filteredPosts = posts?.filter((post) => {
+    if (!lang || lang === "all") {
+      return true;
+    }
+
+    return post.frontmatter.flag === lang;
+  });
+
   return (
     <main className="bg-dark">
       <div className="flex w-[90%] md:w-auto flex-col items-center justify-center mx-auto py-20 text-center bg-dark brightness-110">
         <h1 className="text-3xl font-semibold md:text-4xl">DvadesetJedan Blog</h1>
         <p className="mt-4 mt-6 text-lg md:text-lg text-gray">
-          Naš blog je najbolji resurs za učenje o bitcoin-u. Pročitaj tekstove koje smo sami kreirali, ali i prevode popularnih sadržaja širom ekosistema.
+          Naš blog je najbolji resurs za učenje o bitcoin-u. Pročitaj tekstove koje smo sami
+          kreirali, ali i prevode popularnih sadržaja širom ekosistema.
         </p>
+        <select
+          name="select"
+          onChange={(event) => {
+            router.push(
+              {
+                query: { lang: event.target.value },
+              },
+              undefined,
+              { shallow: true }
+            );
+          }}
+          value={languageOptions.find((o) => o.value === lang)?.value}
+          defaultValue="all"
+          className={classNames("px-3 py-1 pb-1.5 text-md mt-4 text-white rounded-sm bg-lightDark")}
+        >
+          {languageOptions.map(({ value, label }) => {
+            return (
+              <option value={value} key={value}>
+                {value === "all" ? label : <Flag country={value as FlagType} />}
+              </option>
+            );
+          })}
+        </select>
       </div>
-      <div className="w-[90%] mx-auto">
+      <div className="w-[90%] min-h-[30rem] mx-auto">
         <div className="py-20 grid grid-cols-1 sm:grid-cols-2 justify-items-center xl:grid-cols-3 gap-x-[1.875rem] gap-y-16">
-          {posts.map(({ frontmatter }, index) => (
+          {filteredPosts.map(({ frontmatter }, index) => (
             <SmallerBlogPreview key={index} {...frontmatter} />
           ))}
         </div>

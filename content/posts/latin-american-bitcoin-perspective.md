@@ -6,6 +6,7 @@ meta: "Ovo je kratko razmišljanje bazirano na nekim jučerašnjim konverzacijam
 translator: "Matija"
 translatorURL: ""
 slug: "latin-american-bitcoin-perspective"
+flag: "croatia"
 tags:
     - translation
 ---

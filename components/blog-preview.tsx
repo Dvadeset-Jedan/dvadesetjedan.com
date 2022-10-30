@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { images } from "../utils/images";
 import { routes } from "../utils/routes";
 import { Frontmatter } from "../utils/types";
+import { Flag } from "./flag";
 
 export function SmallerBlogPreview({
   title,
@@ -14,6 +15,7 @@ export function SmallerBlogPreview({
   slug,
   meta,
   img,
+  flag,
 }: Frontmatter) {
   const router = useRouter();
 
@@ -44,9 +46,10 @@ export function SmallerBlogPreview({
             {author}
           </a>
           , Prevod{" "}
-          <a className="text-purple" href={translatorURL}>
+          <a className="mr-1 text-purple" href={translatorURL}>
             {translator}
           </a>
+          <Flag country={flag} />
         </p>
         <p className="mt-6 mb-4 text-xl md:text-xl text-gray">{meta}</p>
         <Link href={routes.blogArticle(slug)}>

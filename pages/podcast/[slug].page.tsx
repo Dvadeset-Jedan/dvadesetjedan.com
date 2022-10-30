@@ -23,7 +23,7 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
             />
           )}
         </div>
-        <PodcastActions title="Listen on" />
+        <PodcastActions title="Slušajte nas na" />
       </div>
       <div className="w-[90%] m-auto mb-20 lg:w-3/5">
         <div className="h-[400px]">

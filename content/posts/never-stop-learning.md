@@ -6,6 +6,7 @@ meta: "U novinama i na televiziji, Bitcoin je Äesto prezentiran kao zlatni novÄ
 translator: "Matija"
 translatorURL: ""
 slug: "never-stop-learning"
+flag: "croatia"
 tags:
     - translation
 ---

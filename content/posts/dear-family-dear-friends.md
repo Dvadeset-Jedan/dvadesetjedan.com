@@ -7,6 +7,7 @@ translator: "Tink"
 translatorURL: "https://europeanbitcoiners.com/author/tink/"
 slug: "dear-family-dear-friends"
 img: 'dearFamilyDearFriends' 
+flag: 'croatia'
 tags:
     - translation
 ---
