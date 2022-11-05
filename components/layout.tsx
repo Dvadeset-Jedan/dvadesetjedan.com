@@ -8,7 +8,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div
-      className={classNames("relative flex flex-col w-full h-full", {
+      className={classNames("relative flex flex-col w-full h-full bg-dark", {
         "overflow-hidden": disableScroll,
       })}
     >

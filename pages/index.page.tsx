@@ -1,14 +1,13 @@
-import Image from "next/image";
 import { BlogSection } from "../components/blog-section";
 import { MeetupsSection } from "../components/meetups-section";
 import { PodcastSection } from "../components/podcast-section";
 import matter from "gray-matter";
 import fs from "fs";
-import { images } from "../utils/images";
 import { InferGetStaticPropsType } from "next";
 import { Frontmatter } from "../utils/types";
 import eventsJSON from "../content/events.json";
 import { fetchPodcastEpisodes } from "./podcast/podcast.api";
+import { Hero } from "../components/hero";
 
 export default function Index({
   posts,
@@ -17,31 +16,26 @@ export default function Index({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <main className="bg-dark">
-      <Image
-        src={images.bitcoinIsland}
-        width={1440}
-        height={720}
-        layout="responsive"
-        priority
-        alt=""
-        objectFit="cover"
-      />
-      <div className="pb-16 lg:pb-20 w-[90%] lg:w-[85%] 2xl:w-[75%] mx-auto">
-        <div className="flex justify-center">
-          <div className="text-center">
-            <h1 className="mt-10 text-3xl font-semibold md:text-6xl lg:mt-28">
-              DvadesetJedan je balkanska bitcoin zajednica
-            </h1>
-            <p className="text-xl font-medium md:text-2xl mt-9">
-              DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj
-              ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite
-              projekte.
-            </p>
+      <div className="max-w-7xl mx-auto">
+        <div className="pb-16 lg:pb-20 w-[90%] lg:w-[85%] 2xl:w-[75%] mx-auto">
+          <div className="flex justify-center">
+            <div className="text-center">
+              <h1 className="mt-10 text-3xl font-semibold md:text-5xl lg:mt-20">
+                DvadesetJedan je balkanska bitcoin zajednica
+              </h1>
+              <p className="text-xl font-medium md:text-xl mt-9">
+                DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj
+                ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite
+                projekte.
+              </p>
+            </div>
           </div>
+          <Hero />
+
+          <MeetupsSection events={events} />
+          <PodcastSection episodes={episodes} />
+          <BlogSection title="Bitcoin Blog" posts={posts} />
         </div>
-        <MeetupsSection events={events} />
-        <PodcastSection episodes={episodes} />
-        <BlogSection title="Bitcoin Blog" posts={posts} />
       </div>
     </main>
   );

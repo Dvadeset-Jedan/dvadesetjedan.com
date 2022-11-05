@@ -16,19 +16,20 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
 
   return (
     <section className="mt-14">
-      <Image src={images.meetupCover} width={1024} height={512} layout="responsive" alt="" />
       <div className="w-5/6 m-auto">
         <p className="mb-16 text-xl font-medium text-center md:text-2xl mt-14">
           Grupa trenutno broji stotine članova i organizuje redovne sastanke širom regiona.
-          Dobrodošli su svi koji razumeju posebnost i značaj bitcoina, ali i oni koji bi o tome voleli da uče.
-          Kao zaljubljenici u bitcoin, rado delimo znanje i iskustvo sa svima.
-          Neki od nas rade u bitcoin industriji, neki imaju biznise koji su vezani za bitcoin, dok su neki samo entuzijasti.
-          Ono što nas spaja jeste ljubav prema ovoj tehnologiji. Ukoliko vam ovo deluje zanimljivo, želite da čujete šta imamo da kažemo ili postoji nešto što biste podelili sa nama - čekamo vas!   
+          Dobrodošli su svi koji razumeju posebnost i značaj bitcoina, ali i oni koji bi o tome
+          voleli da uče. Kao zaljubljenici u bitcoin, rado delimo znanje i iskustvo sa svima. Neki
+          od nas rade u bitcoin industriji, neki imaju biznise koji su vezani za bitcoin, dok su
+          neki samo entuzijasti. Ono što nas spaja jeste ljubav prema ovoj tehnologiji. Ukoliko vam
+          ovo deluje zanimljivo, želite da čujete šta imamo da kažemo ili postoji nešto što biste
+          podelili sa nama - čekamo vas!
         </p>
         <div className="flex justify-center w-full">
           <a
             href="https://www.meetup.com/dvadeset-jedan/events/"
-            className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple"
+            className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple hover:bg-purple/5 hover:transition-all"
             target="_blank"
             rel="noreferrer"
           >
