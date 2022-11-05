@@ -2,6 +2,7 @@ import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
+import { ActionLink } from "../../components/action-link";
 import { EpisodePreview } from "../../components/episode-preview";
 import { PodcastActions } from "../../components/podcast-actions";
 import { routes } from "../../utils/routes";
@@ -65,12 +66,9 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
           ))}
         {!showAllEpisodes && (
           <div className="flex justify-center w-full mt-16">
-            <button
-              onClick={() => setShowAllEpisodes(true)}
-              className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple"
-            >
+            <ActionLink as="button" onClick={() => setShowAllEpisodes(true)}>
               Sve epizode
-            </button>
+            </ActionLink>
           </div>
         )}
       </div>

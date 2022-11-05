@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { images } from "../utils/images";
 import { GH_PAGES_SUBDIRECTORY } from "../utils/constants";
 import { EventType } from "../utils/types";
+import { ActionLink } from "./action-link";
 
 function getPastEvents(events: EventType[]) {
   return events
@@ -27,14 +28,9 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
           podelili sa nama - čekamo vas!
         </p>
         <div className="flex justify-center w-full">
-          <a
-            href="https://www.meetup.com/dvadeset-jedan/events/"
-            className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple hover:bg-purple/5 hover:transition-all"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ActionLink href="https://www.meetup.com/dvadeset-jedan/events/">
             Naredni događaj
-          </a>
+          </ActionLink>
         </div>
       </div>
       <div className="px-4 mt-32 3xl:px-20">
@@ -52,14 +48,9 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
         </div>
       </div>
       <div className="flex justify-center w-full mt-14">
-        <a
-          href="https://www.meetup.com/dvadeset-jedan/events/"
-          className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <ActionLink href="https://www.meetup.com/dvadeset-jedan/events/">
           Pregledaj događaje
-        </a>
+        </ActionLink>
       </div>
     </section>
   );
