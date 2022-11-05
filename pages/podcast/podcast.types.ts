@@ -1,6 +1,7 @@
 export type Episode = {
   content: string;
   contentSnippet: string;
+  description: string;
   creator: string;
   "dc:creator": string;
   enclosure: {
