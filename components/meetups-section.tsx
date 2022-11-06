@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { MeetupPreview } from "./meetup-preview";
 import { format } from "date-fns";
-import { images } from "../utils/images";
 import { GH_PAGES_SUBDIRECTORY } from "../utils/constants";
 import { EventType } from "../utils/types";
 import { ActionLink } from "./action-link";
@@ -18,7 +16,7 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
   return (
     <section className="mt-14">
       <div className="w-5/6 m-auto">
-        <p className="mb-16 text-xl font-medium text-center md:text-2xl mt-14">
+        <p className="mb-16 text-xl font-medium text-center md:text-xl mt-14">
           Grupa trenutno broji stotine članova i organizuje redovne sastanke širom regiona.
           Dobrodošli su svi koji razumeju posebnost i značaj bitcoina, ali i oni koji bi o tome
           voleli da uče. Kao zaljubljenici u bitcoin, rado delimo znanje i iskustvo sa svima. Neki

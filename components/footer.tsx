@@ -9,54 +9,56 @@ import { YoutubeIcon } from "./icons/youtube";
 
 export function Footer() {
   return (
-    <footer className="flex flex-col justify-between px-10 pb-16 md:px-10 md:flex-row pt-11 bg-dark brightness-110">
-      <div className="flex items-center">
-        <span className="hidden lg:block">
-          <BarcodeFooterIcon />
-        </span>
+    <footer className="px-10 pb-14 md:px-10 pt-11 bg-dark border border-t-lightDark/10">
+      <div className="max-w-7xl mx-auto flex flex-col justify-between md:flex-row">
+        <div className="flex items-center">
+          <span className="hidden lg:block">
+            <BarcodeFooterIcon />
+          </span>
 
-        <ul className="flex justify-between w-full ml-0 text-md lg:justify-start lg:w-auto lg:ml-8 text-gray">
-          <li>Copyright © 2022</li>
-          <li className="ml-4 lg:ml-6">Uslovi korišćenja</li>
-          <li className="ml-4 lg:ml-6">Pravila o privatnosti</li>
+          <ul className="flex justify-between w-full ml-0 text-md lg:justify-start lg:w-auto lg:ml-8 text-gray">
+            <li>Copyright © 2022</li>
+            {/* <li className="ml-4 lg:ml-6">Uslovi korišćenja</li> */}
+            {/* <li className="ml-4 lg:ml-6">Pravila o privatnosti</li> */}
+          </ul>
+        </div>
+        <ul className="flex items-center mt-10 justify-evenly lg:justify-start md:mt-0">
+          <li className="h-min">
+            <Link href="https://youtube.com/">
+              <a href={urls.discord} target="_blank" rel="noreferrer">
+                <span className="sr-only">Discord Logo</span>
+                <DiscordIcon />
+              </a>
+            </Link>
+          </li>
+          <li className="block ml-3 lg:ml-6 h-min">
+            <Link href="https://youtube.com/">
+              <a href={urls.youtube} target="_blank" rel="noreferrer">
+                <span className="sr-only">Youtube Logo</span>
+                <YoutubeIcon />
+              </a>
+            </Link>
+          </li>
+          <li className="ml-3 lg:ml-6 h-min">
+            <a href={urls.spotify} target="_blank" rel="noreferrer">
+              <span className="sr-only">Spotify Logo</span>
+              <SpotifyIcon />
+            </a>
+          </li>
+          <li className="ml-3 lg:ml-6 h-min">
+            <a href={urls.github} target="_blank" rel="noreferrer">
+              <span className="sr-only">Github Logo</span>
+              <GithubIcon />
+            </a>
+          </li>
+          <li className="ml-3 lg:ml-6 h-min">
+            <a href={urls.telegram} target="_blank" rel="noreferrer">
+              <span className="sr-only">Telegram Logo</span>
+              <TelegramIcon />
+            </a>
+          </li>
         </ul>
       </div>
-      <ul className="flex items-center mt-10 justify-evenly lg:justify-start md:mt-0">
-        <li className="h-min">
-          <Link href="https://youtube.com/">
-            <a href={urls.discord} target="_blank" rel="noreferrer">
-              <span className="sr-only">Discord Logo</span>
-              <DiscordIcon />
-            </a>
-          </Link>
-        </li>
-        <li className="block ml-3 lg:ml-6 h-min">
-          <Link href="https://youtube.com/">
-            <a href={urls.youtube} target="_blank" rel="noreferrer">
-              <span className="sr-only">Youtube Logo</span>
-              <YoutubeIcon />
-            </a>
-          </Link>
-        </li>
-        <li className="ml-3 lg:ml-6 h-min">
-          <a href={urls.spotify} target="_blank" rel="noreferrer">
-            <span className="sr-only">Spotify Logo</span>
-            <SpotifyIcon />
-          </a>
-        </li>
-        <li className="ml-3 lg:ml-6 h-min">
-          <a href={urls.github} target="_blank" rel="noreferrer">
-            <span className="sr-only">Github Logo</span>
-            <GithubIcon />
-          </a>
-        </li>
-        <li className="ml-3 lg:ml-6 h-min">
-          <a href={urls.telegram} target="_blank" rel="noreferrer">
-            <span className="sr-only">Telegram Logo</span>
-            <TelegramIcon />
-          </a>
-        </li>
-      </ul>
     </footer>
   );
 }

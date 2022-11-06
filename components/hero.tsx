@@ -3,7 +3,7 @@ import { images } from "../utils/images";
 
 export function Hero() {
   return (
-    <div className="grid grid-cols-2 mt-12">
+    <div className="md:grid md:grid-cols-2 mt-12">
       <Image
         src={images.hero1}
         width={561}
@@ -12,7 +12,7 @@ export function Hero() {
         alt=""
         className="rounded-2xl mr-4"
       />
-      <div className="grid grid-cols-2 gap-4 ml-4">
+      <div className="hidden md:grid grid-cols-2 gap-4 ml-4">
         <Image
           src={images.hero2}
           width={272}

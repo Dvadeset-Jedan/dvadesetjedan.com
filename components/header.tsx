@@ -46,7 +46,7 @@ export function Header({
 
   return (
     <>
-      <div className="relative flex items-center justify-between w-full px-4 md:px-0 py-8 md:flex-row md:py-14 bg-dark max-w-7xl mx-auto">
+      <div className="relative flex items-center justify-between w-full px-4 md:px-0 py-8 md:flex-row md:py-10 bg-dark max-w-7xl mx-auto">
         <div className="flex items-center">
           <BarcodeHeaderIcon className="w-12 md:w-auto" />
           <Link href={routes.home}>

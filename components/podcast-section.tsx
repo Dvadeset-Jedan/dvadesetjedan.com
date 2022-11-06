@@ -18,7 +18,7 @@ export function PodcastSection({ episodes }: { episodes: Episode[] }) {
       <h2 className="text-3xl md:text-[2.5rem] font-bold mb-14 text-center">
         Nedavne epizode podcasta
       </h2>
-      <div className="lg:px-20">
+      <div className="grid grid-cols-1 px-4 md:grid-cols-2 xl:grid-cols-3 gap-10">
         {[...(episodes || [])]?.splice(0, 3).map(({ link, title, contentSnippet }) => (
           <EpisodePreview
             key={getSlug(link)}

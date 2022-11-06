@@ -37,35 +37,51 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           Naš blog je najbolji resurs za učenje o bitcoin-u. Pročitaj tekstove koje smo sami
           kreirali, ali i prevode popularnih sadržaja širom ekosistema.
         </p>
-        <select
-          name="select"
-          onChange={(event) => {
-            router.push(
-              {
-                query: { lang: event.target.value },
-              },
-              undefined,
-              { shallow: true }
-            );
-          }}
-          value={languageOptions.find((o) => o.value === lang)?.value}
-          defaultValue="all"
-          className={classNames("px-3 py-1 pb-1.5 text-md mt-4 text-white rounded-sm bg-lightDark")}
-        >
-          {languageOptions.map(({ value, label }) => {
-            return (
-              <option value={value} key={value}>
-                {value === "all" ? label : <Flag country={value as FlagType} />}
-              </option>
-            );
-          })}
-        </select>
+        <div className="relative">
+          <select
+            name="select"
+            onChange={(event) => {
+              router.push(
+                {
+                  query: { lang: event.target.value },
+                },
+                undefined,
+                { shallow: true }
+              );
+            }}
+            value={languageOptions.find((o) => o.value === lang)?.value}
+            defaultValue="all"
+            className={classNames(
+              "px-5 pr-10 py-1 pb-1.5 text-md mt-4 rounded-full border border-purple bg-transparent cursor-pointer focus:outline-none text-purple relative z-10"
+            )}
+          >
+            {languageOptions.map(({ value, label }) => {
+              return (
+                <option value={value} key={value}>
+                  {value === "all" ? label : <Flag country={value as FlagType} />}
+                </option>
+              );
+            })}
+          </select>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-4 h-4 absolute top-1/2 right-3 text-purple"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
       </div>
-      <div className="w-[90%] min-h-[30rem] mx-auto">
-        <div className="py-20 grid grid-cols-1 sm:grid-cols-2 justify-items-center xl:grid-cols-3 gap-x-[1.875rem] gap-y-16">
-          {filteredPosts.map(({ frontmatter }, index) => (
-            <SmallerBlogPreview key={index} {...frontmatter} />
-          ))}
+      <div className="max-w-7xl mx-auto">
+        <div className="w-[90%] min-h-[30rem] mx-auto">
+          <div className="py-20 grid grid-cols-1 sm:grid-cols-2 justify-items-center xl:grid-cols-3 gap-x-[1.875rem] gap-y-16">
+            {filteredPosts.map(({ frontmatter }, index) => (
+              <SmallerBlogPreview key={index} {...frontmatter} />
+            ))}
+          </div>
         </div>
       </div>
     </main>

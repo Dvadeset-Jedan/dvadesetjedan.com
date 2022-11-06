@@ -35,14 +35,13 @@ function CopyURLButton() {
 
   return (
     <button
-      className="px-3 text-sm font-medium border text-gray border-gray hover:border-purple hover:text-purple"
+      className="px-3 flex items-center text-sm h-[2rem] font-medium border text-gray border-gray/40 hover:border-purple/40 hover:text-purple"
       onClick={() => {
         setCopied(true);
         copy(location.href);
       }}
     >
-      <span className="block md:hidden lg:block">{copied ? "Kopirano 🙌" : "Kopiraj URL"}</span>
-      <span className="hidden md:block lg:hidden">©️</span>
+      {copied ? "Kopirano 🙌" : "Kopiraj URL"}
     </button>
   );
 }
@@ -56,58 +55,62 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 
   return (
     <main className="pb-20 bg-dark">
-      <div className="relative">
-        <Image
-          src={images.magicInternetMoney}
-          width={1440}
-          height={600}
-          layout="responsive"
-          unoptimized
-          alt=""
-          priority
-        />
-        <div className="absolute z-5 text-center w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-[1.75rem] md:text-4xl xl:text-5xl">{title}</h1>
-          <p className="mt-2 text-sm md:text-lg">
-            Autor{" "}
-            <a className="text-purple" href={authorURL}>
-              {author}
-            </a>
-            , Prevod{" "}
-            <a className="mr-1 text-purple" href={translatorURL}>
-              {translator}
-            </a>
-            <Flag country={flag} />
-          </p>
-        </div>
-      </div>
-      <div className="relative w-[85%] md:w-auto mx-auto mt-16 text-xl tracking-wide md:text-21 md:mx-36 lg:mx-56 xl:mx-72 2xl:mx-96 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
-        {post?.content && (
-          <div
-            dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
-            suppressHydrationWarning
-            className={styles.markdown}
+      <div className="max-w-7xl mx-auto">
+        <div className="relative">
+          <Image
+            src={images.magicInternetMoney}
+            width={1440}
+            height={600}
+            layout="responsive"
+            unoptimized
+            alt=""
+            priority
           />
-        )}
-
-        <div className="top-0 left-0 flex mt-10 md:mt-0 md:flex-col md:items-end md:absolute xl:items-center xl:justify-end md:-right-28 lg:-right-40 xl:flex-row xl:-right-64 2xl:-right-80">
-          <CopyURLButton />
-          <a
-            href={getTwitterShareURL(title, slug)}
-            className="border ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 border-gray h-[2.375rem] w-[2.375rem] flex items-center justify-center hover:border-purple group"
-          >
-            <TwitterIcon className="group-hover:text-purple" />
-          </a>
-          <a
-            href={getLinkedinShareURL(slug)}
-            className="h-[2.375rem] ml-2.5 md:mt-2 xl:mt-0 xl:ml-2.5 w-[2.375rem] flex items-center justify-center border border-gray hover:border-purple group"
-          >
-            <LinkedinIcon className="group-hover:text-purple" />
-          </a>
+          <div className="absolute z-5 text-center w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <h1 className="text-[1.75rem] md:text-4xl xl:text-5xl">{title}</h1>
+            <p className="mt-2 text-sm md:text-lg">
+              Autor{" "}
+              <a className="text-purple" href={authorURL}>
+                {author}
+              </a>
+              , Prevod{" "}
+              <a className="mr-1 text-purple" href={translatorURL}>
+                {translator}
+              </a>
+              <Flag country={flag} />
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="flex justify-center mx-10 md:mx-16">
-        <BlogSection title="More from the blog" posts={posts} />
+
+        <div className="relative md:w-auto mx-6 sm:mx-10 md:mx-20 mt-16 text-xl tracking-wide md:text-21 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
+          {post?.content && (
+            <div
+              dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
+              suppressHydrationWarning
+              className={styles.markdown}
+            />
+          )}
+          <div className="flex mt-14 justify-end">
+            {" "}
+            <CopyURLButton />
+            <a
+              href={getTwitterShareURL(title, slug)}
+              className="border ml-2.5 border-gray/40 h-[2rem] w-[2rem] flex items-center justify-center hover:border-purple/40 group"
+            >
+              <TwitterIcon className="group-hover:text-purple" />
+            </a>
+            <a
+              href={getLinkedinShareURL(slug)}
+              className="h-[2rem] ml-2.5 w-[2rem] flex items-center justify-center border border-gray/40 hover:border-purple/40 group"
+            >
+              <LinkedinIcon className="group-hover:text-purple" />
+            </a>
+          </div>
+        </div>
+
+        <div className="flex justify-center mx-10 md:mx-16">
+          <BlogSection title="More from the blog" posts={posts} />
+        </div>
       </div>
     </main>
   );
