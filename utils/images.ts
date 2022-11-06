@@ -10,4 +10,9 @@ export const images = {
   meetup: `${GH_PAGES_SUBDIRECTORY}/images/meetup.webp`,
   player: `${GH_PAGES_SUBDIRECTORY}/images/player.webp`,
   dearFamilyDearFriends: `${GH_PAGES_SUBDIRECTORY}/images/content/dear-family.jpeg`,
+  hero1: `${GH_PAGES_SUBDIRECTORY}/images/hero_1.webp`,
+  hero2: `${GH_PAGES_SUBDIRECTORY}/images/hero_2.webp`,
+  hero3: `${GH_PAGES_SUBDIRECTORY}/images/hero_3.webp`,
+  hero4: `${GH_PAGES_SUBDIRECTORY}/images/hero_4.webp`,
+  hero5: `${GH_PAGES_SUBDIRECTORY}/images/hero_5.webp`,
 } as const;

@@ -1,6 +1,9 @@
 import { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
+import { EpisodePreview } from "../../components/episode-preview";
 import { PodcastActions } from "../../components/podcast-actions";
+import { truncate } from "../../components/podcast-section";
+import { routes } from "../../utils/routes";
 import { getSlug } from "./index.page";
 import { fetchPodcastEpisodes } from "./podcast.api";
 
@@ -34,6 +37,16 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
         <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-32">
           Epizode u kojima ćeš uživati
         </h2>
+        <div className="grid grid-cols-1 px-4 md:grid-cols-2 xl:grid-cols-3 gap-10">
+          {[...(episodes || [])]?.splice(0, 3).map(({ link, title, contentSnippet }) => (
+            <EpisodePreview
+              key={getSlug(link)}
+              title={title}
+              description={truncate(contentSnippet, 140)}
+              href={routes.podcastEpisode(getSlug(link))}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );

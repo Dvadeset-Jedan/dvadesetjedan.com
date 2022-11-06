@@ -46,7 +46,7 @@ export function Header({
 
   return (
     <>
-      <div className="relative flex items-center justify-between w-full px-4 py-8 sm:px-5 md:flex-row lg:px-12 md:py-14 bg-dark">
+      <div className="relative flex items-center justify-between w-full px-4 md:px-0 py-8 md:flex-row md:py-10 bg-dark max-w-7xl mx-auto">
         <div className="flex items-center">
           <BarcodeHeaderIcon className="w-12 md:w-auto" />
           <Link href={routes.home}>
@@ -58,10 +58,12 @@ export function Header({
         </div>
 
         <ul className="hidden mt-8 ml-8 md:flex md:mt-0">
-          {links.map(({ name, route, active }) => (
+          {links.map(({ name, route, active }, index) => (
             <li
               key={name}
-              className="mr-8 font-medium text-right sm:mr-3 text-19 lg:mr-12 xl:mr-20"
+              className={classNames("font-medium text-right text-19 ", {
+                "mr-8 sm:mr-3 lg:mr-12 xl:mr-20": index !== links.length - 1,
+              })}
             >
               <Link href={route}>
                 <a
