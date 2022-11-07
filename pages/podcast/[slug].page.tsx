@@ -5,6 +5,8 @@ import { truncate } from "../../components/podcast-section";
 import { routes } from "../../utils/routes";
 import { getSlug } from "./index.page";
 import { usePodcastEpisodes } from "./podcast.api";
+import styles from "../../styles/blog.module.scss";
+import classNames from "classnames";
 
 export default function Podcast() {
   const router = useRouter();
@@ -28,24 +30,30 @@ export default function Podcast() {
         </div>
         <PodcastActions title="Slušajte nas na" />
       </div>
-      <div className="w-[90%] m-auto mb-20 lg:w-3/5">
-        <div className="h-[400px]">
-          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-20">Beleške iz podcasta</h2>
-          <p className="text-lg italic text-gray">⏳ Stiže uskoro...</p>
-        </div>
 
-        <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-32">
-          Epizode u kojima ćeš uživati
-        </h2>
-        <div className="grid grid-cols-1 px-4 md:grid-cols-2 xl:grid-cols-3 gap-10">
-          {[...(episodes || [])]?.splice(0, 3).map(({ link, title, contentSnippet }) => (
-            <EpisodePreview
-              key={getSlug(link)}
-              title={title}
-              description={truncate(contentSnippet, 140)}
-              href={routes.podcastEpisode(getSlug(link))}
+      <div className="max-w-7xl mx-auto">
+        <div className="w-[90%] m-auto mb-20">
+          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-20">Beleške iz podcasta</h2>
+          {episode?.content && (
+            <article
+              className={classNames(styles.markdown, "prose mx-auto text-left overflow-hidden")}
+              dangerouslySetInnerHTML={{ __html: episode.content }}
             />
-          ))}
+          )}
+
+          <h2 className="text-2xl md:text-[2rem] font-bold mb-14 mt-32">
+            Epizode u kojima ćeš uživati
+          </h2>
+          <div className="grid grid-cols-1 px-4 md:grid-cols-2 xl:grid-cols-3 gap-10">
+            {[...(episodes || [])]?.splice(0, 3).map(({ link, title, contentSnippet }) => (
+              <EpisodePreview
+                key={getSlug(link)}
+                title={title}
+                description={truncate(contentSnippet, 140)}
+                href={routes.podcastEpisode(getSlug(link))}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </main>
