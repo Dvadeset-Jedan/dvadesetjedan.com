@@ -1,5 +1,13 @@
  .markdown {
-   p {
-      margin: 10px 0 24px 0;
+   * {
+      color: white;
    }
+
+   p {
+     font-size: 20px;
+   }
+
+     a:hover {
+            color: #AF8EFF;
+     }
 }

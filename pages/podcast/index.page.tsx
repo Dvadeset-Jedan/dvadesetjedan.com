@@ -1,4 +1,3 @@
-import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
@@ -6,7 +5,7 @@ import { ActionLink } from "../../components/action-link";
 import { EpisodePreview } from "../../components/episode-preview";
 import { PodcastActions } from "../../components/podcast-actions";
 import { routes } from "../../utils/routes";
-import { fetchPodcastEpisodes } from "./podcast.api";
+import { usePodcastEpisodes } from "./podcast.api";
 
 export function getSlug(link: string | undefined) {
   const CUT_OfF_PREFIX = "episodes/";
@@ -14,10 +13,11 @@ export function getSlug(link: string | undefined) {
   return slug || "";
 }
 
-export default function Podcast({ episodes }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Podcast() {
+  const { episodes } = usePodcastEpisodes();
   const [showAllEpisodes, setShowAllEpisodes] = useState(false);
 
-  const [lastEpisode, ...otherEpisodes] = episodes;
+  const [lastEpisode, ...otherEpisodes] = episodes || [];
   const newerEpisodes = [...otherEpisodes].splice(0, 9);
   const olderEpisodes = [...otherEpisodes].splice(9);
 
@@ -29,7 +29,7 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
             <h1 className="text-2xl font-semibold md:text-4xl">
               Dvadeset Jedan - Bitcoin Only Podcast
             </h1>
-            <p className="mt-3 text-xl md:text-lg text-gray">{`${lastEpisode.contentSnippet.slice(
+            <p className="mt-3 text-xl md:text-lg text-gray">{`${lastEpisode?.contentSnippet?.slice(
               0,
               300
             )}...`}</p>
@@ -37,12 +37,12 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
           </div>
           <div className="m-auto mt-20 w-[90%] mb-4">
             <iframe
-              src={`https://anchor.fm/dvadesetjedan/embed/episodes/${getSlug(lastEpisode.link)}`}
+              src={`https://anchor.fm/dvadesetjedan/embed/episodes/${getSlug(lastEpisode?.link)}`}
               scrolling="no"
               className="w-full h-[10.6rem]"
             />
           </div>
-          <Link href={routes.podcastEpisode(getSlug(lastEpisode.link))}>
+          <Link href={routes.podcastEpisode(getSlug(lastEpisode?.link))}>
             <a className="text-xl font-medium md:text-base text-purple">Detalji epizode</a>
           </Link>
         </div>
@@ -81,13 +81,4 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
       </div>
     </main>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetchPodcastEpisodes();
-  return {
-    props: {
-      episodes: res.items,
-    },
-  };
 }
