@@ -9,7 +9,7 @@ import { YoutubeIcon } from "./icons/youtube";
 
 export function Footer() {
   return (
-    <footer className="px-10 pb-14 md:px-10 pt-11 bg-dark border border-t-lightDark/10">
+    <footer className="px-10 pb-14 md:px-10 pt-11 bg-dark border border-dark border-t-lightDark/10">
       <div className="max-w-7xl mx-auto flex flex-col justify-between md:flex-row">
         <div className="flex items-center">
           <span className="hidden lg:block">
@@ -22,7 +22,7 @@ export function Footer() {
             {/* <li className="ml-4 lg:ml-6">Pravila o privatnosti</li> */}
           </ul>
         </div>
-        <ul className="flex items-center mt-10 justify-evenly lg:justify-start md:mt-0">
+        <ul className="flex items-center mt-8 justify-between lg:justify-start md:mt-0">
           <li className="h-min">
             <Link href="https://youtube.com/">
               <a href={urls.discord} target="_blank" rel="noreferrer">

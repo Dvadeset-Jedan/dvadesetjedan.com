@@ -6,14 +6,9 @@ import fs from "fs";
 import { InferGetStaticPropsType } from "next";
 import { Frontmatter } from "../utils/types";
 import eventsJSON from "../content/events.json";
-import { fetchPodcastEpisodes } from "./podcast/podcast.api";
 import { Hero } from "../components/hero";
 
-export default function Index({
-  posts,
-  events,
-  episodes,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Index({ posts, events }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <main className="bg-dark">
       <div className="max-w-7xl mx-auto">
@@ -33,7 +28,7 @@ export default function Index({
           <Hero />
 
           <MeetupsSection events={events} />
-          <PodcastSection episodes={episodes} />
+          <PodcastSection />
           <BlogSection title="Bitcoin Blog" posts={posts} />
         </div>
       </div>
@@ -42,7 +37,6 @@ export default function Index({
 }
 
 export async function getStaticProps() {
-  const res = await fetchPodcastEpisodes();
   const posts = fs.readdirSync("content/posts").map((fileName: string) => {
     const readFile = fs.readFileSync(`content/posts/${fileName}`, "utf-8");
     const { data: frontmatter, content } = matter(readFile);
@@ -56,7 +50,6 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
-      episodes: res.items,
       events: eventsJSON,
     },
   };

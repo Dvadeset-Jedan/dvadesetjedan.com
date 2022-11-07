@@ -14,6 +14,7 @@ import styles from "../../styles/blog.module.scss";
 import { Flag } from "../../components/flag";
 import { useState } from "react";
 import React from "react";
+import classNames from "classnames";
 
 function getTwitterShareURL(title: string, slug: string) {
   return `https://twitter.com/intent/tweet?text=${title} https://dvadeset-jedan.github.io/dvadesetjedan.com/blog/${slug}`;
@@ -50,6 +51,8 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
   const router = useRouter();
   const post = posts.find((post) => post.frontmatter?.slug === router.query.slug)!;
 
+  const otherPosts = posts.filter((p) => p.frontmatter?.slug !== router.query.slug).splice(0, 3);
+
   const { title, author, translator, slug, authorURL, translatorURL, flag } =
     post?.frontmatter || {};
 
@@ -82,12 +85,12 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
           </div>
         </div>
 
-        <div className="relative md:w-auto mx-6 sm:mx-10 md:mx-20 mt-16 text-xl tracking-wide md:text-21 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
+        <div className="relative md:w-auto mx-6 sm:mx-10 prose md:mx-20 mt-16 text-xl tracking-wide md:text-21 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
           {post?.content && (
             <div
               dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
               suppressHydrationWarning
-              className={styles.markdown}
+              className={classNames(styles.markdown, "prose mx-auto")}
             />
           )}
           <div className="flex mt-14 justify-end">
@@ -97,19 +100,19 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
               href={getTwitterShareURL(title, slug)}
               className="border ml-2.5 border-gray/40 h-[2rem] w-[2rem] flex items-center justify-center hover:border-purple/40 group"
             >
-              <TwitterIcon className="group-hover:text-purple" />
+              <TwitterIcon className="text-gray group-hover:text-purple" />
             </a>
             <a
               href={getLinkedinShareURL(slug)}
               className="h-[2rem] ml-2.5 w-[2rem] flex items-center justify-center border border-gray/40 hover:border-purple/40 group"
             >
-              <LinkedinIcon className="group-hover:text-purple" />
+              <LinkedinIcon className="text-gray group-hover:text-purple" />
             </a>
           </div>
         </div>
 
         <div className="flex justify-center mx-10 md:mx-16">
-          <BlogSection title="More from the blog" posts={posts} />
+          <BlogSection title="Još sa bloga" posts={otherPosts} />
         </div>
       </div>
     </main>

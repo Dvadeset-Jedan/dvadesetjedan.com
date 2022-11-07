@@ -1,15 +1,15 @@
-import { InferGetStaticPropsType } from "next";
 import { useRouter } from "next/router";
 import { EpisodePreview } from "../../components/episode-preview";
 import { PodcastActions } from "../../components/podcast-actions";
 import { truncate } from "../../components/podcast-section";
 import { routes } from "../../utils/routes";
 import { getSlug } from "./index.page";
-import { fetchPodcastEpisodes } from "./podcast.api";
+import { usePodcastEpisodes } from "./podcast.api";
 
-export default function Podcast({ episodes }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Podcast() {
   const router = useRouter();
-  const episode = episodes.find((e: any) => getSlug(e.link) === router.query.slug);
+  const { episodes } = usePodcastEpisodes();
+  const episode = episodes?.find((e: any) => getSlug(e.link) === router.query.slug);
 
   return (
     <main className="text-center bg-dark">
@@ -50,21 +50,4 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
       </div>
     </main>
   );
-}
-
-export async function getStaticPaths() {
-  const res = await fetchPodcastEpisodes();
-  const paths = res?.items?.map((e) => ({
-    params: { id: getSlug(e.link), slug: getSlug(e.link) },
-  }));
-  return { paths, fallback: false };
-}
-
-export async function getStaticProps() {
-  const res = await fetchPodcastEpisodes();
-  return {
-    props: {
-      episodes: res.items,
-    },
-  };
 }
