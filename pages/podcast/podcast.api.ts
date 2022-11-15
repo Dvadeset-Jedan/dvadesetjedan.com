@@ -18,10 +18,10 @@ export async function fetchPodcastEpisodes() {
 export function usePodcastEpisodes(props?: UsePodcastEpisodeProps) {
   const { episodeSlug } = props || {};
 
-  const query: UseQueryResult<AnchorRSSReturnType & { episodes?: Episode[] }> = useQuery(
-    ["episodes"],
-    fetchPodcastEpisodes
-  );
+  const query: UseQueryResult<AnchorRSSReturnType & { episodes?: Episode[] }> = useQuery({
+    queryKey: ["episodes"],
+    queryFn: () => fetchPodcastEpisodes(),
+  });
 
   return {
     ...query,
