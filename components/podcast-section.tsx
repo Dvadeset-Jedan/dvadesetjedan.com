@@ -21,7 +21,7 @@ export function PodcastSection() {
         Nedavne epizode podcasta
       </h2>
       <div className="grid grid-cols-1 px-4 md:grid-cols-2 xl:grid-cols-3 gap-10">
-        {episodes?.slice(0, 2).map(({ link, title, contentSnippet }) => (
+        {episodes?.slice(0, 3).map(({ link, title, contentSnippet }) => (
           <EpisodePreview
             key={getSlug(link)}
             title={title}
