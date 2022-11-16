@@ -4,7 +4,7 @@ import { EventType } from "../utils/types";
 export function MeetupPreview({ url, imgSrc, date, venue, address }: EventType) {
   return (
     <a href={url} target="_blank" rel="noreferrer">
-      <div className="flex flex-col py-6 cursor-pointer bg-dark focus:brightness-110 hover:brightness-110">
+      <div className="flex flex-col py-6 cursor-pointer bg-dark">
         <div>
           <Image
             src={imgSrc}
