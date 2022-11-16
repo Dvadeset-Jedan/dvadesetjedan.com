@@ -19,27 +19,6 @@ export type ActionLinkProps = {
   children: ReactNode;
 } & ConditionalProps;
 
-function ActionLinkItem({
-  href,
-  children,
-  internal,
-}: Pick<ActionLinkProps, "href" | "children" | "internal">) {
-  return (
-    <a
-      href={href}
-      className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple hover:bg-purple/5 hover:transition-all"
-      {...(internal
-        ? {}
-        : {
-            target: "_blank",
-            rel: "noreferrer",
-          })}
-    >
-      {children}
-    </a>
-  );
-}
-
 export function ActionLink({ as = "a", href, children, onClick, internal }: ActionLinkProps) {
   if (as === "button") {
     return (
@@ -55,12 +34,21 @@ export function ActionLink({ as = "a", href, children, onClick, internal }: Acti
   if (internal) {
     return (
       <Link href={href as string}>
-        <ActionLinkItem href={href} internal>
+        <a className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple hover:bg-purple/5 hover:transition-all">
           {children}
-        </ActionLinkItem>
+        </a>
       </Link>
     );
   }
 
-  return <ActionLinkItem href={href}>{children}</ActionLinkItem>;
+  return (
+    <a
+      href={href}
+      className="px-6 py-3 text-lg border rounded-full md:text-base text-purple border-purple hover:bg-purple/5 hover:transition-all"
+      target="_blank"
+      rel="noreferrer"
+    >
+      {children}
+    </a>
+  );
 }
