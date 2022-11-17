@@ -11,8 +11,12 @@ type UsePodcastEpisodeProps = {
 };
 
 export async function fetchPodcastEpisodes() {
-  const feed = (await new Parser().parseURL(ANCHOR_ENDPOINT)) as any;
-  return feed as AnchorRSSReturnType;
+  try {
+    const feed = (await new Parser().parseURL(ANCHOR_ENDPOINT)) as any;
+    return feed as AnchorRSSReturnType;
+  } catch (error) {
+    alert(error);
+  }
 }
 
 export function usePodcastEpisodes(props?: UsePodcastEpisodeProps) {
