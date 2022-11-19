@@ -4,20 +4,20 @@ import { PodcastActions } from "../../components/podcast-actions";
 import { truncate } from "../../components/podcast-section";
 import { routes } from "../../utils/routes";
 import { getSlug } from "./index.page";
-import { usePodcastEpisodes } from "./podcast.api";
+import { fetchPodcastEpisodes } from "./podcast.api";
 import styles from "../../styles/blog.module.scss";
 import classNames from "classnames";
+import { GetStaticPaths, InferGetStaticPropsType } from "next";
 
-export default function Podcast() {
+export default function Podcast({ episodes }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
-  const { episodes } = usePodcastEpisodes();
-  const episode = episodes?.find((e: any) => getSlug(e.link) === router.query.slug);
+  const episode = episodes.find((e) => getSlug(e.link) === router.query.slug);
 
   return (
     <main className="text-center bg-dark">
       <div className="py-10 lg:py-20 bg-dark brightness-110">
         <div className="w-[90%] m-auto xl:w-3/5">
-          <h1 className="text-2xl font-semibold">{episode?.title}</h1>
+          <h1 className="text-2xl font-semibold">{episode?.title || ""}</h1>
         </div>
         <div className="w-[90%] m-auto mt-20 lg:w-3/5">
           {episode && (
@@ -45,7 +45,7 @@ export default function Podcast() {
             Epizode u kojima ćeš uživati
           </h2>
           <div className="grid grid-cols-1 px-4 md:grid-cols-2 xl:grid-cols-3 gap-10">
-            {[...(episodes || [])]?.splice(0, 3).map(({ link, title, contentSnippet }) => (
+            {episodes.slice(0, 3).map(({ link, title, contentSnippet }) => (
               <EpisodePreview
                 key={getSlug(link)}
                 title={title}
@@ -58,4 +58,20 @@ export default function Podcast() {
       </div>
     </main>
   );
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const episodes = await fetchPodcastEpisodes();
+  return {
+    paths: episodes.items?.map((episode) => ({ params: { slug: getSlug(episode.link) } })),
+    fallback: false,
+  };
+};
+
+export async function getStaticProps() {
+  const episodes = await fetchPodcastEpisodes();
+
+  return {
+    props: { episodes: episodes?.items || [] },
+  };
 }
