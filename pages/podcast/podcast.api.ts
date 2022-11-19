@@ -1,18 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import { UseQueryResult } from "@tanstack/react-query";
-import Parser from "rss-parser";
 import { getSlug } from "./index.page";
 import { AnchorRSSReturnType, Episode } from "./podcast.types";
 
-const ANCHOR_ENDPOINT_URL = "https://anchor.fm/s/962ca164/podcast/rss";
+const ANCHOR_RSS_REPLIT_PROXY_ENDPOINT =
+  "https://dvadesetjedan-anchor-rss-proxy.djordjespasic.repl.co/";
 
 type UsePodcastEpisodeProps = {
   episodeSlug?: string;
 };
 
 export async function fetchPodcastEpisodes() {
-  const feed = (await new Parser().parseURL(ANCHOR_ENDPOINT_URL)) as any;
-  return feed as AnchorRSSReturnType;
+  const res = await fetch(ANCHOR_RSS_REPLIT_PROXY_ENDPOINT).then((res) => res.json());
+  return res;
 }
 
 export function usePodcastEpisodes(props?: UsePodcastEpisodeProps) {
