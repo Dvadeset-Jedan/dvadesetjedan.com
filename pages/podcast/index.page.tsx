@@ -1,3 +1,4 @@
+import { InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
@@ -5,7 +6,7 @@ import { ActionLink } from "../../components/action-link";
 import { EpisodePreview } from "../../components/episode-preview";
 import { PodcastActions } from "../../components/podcast-actions";
 import { routes } from "../../utils/routes";
-import { usePodcastEpisodes } from "./podcast.api";
+import { fetchPodcastEpisodes } from "./podcast.api";
 
 export function getSlug(link: string | undefined) {
   const CUT_OfF_PREFIX = "episodes/";
@@ -13,11 +14,10 @@ export function getSlug(link: string | undefined) {
   return slug || "";
 }
 
-export default function Podcast() {
-  const { episodes } = usePodcastEpisodes();
+export default function Podcast({ episodes }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [showAllEpisodes, setShowAllEpisodes] = useState(false);
 
-  const [lastEpisode, ...otherEpisodes] = episodes || [];
+  const [lastEpisode, ...otherEpisodes] = episodes;
   const newerEpisodes = [...otherEpisodes].splice(0, 9);
   const olderEpisodes = [...otherEpisodes].splice(9);
 
@@ -29,10 +29,12 @@ export default function Podcast() {
             <h1 className="text-2xl font-semibold md:text-4xl">
               Dvadeset Jedan - Bitcoin Only Podcast
             </h1>
-            <p className="mt-3 text-xl md:text-lg text-gray">{`${lastEpisode?.contentSnippet?.slice(
-              0,
-              300
-            )}...`}</p>
+            {lastEpisode?.contentSnippet && (
+              <p className="mt-3 text-xl md:text-lg text-gray">{`${lastEpisode?.contentSnippet?.slice(
+                0,
+                300
+              )}...`}</p>
+            )}
             <PodcastActions title="Slušajte nas na" />
           </div>
           <div className="m-auto mt-20 w-[90%] mb-4">
@@ -81,4 +83,12 @@ export default function Podcast() {
       </div>
     </main>
   );
+}
+
+export async function getStaticProps() {
+  const episodes = await fetchPodcastEpisodes();
+
+  return {
+    props: { episodes: episodes?.items || [] },
+  };
 }
