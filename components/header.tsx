@@ -47,22 +47,22 @@ export function Header({
   return (
     <>
       <div className="relative flex items-center justify-between w-full px-4 md:px-0 py-8 md:flex-row md:py-10 bg-dark max-w-7xl mx-auto">
-        <div className="flex items-center">
-          <BarcodeHeaderIcon className="w-12 md:w-auto" />
-          <Link href={routes.home}>
-            <a className="ml-3">
+        <Link href={routes.home}>
+          <a>
+            <div className="relative flex items-center md:ml-4 z-20">
+              <BarcodeHeaderIcon className="w-12 md:w-auto" />
               <span className="sr-only">DvadesetJedan</span>
-              <TextLogoIcon className="w-52 md:w-auto" />
-            </a>
-          </Link>
-        </div>
+              <TextLogoIcon className="w-52 md:w-auto ml-2" />
+            </div>
+          </a>
+        </Link>
 
-        <ul className="hidden mt-8 ml-8 md:flex md:mt-0">
+        <ul className="hidden mt-8 mx-8 lg:flex md:mt-0">
           {links.map(({ name, route, active }, index) => (
             <li
               key={name}
               className={classNames("font-medium text-right text-19 ", {
-                "mr-8 sm:mr-3 lg:mr-12 xl:mr-20": index !== links.length - 1,
+                "mr-8 sm:mr-5 lg:mr-12 xl:mr-20": index !== links.length - 1,
               })}
             >
               <Link href={route}>
@@ -77,12 +77,12 @@ export function Header({
             </li>
           ))}
         </ul>
-        <div className="absolute top-0 left-0 w-full h-full md:hidden">
+        <div className="absolute top-0 left-0 w-full h-full lg:hidden">
           <Popover className="relative z-10 flex justify-end w-full h-full">
             {({ open, close }) => (
               <>
                 <DispatchPopoverState open={open} setDisableScroll={setDisableScroll} />
-                <Popover.Button className="relative z-20 p-4 mt-3.5 mr-0.5 h-min">
+                <Popover.Button className="relative z-20 p-4 mt-4 sm:mt-5 mr-0.5 h-min">
                   {open ? <XMarkIcon /> : <BarsIcon />}
                 </Popover.Button>
 
