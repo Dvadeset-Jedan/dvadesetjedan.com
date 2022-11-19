@@ -19,6 +19,6 @@ Push to `main` to trigger deployment to Github Pages
 
 ##
 
-[Preview](https://dvadeset-jedan.github.io/dvadesetjedan.com/)
+[Kako dodati događaj](https://github.com/Dvadeset-Jedan/dvadesetjedan.com/blob/feature/document-adding-events/CONTRIBUTING.md)
 
 
