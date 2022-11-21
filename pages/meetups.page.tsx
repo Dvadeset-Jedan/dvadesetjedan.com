@@ -1,6 +1,5 @@
 import { MeetupMap } from "../components/icons/meetup-map";
-import { MouseEvent, PropsWithChildren, useState } from "react";
-import { useFloating } from "@floating-ui/react-dom";
+import { MouseEvent, PropsWithChildren } from "react";
 import eventsJSON from "../content/events.json";
 import { InferGetStaticPropsType } from "next";
 import { Serbia } from "../components/icons/serbia";
@@ -10,42 +9,39 @@ import { Bosnia } from "../components/icons/bosnia";
 import { Slovenia } from "../components/icons/slovenia";
 import { Macedonia } from "../components/icons/macedonia";
 import classNames from "classnames";
+import { PINS } from "../utils/pins";
 
-function EventMapPin({ positionX, positionY }: { positionX: number; positionY: number }) {
-  const { x, y, reference, floating, strategy } = useFloating({ placement: "top-start" });
-  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
-
+function EventMapPin({
+  url,
+  position,
+}: {
+  url: string;
+  position:
+    | {
+        city: string;
+        mobilePosition: { x: number; y: number };
+        desktopPosition: { x: number; y: number };
+      }
+    | undefined;
+}) {
   return (
     <>
       <div
-        className={classNames(
-          "absolute -mt-2 -ml-2 cursor-pointer",
-          isTooltipOpen ? "p-4 pr-12" : "p-2"
-        )}
-        style={{ top: positionY, left: positionX }}
-        ref={reference}
-        onMouseEnter={() => setIsTooltipOpen(true)}
-        onMouseLeave={() => setIsTooltipOpen(false)}
+        className={classNames("hidden lg:block absolute -mt-2 -ml-2 cursor-pointer p-2")}
+        style={{ top: position?.desktopPosition.y, left: position?.desktopPosition.x }}
       >
-        <div className="w-2 h-2 bg-[orange] rounded-full" />
+        <a href={url} target="_blank" rel="noreferrer">
+          <div className="w-2 h-2 bg-[orange] rounded-full" />
+        </a>
       </div>
-      {isTooltipOpen && (
-        <div
-          ref={floating}
-          style={{ position: strategy, top: y ?? 0, left: x ?? 0 }}
-          onMouseEnter={() => setIsTooltipOpen(true)}
-          onMouseLeave={() => setIsTooltipOpen(false)}
-        >
-          <div className="flex flex-col p-4 border border-white/50 bg-dark">
-            <p className="text-lg font-medium md:text-base text-purple">2022-02-12</p>
-            <p className="mt-1 text-xl font-medium md:text-2xl">Dogma Brewery</p>
-            <p className="mt-1 text-lg font-medium md:text-base text-gray">Belgrade</p>
-            <p className="text-[12px] mt-1 text-gray">
-              treba smisliti kako ce izgledati ovaj tooltip 🤔
-            </p>
-          </div>
-        </div>
-      )}
+      <div
+        className={classNames("lg:hidden absolute -mt-2 -ml-2 cursor-pointer p-2")}
+        style={{ top: position?.mobilePosition.y, left: position?.mobilePosition.x }}
+      >
+        <a href={url} target="_blank" rel="noreferrer">
+          <div className="w-2 h-2 bg-[orange] rounded-full" />
+        </a>
+      </div>
     </>
   );
 }
@@ -62,6 +58,21 @@ function logPinPosition(event: MouseEvent<HTMLDivElement>) {
 }
 
 export default function Meetups({ events }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const mostRecentFutureEventFromEachCity = Object.values(
+    events.reduce((acc, event) => {
+      if (new Date(event.date) > new Date()) {
+        if (!acc[event.city]) {
+          acc[event.city] = event;
+        } else if (event.date < acc[event.city].date) {
+          acc[event.city] = event;
+        }
+      }
+      return acc;
+    }, {} as Record<string, typeof events[0]>)
+  );
+
+  console.log({ mostRecentFutureEventFromEachCity });
+
   return (
     <main className="bg-dark">
       <div className="w-[90%] mx-auto py-20">
@@ -69,8 +80,8 @@ export default function Meetups({ events }: InferGetStaticPropsType<typeof getSt
         <p className="mt-8 mb-20 text-center">
           Pronadji sastanak blizu tebe. Svi su dobrodosli. Vidimo se!
         </p>
-        <div className="flex items-center justify-center h-full">
-          <p className="flex flex-col lg:hidden">
+        <div className="flex items-center justify-center h-full" onClick={logPinPosition}>
+          <div className="relative flex flex-col lg:hidden">
             <Serbia />
             <Croatia />
             <MapSpacing sm>
@@ -85,19 +96,18 @@ export default function Meetups({ events }: InferGetStaticPropsType<typeof getSt
             <MapSpacing>
               <Macedonia />
             </MapSpacing>
-          </p>
+            {mostRecentFutureEventFromEachCity.map(({ url, city }) => {
+              const position = PINS.find((pin) => pin.city === city);
+
+              return <EventMapPin url={url} key={position?.city} position={position} />;
+            })}
+          </div>
           <div className="relative hidden lg:block" onClick={logPinPosition}>
             <MeetupMap />
-            {events.map(({ positionX, positionY }) => {
-              if (!positionX || !positionY) return null;
+            {mostRecentFutureEventFromEachCity.map(({ url, city }) => {
+              const position = PINS.find((pin) => pin.city === city);
 
-              return (
-                <EventMapPin
-                  key={`${positionX}-${positionY}`}
-                  positionX={positionX}
-                  positionY={positionY}
-                />
-              );
+              return <EventMapPin url={url} key={position?.city} position={position} />;
             })}
           </div>
         </div>

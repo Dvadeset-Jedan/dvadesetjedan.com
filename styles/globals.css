@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 #__next, html, body {
-  min-width: 100vw;
+  width: 100vw;
+  max-width: 100%;
   display: flex;
 }
 
