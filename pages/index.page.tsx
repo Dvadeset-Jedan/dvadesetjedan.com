@@ -32,8 +32,8 @@ export default function Index({
           </div>
           <Hero />
 
-          <MeetupsSection events={events} />
           <PodcastSection episodes={episodes} />
+          <MeetupsSection events={events} />
           <BlogSection title="Bitcoin Blog" posts={posts} />
         </div>
       </div>
