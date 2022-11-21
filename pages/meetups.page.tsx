@@ -39,7 +39,7 @@ function EventMapPin({
         style={{ top: position?.mobilePosition.y, left: position?.mobilePosition.x }}
       >
         <a href={url} target="_blank" rel="noreferrer">
-          <div className="w-2 h-2 bg-[orange] rounded-full" />
+          <div className="w-3 h-3 bg-[orange] rounded-full" />
         </a>
       </div>
     </>

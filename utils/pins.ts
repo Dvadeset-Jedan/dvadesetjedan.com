@@ -2,8 +2,8 @@ export const PINS = [
   {
     city: "Belgrade",
     mobilePosition: {
-      x: 135,
-      y: 185,
+      x: 130,
+      y: 175,
     },
     desktopPosition: {
       x: 760,
