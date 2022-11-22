@@ -12,7 +12,8 @@ module.exports = {
   basePath,
   images: {
     loader: "akamai",
-    path: "/",
+    path: "",
+    domains: ["*.cloudfront.net/*"],
   },
   pageExtensions: ["page.tsx"],
 };

@@ -36,7 +36,10 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
           <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-20">Beleške iz podcasta</h2>
           {episode?.content && (
             <article
-              className={classNames(styles.markdown, "prose mx-auto text-left overflow-hidden")}
+              className={classNames(
+                styles.markdown,
+                "prose mx-auto text-white text-left overflow-hidden"
+              )}
               dangerouslySetInnerHTML={{ __html: episode.content }}
             />
           )}
@@ -45,8 +48,9 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
             Epizode u kojima ćeš uživati
           </h2>
           <div className="grid grid-cols-1 px-4 md:grid-cols-2 xl:grid-cols-3 gap-10">
-            {episodes.slice(0, 3).map(({ link, title, contentSnippet }) => (
+            {episodes.slice(0, 3).map(({ link, title, contentSnippet, itunes }) => (
               <EpisodePreview
+                imgSrc={itunes.image}
                 key={getSlug(link)}
                 title={title}
                 description={truncate(contentSnippet, 140)}

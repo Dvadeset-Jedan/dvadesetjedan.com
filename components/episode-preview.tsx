@@ -7,17 +7,19 @@ export function EpisodePreview({
   title,
   description,
   href,
+  imgSrc,
 }: {
   title: string;
   description: string;
   href: string;
+  imgSrc: string;
 }) {
   return (
     <Link href={href}>
       <a className="flex flex-col items-center cursor-pointer bg-dark brightness-110 rounded-2xl hover:brightness-125 hover:transition-all">
         <div className="w-full">
           <Image
-            src={images.dvadesetJedan}
+            src={imgSrc || images.dvadesetJedan}
             className="rounded-t-2xl"
             width={320}
             height={240}
