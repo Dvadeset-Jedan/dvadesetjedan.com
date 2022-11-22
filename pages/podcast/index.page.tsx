@@ -54,8 +54,9 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
         <div className="m-auto w-[90%] my-20">
           <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14">Prethodne epizode</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 text-left">
-            {newerEpisodes.map(({ link, title, contentSnippet }) => (
+            {newerEpisodes.map(({ link, title, contentSnippet, itunes }) => (
               <EpisodePreview
+                imgSrc={itunes.image}
                 key={getSlug(link)}
                 title={title}
                 description={`${contentSnippet.slice(0, 100)}...`}
@@ -63,8 +64,9 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
               />
             ))}
             {showAllEpisodes &&
-              olderEpisodes.map(({ link, title, contentSnippet }) => (
+              olderEpisodes.map(({ link, title, contentSnippet, itunes }) => (
                 <EpisodePreview
+                  imgSrc={itunes.image}
                   key={getSlug(link)}
                   title={title}
                   description={`${contentSnippet.slice(0, 100)}...`}
