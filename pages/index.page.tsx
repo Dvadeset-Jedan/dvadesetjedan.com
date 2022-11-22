@@ -21,7 +21,7 @@ export default function Index({
           <div className="flex justify-center">
             <div className="text-center">
               <h1 className="mt-10 text-3xl font-semibold md:text-5xl lg:mt-20">
-                DvadesetJedan je balkanska bitcoin zajednica
+                Balkanska bitcoin zajednica
               </h1>
               <p className="text-xl font-medium md:text-xl mt-9">
                 DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj
