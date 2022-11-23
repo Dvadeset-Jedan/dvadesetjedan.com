@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { images } from "../utils/images";
 import { truncate } from "./podcast-section";
 
 export function EpisodePreview({
@@ -16,16 +14,10 @@ export function EpisodePreview({
 }) {
   return (
     <Link href={href}>
-      <a className="flex flex-col items-center cursor-pointer bg-dark brightness-110 rounded-2xl hover:brightness-125 hover:transition-all">
+      <a className="flex flex-col items-center cursor-pointer bg-dark brightness-110 rounded-2xl hover:brightness-[120%] hover:transition-all hover:duration-500">
         <div className="w-full">
-          <Image
-            src={imgSrc || images.dvadesetJedan}
-            className="rounded-t-2xl"
-            width={320}
-            height={240}
-            layout="responsive"
-            alt=""
-          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={imgSrc} alt={title} className="rounded-t-2xl" />
         </div>
         <div className="px-3 pb-3">
           <h2 className="text-xl font-semibold truncate md:block md:text-xl whitespace-pre-wrap mt-6">
