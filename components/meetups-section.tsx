@@ -1,6 +1,5 @@
 import { MeetupPreview } from "./meetup-preview";
 import { format } from "date-fns";
-import { GH_PAGES_SUBDIRECTORY } from "../utils/constants";
 import { EventType } from "../utils/types";
 import { ActionLink } from "./action-link";
 
@@ -38,7 +37,7 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
             <div key={new Date(event.date).toString()}>
               <MeetupPreview
                 {...event}
-                imgSrc={`${GH_PAGES_SUBDIRECTORY}/${event.imgSrc}`}
+                imgSrc={`/${event.imgSrc}`}
                 date={format(new Date(event.date), "EEEE, MMMM dd, yyyy")}
               />
             </div>
