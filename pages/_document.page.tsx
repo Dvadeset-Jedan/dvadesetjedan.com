@@ -9,6 +9,7 @@ export default function Document() {
           rel="stylesheet"
         />
         <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href="/images/favicon.png" />
       </Head>
       <body>
         <Main />
