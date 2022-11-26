@@ -17,11 +17,11 @@ import React from "react";
 import classNames from "classnames";
 
 function getTwitterShareURL(title: string, slug: string) {
-  return `https://twitter.com/intent/tweet?text=${title} https://dvadeset-jedan.github.io/dvadesetjedan.com/blog/${slug}`;
+  return `https://twitter.com/intent/tweet?text=${title} https://dvadesetjedan.com/dvadesetjedan.com/blog/${slug}`;
 }
 
 function getLinkedinShareURL(slug: string) {
-  return `https://www.linkedin.com/sharing/share-offsite/?url=https://dvadeset-jedan.github.io/dvadesetjedan.com/blog/${slug}`;
+  return `https://www.linkedin.com/sharing/share-offsite/?url=https://dvadesetjedan.com/blog/${slug}`;
 }
 
 function CopyURLButton() {
