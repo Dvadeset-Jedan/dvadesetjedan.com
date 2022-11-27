@@ -13,4 +13,5 @@ export const images = {
   hero3: `/images/hero_3.webp`,
   hero4: `/images/hero_4.webp`,
   hero5: `/images/hero_5.webp`,
+  "bullishcase-featured": `/images/content/bullishcase-featured.jpg`,
 } as const;
