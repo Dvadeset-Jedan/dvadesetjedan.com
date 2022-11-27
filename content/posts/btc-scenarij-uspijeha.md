@@ -5,7 +5,7 @@ authorURL: "https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8b
 meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij za ulagače se možda čini toliko očitim da ga nije potrebno niti spominjati. Alternativno, možda se nekome čini glupo ulagati u digitalnu vrijednost koja ne počiva na nijednom fizičkom dobru ili vladi i čiji porast cijene su neki usporedili sa manijom tulipana..."
 translator: "Matija"
 translatorURL: ""
-slug: "never-stop-learning"
+slug: "btc-scenarij-learning"
 flag: "croatia"
 tags:
     - translation
