@@ -55,7 +55,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts,
+      posts: posts.sort((a, z) => z.frontmatter.index - a.frontmatter.index),
       events: eventsJSON,
       episodes: episodes.items || [],
     },

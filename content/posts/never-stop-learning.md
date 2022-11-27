@@ -1,4 +1,5 @@
 ---
+index: 0
 title: "Nikad ne prestani učiti"
 author: "Yves Bennaim"
 authorURL: "https://bennaim.com/"
