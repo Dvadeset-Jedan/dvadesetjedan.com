@@ -1,5 +1,5 @@
 ---
-title: "Bullish slucaj za bitcoin"
+title: "Bitcoin scenarij uspjeha"
 author: "Vijay Boyapati"
 authorURL: "https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1"
 meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij za ulagače se možda čini toliko očitim da ga nije potrebno niti spominjati. Alternativno, možda se nekome čini glupo ulagati u digitalnu vrijednost koja ne počiva na nijednom fizičkom dobru ili vladi i čiji porast cijene su neki usporedili sa manijom tulipana..."
@@ -19,9 +19,7 @@ Nikad u povijesti svijeta nije bilo moguće napraviti transfer vrijednosti među
 
 Za ulagače, važna činjenica izuma Bitcoina (mreže i protokola) je stvaranje novog oskudnog digitalnog dobra - bitcoina (monetarne jedinice). Bitcoini su prenosivi digitalni “novčići” (tokeni), proizvedeni na Bitcoin mreži kroz proces nazvan “rudarenje” (mining). Rudarenje Bitcoina je ugrubo usporedivo sa rudarenjem zlata, uz bitnu razliku da proizvodnja bitcoina prati unaprijed osmišljeni i predvidivi raspored. Samo 21 milijun bitcoina će ikad postojati, i većina (2017., kada je ovaj tekst napisan) su već izrudareni. Svake četiri godine, količina rudarenih bitcoina se prepolovi. Produkcija novih bitcoina će potpuno prestati 2140. godine.
 
-&nbsp;
-![](public/images/content/blog/bullishcase/BitcoinProtivInflacije.png)
-&nbsp;
+![](/images/content/blog/bullishcase/povjerenjevriijemebitcoin.png)
 
 —— Stopa inflacije   —— Monetarna baza
 
@@ -39,10 +37,7 @@ Predmeti koje su ljudi sakupljali služili su kao svojevrsni “proto-novac,” 
 
 Rani čovjek suočio se sa bitnom dilemom u teoriji igara, kada je odlučivao koje predmete sakupljati: koje od njih će drugi ljudi željeti? Onaj koji bi to točno predvidio imao bi ogromnu prednost u mogućnosti trgovine i akvizicije bogatsva. Neka američka indijanska plemena, npr. Naraganseti, specijalizirala su se u proizvodnji sakupljačkih dobara koja nisu imala drugu svrhu osim trgovine. Valja spomenuti da što je ranije predviđanje da će neko dobro imati takvu vrijednost, veća je prednost koju će imati onaj koji je posjeduje, zato što ju je moguće nabaviti jeftinije, prije nego postane vrlo tražena roba i njezona vrijednost naraste zajedno sa populacijom. Nadalje, nabava nekog dobra u nadi da će u budućnosti biti korišteno kao spremište vrijednosti, ubrzava upravo tu primjenu. Ova cirkularnost je zapravo povratna veza (feedback loop) koja potiče društva da se rapidno slože oko jednog spremišta vrijednosti. U terminima teorije igara, ovo je znano kao “[Nashov ekvilibrij](https://sh.wikipedia.org/wiki/Nashov_ekvilibrijum).” Postizanje Nashovog ekvilibrija za neko spremište vrijednosti je veliko postignuće za društvo, pošto ono znatno olakšava trgovinu i podjelu rada, i time omogućava napredak civilizacije.
 
-&nbsp;
-![](public/images/content/blog/bullishcase/1*Wpt9pCznLfQP9KoWzv9vGA.webp)
-&nbsp;
-
+![](/images/content/blog/bullishcase/1*Wpt9pCznLfQP9KoWzv9vGA.webp)
 
 Tisućljećima, kako su ljudska društva rasla i otvarala trgovinske puteve, različite aplikacije spremišta vrijednosti u individualnim društvima počele su se natjecati međusobno. Trgovci su imali izbor: čuvati svoju zaradu u spremištu vrijednosti vlastite kulture, ili one kulture sa kojom su trgovali, ili mješavini oboje. Benefit štednje u stranom spremištu vrijednosti bila je uvećana sposobnost trgovanja u povezanom stranom društvu. Trgovci koji su štedili u stranom spremištu vrijednosti su također imali dobrih razloga da potiču svoje društvo da ga prihvati, jer bi tako uvećali vrijednost vlastite ušteđevine. Prednosti “uvezene” tehnologije spremanja vrijednosti bile su prisutne ne samo za trgovce, nego i za sama društva. Kada bi se dvije grupe konvergirale u jedinstvenom spremištu vrijednosti, to bi značajno smanjilo cijenu troškova trgovine jednog s drugim, i samim time povećanje bogatstva kroz trgovinu. I zaista, 19. stoljeće bilo je prvi put da je najveći dio svijeta prihvatio jedinstveno spremište vrijednosti - zlato - i u tom periodu vidio najveću eksploziju trgovine u povijesti svijeta. O ovom mirnom periodu, pisao je John Maynard Keynes:
 
@@ -63,10 +58,7 @@ Kada se spremišta vrijednosti natječu jedno s drugim, specifična svojstva rad
 
 Ova tablica ocjenjuje Bitcoin, zlato (gold) i fiat novac (kao što je euro ili dolar) po svojstvima izlistanim gore. Objašnjenje svake ocjene slijedi nakon tablice.
 
-&nbsp;
-![](public/images/content/blog/bullishcase/1*_63fojX4ZSQxWlLNR6brLQ.webp)
-&nbsp;
-
+![](/images/content/blog/bullishcase/1*_63fojX4ZSQxWlLNR6brLQ.webp)
 
 ### Trajnost:
 
@@ -96,9 +88,7 @@ Svojstvo koje najjasnije razlikuje Bitcoin od fiat valuta i zlata je njegova una
 
 Nijedno monetarno dobro nema povijest kao zlato, koje je imalo vrijednost za cijelog trajanja ljudske civilizacije. Kovanice izrađene u antičko doba i [danas imaju značajnu vrijednost](https://en.wikipedia.org/wiki/Hoxne_Hoard). Ne može se isto reći za fiat valute, koje su same relativno nova povijesna anomalija. Od njihovog početka, fiat valute su imale gotovo univerzalni smjer prema bezvrijednosti. Korištenje inflacije kao podmuklog načina za nevidljivo oporezivanje građana je vječita kušnja kojoj se skoro nijedna država u povijesti nije mogla oduprijeti. Ako je 20. stoljeće, u kojem je fiat novac dominirao globalni monetarni poredak, demonstriralo neku ekonomsku istinu, to je onda bila ta da ne možemo računati na fiat novac da održi vrijednost u dužem ili srednjem vremenskom periodu. Bitcoin, usprkos svojoj novosti, je preživio dovoljno testova tržišta da postoji velika vjerojatnost da neće nestati kao vrijedno dobro. Nadalje, [Lindy efekt](https://en.wikipedia.org/wiki/Lindy_effect) govori da što duže Bitcoin bude korišten, to će veća biti vjera u njega i njegovu sposobnost da nastavi postojati dugo u budućnost. Drugim riječima, društvena vjera u monetarno dobro je asimptotička, kao u grafu ispod:
 
-&nbsp;
-![](public/images/content/blog/bullishcase/povjerenjevriijemebitcoin.png)
-&nbsp;
+![](/images/content/blog/bullishcase/povjerenjevriijemebitcoin.png)
 
 Ako Bitcoin preživi prvih 20 godina, imat će gotovo sveopće povjerenje da će trajati zauvijek, kao što ljudi vjeruju da je internet trajna stvar u modernom svijetu.
 
@@ -133,9 +123,7 @@ Bitcoin je trenutno u fazi tranzicije iz prvog stadija monetizacije u drugi. Vje
 
 Kroz proces monetizacije, monetarno dobro će naglo porasti u kupovnoj moći. Mnogi su tako komentirali da je uvećanje kupovne moći Bitcoina izgledalo kao “balon” (bubble). Premda je ovaj termin često korišten kako bi ukazao na pretjeranu vrijednosti Bitcoina, sasvim slučajno je prikladan. Svojstvo koje je uobičajeno za sva monetarna dobra jest da je njihova kupovna moć viša nego što se može opravdati samo kroz njihovu uporabnu vrijednost. Zaista, mnogi povijesni novci nisu imali uporabnu vrijednost. Razliku između kupovne moći i vrijednosti razmjene koju bi novac mogao imati za svoju inherentnu korisnost, možemo razmatrati kao “monetarnu premiju.” Kako monetarno dobro prolazi kroz stadije monetizacije (navedene gore), monetarna premija raste. No, ta premija ne raste u ravnoj i predvidivoj liniji. Dobro X, koje je bilo u procesu monetizacije, može izgubiti u usporedbi sa dobrom Y koje ima više svojstava novca, te monetarna premija dobra X drastično padne ili potpuno nestane. Monetarna premija srebra je skoro potpuno nestala u kasnom 19. stoljeću, kada su ga vlade diljem svijeta zamijenile zlatom kao novcem.
 
-&nbsp;
-![](public/images/content/blog/bullishcase/monetarnapremija-razlicita-dobra.jpg)
-&nbsp;
+![](/images/content/blog/bullishcase/monetarnapremija-razlicita-dobra.jpg)
 
 Čak i u odsustvu vanjskih faktora, kao što su intervencije vlade ili druga monetarna dobra, monetarna premija novog novca neće ići predvidivim putem. Ekonomist [Larry White](http://oll.libertyfund.org/pages/misestmc) primijetio je:
 
@@ -159,15 +147,11 @@ Premda usporedba sa religijom može staviti Bitcoin u iracionalno svjetlo, potpu
 
 Premda ne postoje _a priori_ pravila o putanji koju će monetarno dobro slijediti za vrijeme monetizacije, pojavio se zanimljiv uzorak za relativno kratke povijesti Bitcoinove monetizacije. Čini se da cijena Bitcoina prati fraktalni uzorak povećavajuće magnitude, gdje svaka iteracija fraktala dobiva klasični oblik Gartnerovog ciklusa “hypea.”
 
-&nbsp;
-![](public/images/content/blog/bullishcase/vidljivost-vrijeme.jpg)
-&nbsp;
+![](/images/content/blog/bullishcase/vidljivost-vrijeme.jpg)
 
 U članku o [Spekulativnom prihvaćanju Bitcoina / teorije cijene](https://medium.com/@mcasey0827/speculative-bitcoin-adoption-price-theory-2eed48ecf7da), Michael Casey postulira da rastući Gartner hype ciklusi predstavljaju faze standardne S-krivulje prihvaćanja novih tehnologija, koje su bile prisutne kod mnogih transformacijskih tehnologija dok su postajale uobičajene u društvu.
 
-&nbsp;
-![](public/images/content/blog/bullishcase/1*HsB1VOYAf1MUvPyuf13b9g.webp)
-&nbsp;
+![](/images/content/blog/bullishcase/1*HsB1VOYAf1MUvPyuf13b9g.webp)
 
 Svaki Gartner hype ciklus počinje sa eksplozijom entuzijazma za novom tehnologijom, a cijenu podižu oni sudionici na tržištvu koji su “dostupni” u toj fazi. Najraniji kupci u Gartner hype ciklusu obično imaju jaku vjeru o transformacijskoj prirodi tehnologije u koju ulažu. S vremenom, tržište dosegne vrhunac entuzijazma kako se količina novih kupaca iscrpljuje, te kupovinom počnu dominirati spekulatori koji su više zainteresirani u brze profite nego u samu tehnologiju.
 
@@ -197,9 +181,7 @@ Tek nakon kolapsa MtGox mjenjačnice i dvogodišnje pauze u tržišnoj cijeni Bi
 
 U trenutku pisanja ovog teksta, tržište Bitcoina je prolazilo svoj četvrti veliki hype ciklus. Sudjelovanje u ovom hype ciklusu dominirala je ona skupina koju je Michael Casey opisao kao “rana većina” običnih i institucionalnih ulagača.
 
-&nbsp;
-![](public/images/content/blog/bullishcase/vrijeme-penetracija-trzista.jpg)
-&nbsp;
+![](/images/content/blog/bullishcase/vrijeme-penetracija-trzista.jpg)
 
 Kako su se izvori likvidnosti produbljivali i sazrijevali, veliki institucionalni ulagači sada imaju priliku sudjelovati kroz regulirana “futures” tržišta. Dostupnosti takvih tržišta stvara put ka kreaciji Bitcoin ETF-a (exchange traded fund) (fond na slobodnom tržištu), koji će onda pokrenuti “kasnu većinu” i “najsporije” u sljedećim hype ciklusima.
 
@@ -229,9 +211,7 @@ Postoje međutim velike institucionalne barijere da novonastalo spremište vrije
 
 Ovakvo sabotiranje tržišnih monetarnih dobara nije nepremostiva barijera za njihovo prihvaćanje kao općeg medija razmjene. Ako ljudi izgube vjeru u suvereni novac, njegova vrijednost može rapidno propasti kroz proces zvan hiperinflacija. Kada suvereni novac prolazi kroz hiperinflaciju, njegova vrijednost propadne prvo u usporedbi sa najlikvidnijim dobrima u društvu, kao što je zlato ili stabilna strana valuta (američki dolar npr.), ako su ona dostupna. Kada nema likvidnih dobara ili ih ima premalo, novac u hiperinflaciji kolabira u usporedbi sa stvarnim dobrima, kao što su nekretnine ili upotrebljiva roba. Arhetipska slika hiperinflacije je trgovina sa praznim policama - potrošači brzo bježe iz propadajuće vrijednosti novca svoje nacije.
 
-&nbsp;
-![](public/images/content/blog/bullishcase/1*sR1Puz5clh5-X_9VMBGZ-A.webp)
-&nbsp;
+![](/images/content/blog/bullishcase/1*sR1Puz5clh5-X_9VMBGZ-A.webp)
 
 Nakon dovoljno vremena, kada je vjera potpuno uništena za vrijeme hiperinflacije, suvereni novac više nitko ne prihvaća, te se društvo može vratiti na robnu razmjenu, ili će doživjeti potpunu zamjenu monetarne jedinice za sredstvo razmjene. Primjer ovog procesa bila je zamjena zimbabveanskog dolara za američki dolar. Takva promjena suverenog novca za stranu valutu je dodatno otežana relativnom oskudnošću strane valute i odsustvom stranih bankarskih institucija koje pružaju likvidnost tržištu.
 
@@ -241,9 +221,9 @@ Sposobnost lakog prenošenja bitcoina preko granica i odsustvo potrebe za bankar
 
 Većina ovog članka usredotočila se na monetarnu prirodu Bitcoina. Sa tim temeljima možemo adresirati neke od najčešćih nerazumijevanja u Bitcoinu.
 
-&nbsp;
-![](public/images/content/blog/bullishcase/1*77EFO1Wmx6uHOmbL5aHFiA.gif)
-&nbsp;
+
+![](/images/content/blog/bullishcase/1*77EFO1Wmx6uHOmbL5aHFiA.gif)
+
 
 ### Bitcoin je balon (bubble)
 
@@ -265,9 +245,7 @@ Površan temelj kritika Bitcoinovih “visokih” cijena transakcija je uvjerenj
 
 Pošto je Bitcoin softverski protokol otvorenog tipa (open-source), oduvijek je bilo moguće kopirati softver i imitirati mrežu. Kroz godine nastajali su mnogi imitatori, od identičnih kopija, kao Litecoin, do kompleksnijih varijanti kao što je Ethereum, koje obećavaju arbitrarno kompleksne ugovorne mehanizme koristeći decentralizirani računalni sustav. Česta kritika Bitcoinu od strane ulagača je ta da on ne može zadržati svoju vrijednost kada je vrlo lako stvoriti konkurente koji mogu lako i brzo u sebi imati najnovije inovacije i softverske funkcionalnosti.
 
-&nbsp;
-![](public/images/content/blog/1*tCCCuRLl5IZcamvdaNWV4Q.webp)
-&nbsp;
+![](/images/content/blog/bullishcase/1*tCCCuRLl5IZcamvdaNWV4Q.webp)
 
 Greška u ovom argumentu leži u manju takozvanog “mrežnog efekta” (network effect), koji postoji u prvoj i dominantnoj tehnologiji u nekom području. Mrežni efekt - velika vrijednost korištenja Bitcoina samo zato što je već dominantan - je važno svojstvo samo po sebi. Za svaku tehnologiju koja posjeduje mrežni efekt, to je daleko najvažnije svojstvo koje može imati.
 
@@ -277,9 +255,7 @@ Za Bitcoin, mrežni efekt uključuje likvidnost njegovog tržišta, broj ljudi k
 
 Trend koji je postao popularan 2017. godine nije bio samo imitacija Bitcoinovog softvera, nego kopiranje potpune povijesti njegovih prošlih transakcija (cijeli blockchain). Kopiranjem Bitcoinovog blockchaina do određene točke/bloka i odvajanjem sljedećih blokova ka novoj mreži, u procesu znanom kao “forking” (odvajanje), Bitcoinovi konkurenti su uspjeli riješiti problem distribuiranja svojeg tokena velikom broju korisnika.
 
-&nbsp;
-![](public/images/content/blog/1*1*bSHwkeSS0akMdp563SeZWw.webp)
-&nbsp;
+![](/images/content/blog/bullishcase/1*bSHwkeSS0akMdp563SeZWw.webp)
 
 Najznačajniji takav fork dogodio se 1. 8. 2017. godine, kada je nova mreža nazvana Bitcoin Cash (Bcash) stvorena. Vlasnik N količine bitcoina prije 1.8.2017. bi onda posjedovao N bitcoina i N BCash tokena. Mala, ali vrlo glasna zajednica Bcash proponenata je neumorno pokušavala prisvojiti Bitcoinov brend i ime, imenujući svoju novu mrežu Bitcoin Cast i pokušavajući uvjeriti nove pridošlice u Bitcoin da je Bcash “pravi” Bitcoin. Ti pokušaji su većinom propali, i taj neuspjeh se vidi u tržišnim kapitalizacijama dviju mreža. No, za nove ulagače, i dalje postoji rizik da bi konkurent mogao kopirati Bitcoin i njegov blockchain i tako uspjeti u preuzimanju tržišne kapitalizacije, te postati de facto Bitcoin.
 
