@@ -7,6 +7,7 @@ import { routes } from "../utils/routes";
 import { BarcodeHeaderIcon } from "./icons/barcode-header";
 import { BarsIcon } from "./icons/bars";
 import { TextLogoIcon } from "./icons/text-logo";
+import { DvadesetJedan } from "./icons/dvadesetjedan";
 import { XMarkIcon } from "./icons/x-mark";
 
 function useLinks() {
@@ -50,9 +51,8 @@ export function Header({
         <Link href={routes.home}>
           <a>
             <div className="relative flex items-center md:ml-4 z-20">
-              <BarcodeHeaderIcon className="w-12 md:w-auto" />
               <span className="sr-only">DvadesetJedan</span>
-              <TextLogoIcon className="w-52 md:w-auto ml-2" />
+              <DvadesetJedan className="w-60 md:w-96 mt-px ml-2" />
             </div>
           </a>
         </Link>
@@ -82,7 +82,7 @@ export function Header({
             {({ open, close }) => (
               <>
                 <DispatchPopoverState open={open} setDisableScroll={setDisableScroll} />
-                <Popover.Button className="relative z-20 p-4 mt-4 sm:mt-5 mr-0.5 h-min">
+                <Popover.Button className="relative z-20 p-4 mt-9 sm:mt-10 mr-0.5 h-min">
                   {open ? <XMarkIcon /> : <BarsIcon />}
                 </Popover.Button>
 
