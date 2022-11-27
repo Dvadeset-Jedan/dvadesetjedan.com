@@ -14,4 +14,5 @@ export const images = {
   hero4: `/images/hero_4.webp`,
   hero5: `/images/hero_5.webp`,
   "bullishcase-featured": `/images/content/bullishcase-featured.jpg`,
+  "bitcoin-ne-moze-biti-zabranjen-featured": `images/content/blog/niko-ne-moze-zabraniti-btc/bitcoin-ne-moze-biti-zabranjen-featured.png`,
 } as const;
