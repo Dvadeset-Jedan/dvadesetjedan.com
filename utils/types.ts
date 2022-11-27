@@ -5,6 +5,7 @@ import { ArticleSlug } from "./routes";
 export type EventType = typeof events[number];
 
 export type Frontmatter = {
+  index: number;
   author: string;
   authorURL: string;
   tags: string[];

@@ -1,4 +1,5 @@
 ---
+index: 4
 title: "Niko ne može zabraniti bitcoin"
 author: "Parker Lewis"
 authorURL: "https://unchained.com/blog/bitcoin-cannot-be-banned/"

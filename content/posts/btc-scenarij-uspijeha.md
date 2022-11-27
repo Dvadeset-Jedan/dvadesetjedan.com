@@ -1,4 +1,5 @@
 ---
+index: 3
 title: "Bitcoin Scenarij Uspijeha"
 author: "Vjay Boyapati"
 authorURL: "https://twitter.com/real_vijay"

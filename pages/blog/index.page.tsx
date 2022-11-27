@@ -100,6 +100,6 @@ export async function getStaticProps() {
   });
 
   return {
-    props: { posts },
+    props: { posts: posts?.sort((a, z) => z.frontmatter.index - a.frontmatter.index) },
   };
 }

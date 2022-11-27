@@ -1,4 +1,5 @@
 ---
+index: 2
 title: "Draga Porodica, Dragi Priatelji"
 author: "Gigi"
 authorURL: "https://dergigi.com/"

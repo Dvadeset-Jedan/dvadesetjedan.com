@@ -1,4 +1,5 @@
 ---
+index: 1
 title: "Perspektive na Bitcoin u latinskoj Americi"
 author: "Jimmy Song"
 authorURL: "https://twitter.com/jimmysong"
