@@ -1,12 +1,13 @@
 ---
-title: "Bitcoin scenarij uspjeha"
-author: "Vijay Boyapati"
-authorURL: "https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1"
-meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij za ulagače se možda čini toliko očitim da ga nije potrebno niti spominjati. Alternativno, možda se nekome čini glupo ulagati u digitalnu vrijednost koja ne počiva na nijednom fizičkom dobru ili vladi i čiji porast cijene su neki usporedili sa manijom tulipana..."
-translator: "Matija"
-translatorURL: ""
-slug: "btc-scenarij-learning"
-flag: "croatia"
+title: "Bitcoin Scenarij Uspijeha
+author: "Vjay Boyapati"
+authorURL: "https://twitter.com/real_vijay?lang=en"
+meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij za ulagače se možda čini toliko očitim da ga nije potrebno niti spominjati. Alternativno, možda se nekome čini glupo ulagati u digitalnu vrijednost..."
+translator: "Tink"
+translatorURL: "https://t.me/matijap9"
+slug: "btc-scenarij-uspijeha"
+img: 'dearFamilyDearFriends'
+flag: 'croatia'
 tags:
     - translation
 ---
