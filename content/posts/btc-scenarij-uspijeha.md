@@ -1,9 +1,9 @@
 ---
-title: "Bitcoin Scenarij Uspijeha
+title: "Bitcoin Scenarij Uspijeha"
 author: "Vjay Boyapati"
-authorURL: "https://twitter.com/real_vijay?lang=en"
+authorURL: "https://twitter.com/real_vijay"
 meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij za ulagače se možda čini toliko očitim da ga nije potrebno niti spominjati. Alternativno, možda se nekome čini glupo ulagati u digitalnu vrijednost..."
-translator: "Tink"
+translator: "Matija"
 translatorURL: "https://t.me/matijap9"
 slug: "btc-scenarij-uspijeha"
 img: 'dearFamilyDearFriends'
