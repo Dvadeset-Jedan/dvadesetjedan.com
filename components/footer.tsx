@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { urls } from "../utils/urls";
-import { BarcodeFooterIcon } from "./icons/barcode-footer";
 import { DiscordIcon } from "./icons/discord";
 import { GithubIcon } from "./icons/github";
 import { SpotifyIcon } from "./icons/spotify";
@@ -10,19 +9,8 @@ import { YoutubeIcon } from "./icons/youtube";
 export function Footer() {
   return (
     <footer className="px-10 pb-14 md:px-10 pt-11 bg-dark border border-dark border-t-lightDark/10">
-      <div className="max-w-7xl mx-auto flex flex-col justify-between md:flex-row">
-        <div className="flex items-center">
-          <span className="hidden lg:block">
-            <BarcodeFooterIcon />
-          </span>
-
-          <ul className="flex justify-between w-full ml-0 text-md lg:justify-start lg:w-auto lg:ml-8 text-gray">
-            <li>Copyright © 2022</li>
-            {/* <li className="ml-4 lg:ml-6">Uslovi korišćenja</li> */}
-            {/* <li className="ml-4 lg:ml-6">Pravila o privatnosti</li> */}
-          </ul>
-        </div>
-        <ul className="flex items-center mt-8 justify-between lg:justify-start md:mt-0">
+      <div className="max-w-7xl mx-auto flex flex-col justify-center md:flex-row">
+        <ul className="flex items-center justify-between lg:justify-start">
           <li className="h-min">
             <Link href="https://youtube.com/">
               <a href={urls.discord} target="_blank" rel="noreferrer">
