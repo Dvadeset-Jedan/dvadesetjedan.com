@@ -6,7 +6,7 @@ meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij
 translator: "Matija"
 translatorURL: "https://t.me/matijap9"
 slug: "btc-scenarij-uspijeha"
-img: 'dearFamilyDearFriends'
+img: 'bullishcase-featured'
 flag: 'croatia'
 tags:
     - translation
