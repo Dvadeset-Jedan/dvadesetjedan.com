@@ -33,8 +33,8 @@ export default function Index({
           <Hero />
 
           <PodcastSection episodes={episodes} />
-          <MeetupsSection events={events} />
           <BlogSection title="Bitcoin Blog" posts={posts} />
+          <MeetupsSection events={events} />
         </div>
       </div>
     </main>
