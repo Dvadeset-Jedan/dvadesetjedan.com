@@ -1,6 +1,6 @@
 ---
 index: 3
-title: "Bitcoin Scenarij Uspijeha"
+title: "Bitcoin Scenarij Uspjeha"
 author: "Vjay Boyapati"
 authorURL: "https://twitter.com/real_vijay"
 meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij za ulagače se možda čini toliko očitim da ga nije potrebno niti spominjati. Alternativno, možda se nekome čini glupo ulagati u digitalnu vrijednost..."
