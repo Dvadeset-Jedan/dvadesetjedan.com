@@ -15,10 +15,6 @@ tags:
 
 ### Pismo svima vama koji još uvek nemate bitkoin. 
 
-&nbsp; 
-![Draga Porodica, Dragi Priatelji...](https://europeanbitcoiners.com/content/images/size/w1200/2022/05/1-cWyKZog6yUOGhxqDzqj6Rw.jpeg)
-&nbsp; 
-
 Pišem ovo pismo jer sam uveren u dve stvari: (**1**) naš trenutni novac je u osnovi slomljen (**2**) korišćenjem superiornog novca posebno će vam biti od koristi - i društvu uopšte - na duži rok.
 
 Novac je dirljiva tema - većina ljudi ne voli da pričaju o tome, bilo zato što ih ima malo i stidi se, ili zato što ima puno i plaši se. Još manje ljudi znaju bilo šta o prirodi našeg novca, što je prilično šokantno - uostalom, novac je osnovno sredstvo naše civilizacije.  

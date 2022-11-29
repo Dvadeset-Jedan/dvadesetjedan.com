@@ -8,6 +8,7 @@ translator: "Matija"
 translatorURL: ""
 slug: "latin-american-bitcoin-perspective"
 flag: "croatia"
+img: 'blogPreview'
 tags:
     - translation
 ---

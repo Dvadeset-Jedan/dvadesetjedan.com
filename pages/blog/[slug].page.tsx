@@ -53,22 +53,41 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 
   const otherPosts = posts.filter((p) => p.frontmatter?.slug !== router.query.slug).splice(0, 3);
 
-  const { title, author, translator, slug, authorURL, translatorURL, flag } =
+  const { title, author, translator, slug, authorURL, translatorURL, flag, img } =
     post?.frontmatter || {};
 
   return (
     <main className="pb-20 bg-dark">
       <div className="max-w-7xl mx-auto">
         <div className="relative">
-          <Image
-            src={images.magicInternetMoney}
-            width={1440}
-            height={600}
-            layout="responsive"
-            unoptimized
-            alt=""
-            priority
-          />
+          {img && (
+            <>
+              <div className="w-full">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={images[img as keyof typeof images]}
+                  alt=""
+                  className="absolute top-0 left-0 w-full h-full blur-sm brightness-[20%]"
+                />
+              </div>
+              <div className="h-[400px] sm:h-[600px] flex justify-center brightness-[30%]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={images[img as keyof typeof images]} alt="" className="h-full" />
+              </div>
+            </>
+          )}
+          {!img && (
+            <Image
+              src={images.magicInternetMoney}
+              width={1440}
+              height={600}
+              layout="responsive"
+              unoptimized
+              alt=""
+              priority
+            />
+          )}
+
           <div className="absolute z-5 text-center w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <h1 className="text-[1.75rem] md:text-4xl xl:text-5xl">{title}</h1>
             <p className="mt-2 text-sm md:text-lg">
