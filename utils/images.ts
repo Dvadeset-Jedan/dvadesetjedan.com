@@ -16,4 +16,5 @@ export const images = {
   "bullishcase-featured": `/images/content/bullishcase-featured.jpg`,
   "bitcoin-ne-moze-biti-zabranjen-featured": `/images/content/bitcoin-ne-moze-biti-zabranjen-featured.png`,
   "bitcoin-privatnost-najbolje-prakse": `/images/content/bitcoin-privatnost-najbolje-prakse.png`,
+  "bitcoin-daje-ti-krila": `/images/content/bitcoin-daje-ti-krila.png`,
 } as const;
