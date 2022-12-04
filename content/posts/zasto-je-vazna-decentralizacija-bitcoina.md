@@ -1,13 +1,13 @@
 ---
-index: 5
+index: 9
 title: "Zašto je decentralizacija bitcoina važna?"
 author: "Matt Corallo"
 authorURL: "https://bluematt.bitcoin.ninja/2016/01/14/decentralization/"
 meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij za ulagače se možda čini toliko očitim da ga nije potrebno niti spominjati. Alternativno, možda se nekome čini glupo ulagati u digitalnu vrijednost..."
 translator: "Davor"
 translatorURL: "https://t.me/davor_e"
-slug: "bitcoin-decentralizacija"
-img: 'btc-decentralizacija-featured'
+slug: "zasto-je-vazna-decentralizacija-bitcoina"
+img: 'zasto-je-vazna-decentralizacija-bitcoina'
 flag: 'croatia'
 tags:
     - translation
