@@ -15,5 +15,5 @@ export const images = {
   hero5: `/images/hero_5.webp`,
   "bullishcase-featured": `/images/content/bullishcase-featured.jpg`,
   "bitcoin-ne-moze-biti-zabranjen-featured": `/images/content/bitcoin-ne-moze-biti-zabranjen-featured.png`,
-  "  bitcoin-privatnost-najbolje-prakse": `/images/content/bitcoin-privatnost-najbolje-prakse.png`,
+  "bitcoin-privatnost-najbolje-prakse": `/images/content/bitcoin-privatnost-najbolje-prakse.png`,
 } as const;
