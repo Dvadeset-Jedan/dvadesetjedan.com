@@ -7,7 +7,7 @@ meta: "Sa zadnjim cijenama koje je bitcoin dosegao 2017., optimističan scenarij
 translator: "Davor"
 translatorURL: "https://t.me/davor_e"
 slug: "bitcoin-decentralizacija"
-img: 'btc-decentralizacija-featured.png'
+img: 'btc-decentralizacija-featured'
 flag: 'croatia'
 tags:
     - translation
