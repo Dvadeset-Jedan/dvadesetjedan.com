@@ -57,84 +57,115 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
     post?.frontmatter || {};
 
   return (
-    <main className="pb-20 bg-dark">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative">
-          {img && (
-            <>
-              <div className="w-full">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={images[img as keyof typeof images]}
-                  alt=""
-                  className="absolute top-0 left-0 w-full h-full blur-sm brightness-[20%]"
-                />
-              </div>
-              <div className="h-[400px] sm:h-[600px] flex justify-center brightness-[30%]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={images[img as keyof typeof images]} alt="" className="h-full" />
-              </div>
-            </>
-          )}
-          {!img && (
-            <Image
-              src={images.magicInternetMoney}
-              width={1440}
-              height={600}
-              layout="responsive"
-              unoptimized
-              alt=""
-              priority
-            />
-          )}
+    <>
+      {/* Facebook meta tags */}
+      <meta property="og:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="DvadesetJedan" />
+      <meta
+        property="og:description"
+        content="DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite projekte."
+      />
+      <meta
+        property="og:image"
+        content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
+      />
+      {/* Facebook meta tags */}
 
-          <div className="absolute z-5 text-center w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <h1 className="text-[1.75rem] md:text-4xl xl:text-5xl">{title}</h1>
-            <p className="mt-2 text-sm md:text-lg">
-              Autor{" "}
-              <a className="text-purple" href={authorURL}>
-                {author}
+      {/* Twitter meta tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="dvadesetjedan.com" />
+      <meta property="twitter:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
+      <meta name="twitter:title" content="DvadesetJedan" />
+      <meta
+        name="twitter:description"
+        content="DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite projekte."
+      />
+      <meta
+        name="twitter:image"
+        content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
+      />
+      {/* Twitter meta tags */}
+
+      <main className="pb-20 bg-dark">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative">
+            {img && (
+              <>
+                <div className="w-full">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={images[img as keyof typeof images]}
+                    alt=""
+                    className="absolute top-0 left-0 w-full h-full blur-sm brightness-[20%]"
+                  />
+                </div>
+                <div className="h-[400px] sm:h-[600px] flex justify-center brightness-[30%]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={images[img as keyof typeof images]} alt="" className="h-full" />
+                </div>
+              </>
+            )}
+            {!img && (
+              <Image
+                src={images.magicInternetMoney}
+                width={1440}
+                height={600}
+                layout="responsive"
+                unoptimized
+                alt=""
+                priority
+              />
+            )}
+
+            <div className="absolute z-5 text-center w-[80%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <h1 className="text-[1.75rem] md:text-4xl xl:text-5xl">{title}</h1>
+              <p className="mt-2 text-sm md:text-lg">
+                Autor{" "}
+                <a className="text-purple" href={authorURL}>
+                  {author}
+                </a>
+                , Prevod{" "}
+                <a className="mr-1 text-purple" href={translatorURL}>
+                  {translator}
+                </a>
+                <Flag country={flag} />
+              </p>
+            </div>
+          </div>
+
+          <div className="relative md:w-auto mx-6 sm:mx-10 prose md:mx-20 mt-16 text-xl tracking-wide md:text-21 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
+            {post?.content && (
+              <div
+                dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
+                suppressHydrationWarning
+                className={classNames(styles.markdown, "prose mx-auto")}
+              />
+            )}
+            <div className="flex mt-14 justify-end">
+              {" "}
+              <CopyURLButton />
+              <a
+                href={getTwitterShareURL(title, slug)}
+                className="border ml-2.5 border-gray/40 h-[2rem] w-[2rem] flex items-center justify-center hover:border-purple/40 group"
+              >
+                <TwitterIcon className="text-gray group-hover:text-purple" />
               </a>
-              , Prevod{" "}
-              <a className="mr-1 text-purple" href={translatorURL}>
-                {translator}
+              <a
+                href={getLinkedinShareURL(slug)}
+                className="h-[2rem] ml-2.5 w-[2rem] flex items-center justify-center border border-gray/40 hover:border-purple/40 group"
+              >
+                <LinkedinIcon className="text-gray group-hover:text-purple" />
               </a>
-              <Flag country={flag} />
-            </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center mx-10 md:mx-16">
+            <BlogSection title="Još sa bloga" posts={otherPosts} />
           </div>
         </div>
-
-        <div className="relative md:w-auto mx-6 sm:mx-10 prose md:mx-20 mt-16 text-xl tracking-wide md:text-21 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
-          {post?.content && (
-            <div
-              dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
-              suppressHydrationWarning
-              className={classNames(styles.markdown, "prose mx-auto")}
-            />
-          )}
-          <div className="flex mt-14 justify-end">
-            {" "}
-            <CopyURLButton />
-            <a
-              href={getTwitterShareURL(title, slug)}
-              className="border ml-2.5 border-gray/40 h-[2rem] w-[2rem] flex items-center justify-center hover:border-purple/40 group"
-            >
-              <TwitterIcon className="text-gray group-hover:text-purple" />
-            </a>
-            <a
-              href={getLinkedinShareURL(slug)}
-              className="h-[2rem] ml-2.5 w-[2rem] flex items-center justify-center border border-gray/40 hover:border-purple/40 group"
-            >
-              <LinkedinIcon className="text-gray group-hover:text-purple" />
-            </a>
-          </div>
-        </div>
-
-        <div className="flex justify-center mx-10 md:mx-16">
-          <BlogSection title="Još sa bloga" posts={otherPosts} />
-        </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
 
