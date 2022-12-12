@@ -15,6 +15,7 @@ import { Flag } from "../../components/flag";
 import { useState } from "react";
 import React from "react";
 import classNames from "classnames";
+import Head from "next/head";
 
 function getTwitterShareURL(title: string, slug: string) {
   return `https://twitter.com/intent/tweet?text=${title} https://dvadesetjedan.com/dvadesetjedan.com/blog/${slug}`;
@@ -58,34 +59,36 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
 
   return (
     <>
-      {/* Facebook meta tags */}
-      <meta property="og:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="DvadesetJedan" />
-      <meta
-        property="og:description"
-        content="DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite projekte."
-      />
-      <meta
-        property="og:image"
-        content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
-      />
-      {/* Facebook meta tags */}
+      <Head>
+        {/* Facebook meta tags */}
+        <meta property="og:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="DvadesetJedan" />
+        <meta
+          property="og:description"
+          content="DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite projekte."
+        />
+        <meta
+          property="og:image"
+          content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
+        />
+        {/* Facebook meta tags */}
 
-      {/* Twitter meta tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta property="twitter:domain" content="dvadesetjedan.com" />
-      <meta property="twitter:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
-      <meta name="twitter:title" content="DvadesetJedan" />
-      <meta
-        name="twitter:description"
-        content="DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite projekte."
-      />
-      <meta
-        name="twitter:image"
-        content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
-      />
-      {/* Twitter meta tags */}
+        {/* Twitter meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="dvadesetjedan.com" />
+        <meta property="twitter:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
+        <meta name="twitter:title" content="DvadesetJedan" />
+        <meta
+          name="twitter:description"
+          content="DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite projekte."
+        />
+        <meta
+          name="twitter:image"
+          content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
+        />
+        {/* Twitter meta tags */}
+      </Head>
 
       <main className="pb-20 bg-dark">
         <div className="max-w-7xl mx-auto">
