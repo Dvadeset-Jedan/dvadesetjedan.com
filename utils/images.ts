@@ -20,4 +20,6 @@ export const images = {
   "bitcoin-daje-ti-krila": `/images/content/bitcoin-daje-ti-krila.png`,
   "bitcoin-je-vrijeme": `/images/content/bitcoin-je-vrijeme.png`,
   "borba-protiv-monetarnog-kolonijalizma-pomocu-otvorenog-koda": `/images/content/borba-protiv-monetarnog-kolonijalizma-pomocu-otvorenog-koda.jpeg`,
+  "selo-i-mocnik": `/images/content/selo-i-mocnik.jpeg`,
+
 } as const;
