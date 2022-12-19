@@ -7,7 +7,6 @@ export const images = {
   meetupCover: `/images/meetup-cover.webp`,
   meetup: `/images/meetup.webp`,
   player: `/images/player.webp`,
-  dearFamilyDearFriends: `/images/content/dear-family.jpeg`,
   hero1: `/images/hero_1.webp`,
   hero2: `/images/hero_2.webp`,
   hero3: `/images/hero_3.webp`,
@@ -21,5 +20,4 @@ export const images = {
   "bitcoin-je-vrijeme": `/images/content/bitcoin-je-vrijeme.png`,
   "borba-protiv-monetarnog-kolonijalizma-pomocu-otvorenog-koda": `/images/content/borba-protiv-monetarnog-kolonijalizma-pomocu-otvorenog-koda.jpeg`,
   "selo-i-mocnik": `/images/content/selo-i-mocnik.jpeg`,
-
 } as const;
