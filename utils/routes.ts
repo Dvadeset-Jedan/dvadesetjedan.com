@@ -1,7 +1,4 @@
-export type ArticleSlug =
-  | "never-stop-learning"
-  | "dear-family-dear-friends"
-  | "latin-american-bitcoin-perspective";
+export type ArticleSlug = "never-stop-learning" | "latin-american-bitcoin-perspective";
 
 export const routes = {
   home: "/",
