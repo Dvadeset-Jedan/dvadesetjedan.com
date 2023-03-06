@@ -26,6 +26,6 @@ Merging PRs to `main` will trigger a deployment to [dvadesetjedan.com](https://d
 
 ##
 
-[Kako dodati događaj](https://github.com/Dvadeset-Jedan/dvadesetjedan.com/blob/feature/document-adding-events/CONTRIBUTING.md)
+[Kako dodati događaj](https://github.com/Dvadeset-Jedan/dvadesetjedan.com/blob/feature/document-adding-events/CONTRIBUTING.md)?
 
 
