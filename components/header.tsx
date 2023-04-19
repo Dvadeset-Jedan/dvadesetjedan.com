@@ -18,11 +18,13 @@ function useLinks() {
       name: "Početna",
       route: routes.home,
       active: router.asPath === routes.home,
+      Icon: undefined,
     },
     {
       name: "Podcast",
       route: routes.podcast,
       active: router.asPath.includes(routes.podcast),
+      Icon: undefined,
     },
     {
       name: "Sastanci",
@@ -34,6 +36,7 @@ function useLinks() {
       name: "Blog",
       route: routes.blog,
       active: router.asPath.includes(routes.blog),
+      Icon: undefined,
     },
   ] as const;
 }
