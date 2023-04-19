@@ -28,7 +28,6 @@ function useLinks() {
       name: "Sastanci",
       route: urls.meetup,
       active: router.asPath === routes.meetups,
-      Icon: <ArrowUpRight />,
     },
     {
       name: "Blog",
@@ -59,7 +58,7 @@ export function Header({
         </Link>
 
         <ul className="hidden mx-8 mt-8 lg:flex md:mt-0">
-          {links.map(({ name, route, active, Icon }, index) => (
+          {links.map(({ name, route, active }, index) => (
             <li
               key={name}
               className={classNames("font-medium text-right text-19 ", {
@@ -75,7 +74,11 @@ export function Header({
                 >
                   <div className="flex items-center">
                     {name}
-                    <span className="mt-1 ml-2">{Icon}</span>
+                    {name === "Sastanci" && (
+                      <span className="mt-1 ml-2">
+                        <ArrowUpRight />
+                      </span>
+                    )}
                   </div>
                 </a>
               </Link>
@@ -93,7 +96,7 @@ export function Header({
 
                 <Popover.Panel className="absolute z-10 w-full h-screen bg-dark/90 backdrop-blur-md z-5">
                   <ul className="flex flex-col mt-28 h-[60%] justify-evenly">
-                    {links.map(({ name, route, active, Icon }) => (
+                    {links.map(({ name, route, active }) => (
                       <li key={name} className="text-center">
                         <button
                           className={classNames("font-medium text-4xl hover:text-purple", {
@@ -110,7 +113,11 @@ export function Header({
                         >
                           <div className="flex items-center">
                             {name}
-                            <span className="mt-1 ml-2">{Icon}</span>
+                            {name === "Sastanci" && (
+                              <span className="mt-1 ml-2">
+                                <ArrowUpRight />
+                              </span>
+                            )}
                           </div>
                         </button>
                       </li>
