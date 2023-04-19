@@ -30,25 +30,25 @@ export function MeetupsSection({ events }: { events: EventType[] }) {
           </ActionLink>
         </div>
       </div>
-      <div className="px-4 mt-32 3xl:px-20">
-        <h3 className="mb-14 text-3xl md:text-[2.5rem] font-bold text-center">Nedavni Događaji</h3>
-        <div className="justify-between grid grid-cols-1 gap-y-10 sm:gap-20 sm:grid-cols-2 md:grid-cols-3">
-          {[...pastEvents].splice(0, 3).map((event) => (
-            <div key={new Date(event.date).toString()}>
-              <MeetupPreview
-                {...event}
-                imgSrc={`/${event.imgSrc}`}
-                date={format(new Date(event.date), "EEEE, MMMM dd, yyyy")}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="flex justify-center w-full mt-14">
-        <ActionLink href="https://www.meetup.com/dvadeset-jedan/events/">
-          Pregledaj događaje
-        </ActionLink>
-      </div>
+      {/* <div className="px-4 mt-32 3xl:px-20"> */}
+      {/*   <h3 className="mb-14 text-3xl md:text-[2.5rem] font-bold text-center">Nedavni Događaji</h3> */}
+      {/*   <div className="justify-between grid grid-cols-1 gap-y-10 sm:gap-20 sm:grid-cols-2 md:grid-cols-3"> */}
+      {/*     {[...pastEvents].splice(0, 3).map((event) => ( */}
+      {/*       <div key={new Date(event.date).toString()}> */}
+      {/*         <MeetupPreview */}
+      {/*           {...event} */}
+      {/*           imgSrc={`/${event.imgSrc}`} */}
+      {/*           date={format(new Date(event.date), "EEEE, MMMM dd, yyyy")} */}
+      {/*         /> */}
+      {/*       </div> */}
+      {/*     ))} */}
+      {/*   </div> */}
+      {/* </div> */}
+      {/* <div className="flex justify-center w-full mt-14"> */}
+      {/*   <ActionLink href="https://www.meetup.com/dvadeset-jedan/events/"> */}
+      {/*     Pregledaj događaje */}
+      {/*   </ActionLink> */}
+      {/* </div> */}
     </section>
   );
 }

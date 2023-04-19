@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { routes } from "../utils/routes";
-import { BarcodeHeaderIcon } from "./icons/barcode-header";
 import { BarsIcon } from "./icons/bars";
-import { TextLogoIcon } from "./icons/text-logo";
 import { DvadesetJedan } from "./icons/dvadesetjedan";
 import { XMarkIcon } from "./icons/x-mark";
+import { urls } from "../utils/urls";
+import { ArrowUpRight } from "./icons/arrow-up-right";
 
 function useLinks() {
   const router = useRouter();
@@ -26,8 +26,9 @@ function useLinks() {
     },
     {
       name: "Sastanci",
-      route: routes.meetups,
+      route: urls.meetup,
       active: router.asPath === routes.meetups,
+      Icon: <ArrowUpRight />,
     },
     {
       name: "Blog",
@@ -47,18 +48,18 @@ export function Header({
 
   return (
     <>
-      <div className="relative flex items-center justify-between w-full px-4 md:px-0 py-8 md:flex-row md:py-10 bg-dark max-w-7xl mx-auto">
+      <div className="relative flex items-center justify-between w-full px-4 py-8 mx-auto md:px-0 md:flex-row md:py-10 bg-dark max-w-7xl">
         <Link href={routes.home}>
           <a>
-            <div className="relative flex items-center md:ml-4 z-20">
+            <div className="relative z-20 flex items-center md:ml-4">
               <span className="sr-only">DvadesetJedan</span>
-              <DvadesetJedan className="w-60 md:w-96 mt-px ml-2" />
+              <DvadesetJedan className="mt-px ml-2 w-60 md:w-96" />
             </div>
           </a>
         </Link>
 
-        <ul className="hidden mt-8 mx-8 lg:flex md:mt-0">
-          {links.map(({ name, route, active }, index) => (
+        <ul className="hidden mx-8 mt-8 lg:flex md:mt-0">
+          {links.map(({ name, route, active, Icon }, index) => (
             <li
               key={name}
               className={classNames("font-medium text-right text-19 ", {
@@ -67,11 +68,15 @@ export function Header({
             >
               <Link href={route}>
                 <a
-                  className={classNames("hover:text-purple", {
+                  className={classNames("hover:text-purple whitespace-nowrap", {
                     "text-purple": active,
                   })}
+                  target={name === "Sastanci" ? "_blank" : undefined}
                 >
-                  {name}
+                  <div className="flex items-center">
+                    {name}
+                    <span className="mt-1 ml-2">{Icon}</span>
+                  </div>
                 </a>
               </Link>
             </li>
@@ -88,18 +93,25 @@ export function Header({
 
                 <Popover.Panel className="absolute z-10 w-full h-screen bg-dark/90 backdrop-blur-md z-5">
                   <ul className="flex flex-col mt-28 h-[60%] justify-evenly">
-                    {links.map(({ name, route, active }) => (
+                    {links.map(({ name, route, active, Icon }) => (
                       <li key={name} className="text-center">
                         <button
                           className={classNames("font-medium text-4xl hover:text-purple", {
                             "text-purple": active,
                           })}
                           onClick={() => {
-                            router.push(route);
+                            if (name === "Sastanci") {
+                              window.open(route, "_blank");
+                            } else {
+                              router.push(route);
+                            }
                             close();
                           }}
                         >
-                          {name}
+                          <div className="flex items-center">
+                            {name}
+                            <span className="mt-1 ml-2">{Icon}</span>
+                          </div>
                         </button>
                       </li>
                     ))}
