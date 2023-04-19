@@ -63,11 +63,8 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
         {/* Facebook meta tags */}
         <meta property="og:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="DvadesetJedan" />
-        <meta
-          property="og:description"
-          content="DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite projekte."
-        />
+        <meta property="og:title" content={post.frontmatter.title} />
+        <meta property="og:description" content={post.frontmatter.meta} />
         <meta
           property="og:image"
           content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
@@ -78,11 +75,8 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="dvadesetjedan.com" />
         <meta property="twitter:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
-        <meta name="twitter:title" content="DvadesetJedan" />
-        <meta
-          name="twitter:description"
-          content="DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite projekte."
-        />
+        <meta name="twitter:title" content={post.frontmatter.title} />
+        <meta name="twitter:description" content={post.frontmatter.meta} />
         <meta
           name="twitter:image"
           content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
@@ -91,7 +85,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
       </Head>
 
       <main className="pb-20 bg-dark">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto max-w-7xl">
           <div className="relative">
             {img && (
               <>
@@ -137,7 +131,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
             </div>
           </div>
 
-          <div className="relative md:w-auto mx-6 sm:mx-10 prose md:mx-20 mt-16 text-xl tracking-wide md:text-21 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
+          <div className="relative mx-6 mt-16 text-xl tracking-wide md:w-auto sm:mx-10 prose md:mx-20 md:text-21 text-gray leading-8 md:leading-9 first-letter:text-3xl first-letter:tracking-wide">
             {post?.content && (
               <div
                 dangerouslySetInnerHTML={{ __html: md().render(post.content) }}
@@ -145,7 +139,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
                 className={classNames(styles.markdown, "prose mx-auto")}
               />
             )}
-            <div className="flex mt-14 justify-end">
+            <div className="flex justify-end mt-14">
               {" "}
               <CopyURLButton />
               <a
