@@ -27,7 +27,7 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
         <div className="max-w-7xl mx-auto">
           <div className="m-auto w-[90%] xl:w-3/5">
             <h1 className="text-2xl font-semibold md:text-4xl">
-              Dvadeset Jedan - Bitcoin Only Podcast
+              Yirmibir - Bitcoin Odaklı Podcast
             </h1>
             {lastEpisode?.contentSnippet && (
               <p className="mt-3 text-xl md:text-lg text-gray">{`${lastEpisode?.contentSnippet?.slice(
@@ -35,24 +35,24 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
                 300
               )}...`}</p>
             )}
-            <PodcastActions title="Slušajte nas na" />
+            <PodcastActions title="Bizi dinleyin" />
           </div>
           <div className="m-auto mt-20 w-[90%] mb-4">
             <iframe
-              src={`https://anchor.fm/dvadesetjedan/embed/episodes/${getSlug(lastEpisode?.link)}`}
+              src={`https://anchor.fm/yirmibirbitcoin/embed/episodes/${getSlug(lastEpisode?.link)}`}
               scrolling="no"
               className="w-full h-[10.6rem]"
             />
           </div>
           <Link href={routes.podcastEpisode(getSlug(lastEpisode?.link))}>
-            <a className="text-xl font-medium md:text-base text-purple">Detalji epizode</a>
+            <a className="text-xl font-medium md:text-base text-purple">Bölüm detayları</a>
           </Link>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto">
         <div className="m-auto w-[90%] my-20">
-          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14">Prethodne epizode</h2>
+          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14">Önceki Bölümler</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 text-left">
             {newerEpisodes.map(({ link, title, contentSnippet, itunes }) => (
               <EpisodePreview
@@ -77,7 +77,7 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
           {!showAllEpisodes && (
             <div className="flex justify-center w-full mt-16">
               <ActionLink as="button" onClick={() => setShowAllEpisodes(true)}>
-                Sve epizode
+                Tüm bölümler
               </ActionLink>
             </div>
           )}
@@ -86,6 +86,7 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
     </main>
   );
 }
+
 
 export async function getStaticProps() {
   const episodes = await fetchPodcastEpisodes();

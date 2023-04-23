@@ -21,12 +21,10 @@ export default function Index({
           <div className="flex justify-center">
             <div className="text-center">
               <h1 className="mt-10 text-3xl font-semibold md:text-5xl lg:mt-20">
-                Balkanska bitcoin zajednica
+                Türkiye Bitcoin Topluluğu
               </h1>
               <p className="text-xl font-medium md:text-xl mt-9">
-                DvadesetJedan je neformalna grupa bitcoin entuzijasta sa ex-yu prostora koja za cilj
-                ima edukaciju, podsticanje preduzetništva i širenje bitcoin mreže kroz različite
-                projekte.
+                Yirmibir, Türkiye'deki bitcoin meraklılarından oluşan gayri resmi bir grup olup, eğitim, girişimciliği teşvik etme ve farklı projelerle bitcoin ağını yayma amacını taşır.
               </p>
             </div>
           </div>
@@ -40,6 +38,7 @@ export default function Index({
     </main>
   );
 }
+
 
 export async function getStaticProps() {
   const episodes = await fetchPodcastEpisodes();

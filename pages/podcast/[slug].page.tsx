@@ -22,18 +22,18 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
         <div className="w-[90%] m-auto mt-20 lg:w-3/5">
           {episode && (
             <iframe
-              src={`https://anchor.fm/dvadesetjedan/embed/episodes/${getSlug(episode.link)}`}
+              src={`https://anchor.fm/yirmibirbitcoin/embed/episodes/${getSlug(episode.link)}`}
               scrolling="no"
               className="w-full h-[8rem] lg:h-[10.6rem]"
             />
           )}
         </div>
-        <PodcastActions title="Slušajte nas na" />
+        <PodcastActions title="Bizi dinleyin" />
       </div>
 
       <div className="max-w-7xl mx-auto">
         <div className="w-[90%] m-auto mb-20">
-          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-20">Beleške iz podcasta</h2>
+          <h2 className="text-2xl md:text-[2.5rem] font-bold mb-14 mt-20">Podcast Notları</h2>
           {episode?.content && (
             <article
               className={classNames(
@@ -45,7 +45,7 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
           )}
 
           <h2 className="text-2xl md:text-[2rem] font-bold mb-14 mt-32">
-            Epizode u kojima ćeš uživati
+            Keyifle dinleyeceğiniz diğer bölümler
           </h2>
           <div className="grid grid-cols-1 px-4 md:grid-cols-2 xl:grid-cols-3 gap-10">
             {episodes.slice(0, 3).map(({ link, title, contentSnippet, itunes }) => (
@@ -63,6 +63,7 @@ export default function Podcast({ episodes }: InferGetStaticPropsType<typeof get
     </main>
   );
 }
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const episodes = await fetchPodcastEpisodes();

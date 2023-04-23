@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <>
         <Head>
-          <title>DvadesetJedan</title>
+          <title>Yirmibir</title>
         </Head>
         <Layout>
           <Component {...pageProps} />

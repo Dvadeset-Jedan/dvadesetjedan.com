@@ -8,14 +8,10 @@ import { Flag, FlagType } from "../../components/flag";
 import classNames from "classnames";
 
 const languageOptions: { label: string; value: FlagType | "all" }[] = [
-  { label: "Svi prevodi", value: "all" },
-  { label: "Srpski", value: "serbia" },
-  { label: "Hrvatski", value: "croatia" },
-  { label: "Makedonski", value: "macedonia" },
-  { label: "Slovenački", value: "slovenia" },
-  { label: "Crnogorski", value: "montenegro" },
-  { label: "Bosanski", value: "bosnia" },
+  { label: "Tüm çeviriler", value: "all" },
+  { label: "Türkçe", value: "turkey" },
 ];
+
 
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
@@ -32,10 +28,9 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
   return (
     <main className="bg-dark">
       <div className="flex w-[90%] md:w-auto flex-col items-center justify-center mx-auto py-20 text-center bg-dark brightness-110">
-        <h1 className="text-3xl font-semibold md:text-4xl">DvadesetJedan Blog</h1>
+        <h1 className="text-3xl font-semibold md:text-4xl">Yirmibir Blog</h1>
         <p className="mt-4 mt-6 text-lg md:text-lg text-gray">
-          Naš blog je najbolji resurs za učenje o bitcoin-u. Pročitaj tekstove koje smo sami
-          kreirali, ali i prevode popularnih sadržaja širom ekosistema.
+          Blogumuz, Bitcoin hakkında öğrenmek için en iyi kaynaktır. Kendi oluşturduğumuz metinleri ve ekosistem genelindeki popüler içeriklerin çevirilerini okuyun.
         </p>
         <div className="relative">
           <select
@@ -87,6 +82,7 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
     </main>
   );
 }
+
 
 export async function getStaticProps() {
   const posts = fs.readdirSync("content/posts").map((fileName: string) => {

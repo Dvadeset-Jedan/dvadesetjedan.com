@@ -18,11 +18,11 @@ import classNames from "classnames";
 import Head from "next/head";
 
 function getTwitterShareURL(title: string, slug: string) {
-  return `https://twitter.com/intent/tweet?text=${title} https://dvadesetjedan.com/dvadesetjedan.com/blog/${slug}`;
+  return `https://twitter.com/intent/tweet?text=${title} https://yirmibir.org/yirmibir.org/blog/${slug}`;
 }
 
 function getLinkedinShareURL(slug: string) {
-  return `https://www.linkedin.com/sharing/share-offsite/?url=https://dvadesetjedan.com/blog/${slug}`;
+  return `https://www.linkedin.com/sharing/share-offsite/?url=https://yirmibir.org/blog/${slug}`;
 }
 
 function CopyURLButton() {
@@ -43,10 +43,11 @@ function CopyURLButton() {
         copy(location.href);
       }}
     >
-      {copied ? "Kopirano 🙌" : "Kopiraj URL"}
+      {copied ? "Kopyalandı 🙌" : "URL'yi Kopyala"}
     </button>
   );
 }
+
 
 export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
@@ -61,25 +62,25 @@ export default function Blog({ posts }: InferGetStaticPropsType<typeof getStatic
     <>
       <Head>
         {/* Facebook meta tags */}
-        <meta property="og:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
+        <meta property="og:url" content={`https://yirmibir.org/blog/${slug}`} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={post.frontmatter.title} />
         <meta property="og:description" content={post.frontmatter.meta} />
         <meta
           property="og:image"
-          content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
+          content={`https://yirmibir.org${images[img as keyof typeof images]}`}
         />
         {/* Facebook meta tags */}
 
         {/* Twitter meta tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="dvadesetjedan.com" />
-        <meta property="twitter:url" content={`https://dvadesetjedan.com/blog/${slug}`} />
+        <meta property="twitter:domain" content="yirmibir.org" />
+        <meta property="twitter:url" content={`https://yirmibir.org/blog/${slug}`} />
         <meta name="twitter:title" content={post.frontmatter.title} />
         <meta name="twitter:description" content={post.frontmatter.meta} />
         <meta
           name="twitter:image"
-          content={`https://dvadesetjedan.com${images[img as keyof typeof images]}`}
+          content={`https://yirmibir.org${images[img as keyof typeof images]}`}
         />
         {/* Twitter meta tags */}
       </Head>

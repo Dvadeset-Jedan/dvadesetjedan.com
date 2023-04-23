@@ -76,26 +76,13 @@ export default function Meetups({ events }: InferGetStaticPropsType<typeof getSt
   return (
     <main className="bg-dark">
       <div className="w-[90%] mx-auto py-20">
-        <h1 className="text-3xl font-semibold text-center md:text-4xl">Sastanci</h1>
+        <h1 className="text-3xl font-semibold text-center md:text-4xl">Toplantılar</h1>
         <p className="mt-8 mb-20 text-center">
-          Pronadji sastanak blizu tebe. Svi su dobrodosli. Vidimo se!
+          Yakınındaki bir toplantıyı bul. Herkes davetlidir. Görüşmek üzere!
         </p>
         <div className="flex items-center justify-center h-full" onClick={logPinPosition}>
           <div className="relative flex flex-col lg:hidden">
-            <Serbia />
-            <Croatia />
-            <MapSpacing sm>
-              <Montenegro />
-            </MapSpacing>
-            <MapSpacing>
-              <Bosnia />
-            </MapSpacing>
-            <MapSpacing>
-              <Slovenia />
-            </MapSpacing>
-            <MapSpacing>
-              <Macedonia />
-            </MapSpacing>
+            <Turkey />
             {mostRecentFutureEventFromEachCity.map(({ url, city }) => {
               const position = PINS.find((pin) => pin.city === city);
 
@@ -115,6 +102,7 @@ export default function Meetups({ events }: InferGetStaticPropsType<typeof getSt
     </main>
   );
 }
+
 
 export async function getStaticProps() {
   return {

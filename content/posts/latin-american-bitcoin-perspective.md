@@ -1,22 +1,22 @@
 ---
 index: 1
-title: "Perspektive na Bitcoin u latinskoj Americi"
+title: "Latin Amerika'daki Bitcoin Perspektifleri"
 author: "Jimmy Song"
 authorURL: "https://twitter.com/jimmysong"
-meta: "Ovo je kratko razmišljanje bazirano na nekim jučerašnjim konverzacijama, a predugo za Tweet. Dio zadovoljstva, i frustracije, putovanja je da različita mjesta imaju vrlo različite perspektive..."
-translator: "Matija"
+meta: "Bu, dün bazı konuşmalara dayalı kısa bir düşünce ve Tweet için çok uzun. Seyahatin zevki ve can sıkıcılığı, farklı yerlerin çok farklı bakış açılarına sahip olmasıdır. Dünyaya çok dar bir bakış açısıyla bakmak ve onun geniş olduğunu düşünmek kolaydır. Seyahat bu yanılsamanın panzehiridir."
+translator: "pretyflaco"
 translatorURL: ""
 slug: "latin-american-bitcoin-perspective"
-flag: "croatia"
+flag: "turkey"
 img: 'blogPreview'
 tags:
     - translation
 ---
 
-Ovo je kratko razmišljanje bazirano na nekim jučerašnjim konverzacijama, a predugo za Tweet.
+Bu, dün bazı konuşmalara dayalı kısa bir düşünce ve Tweet için çok uzun.
 
-Dio zadovoljstva, i frustracije, putovanja je da različita mjesta imaju vrlo različite perspektive. Lako je biti ograničen na veoma uzak pogled na svijet, a misliti da je širok. Putovanje je protuotrov ovom samozavaravanju.
+Seyahatin zevki ve can sıkıcılığı, farklı yerlerin çok farklı bakış açılarına sahip olmasıdır. Dünyaya çok dar bir bakış açısıyla bakmak ve onun geniş olduğunu düşünmek kolaydır. Seyahat bu yanılsamanın panzehiridir.
 
-Problem je još gori u tehnološkom sektoru, pošto se čini da Silicijska Dolina ima hegemoniju nad inovativnosti. To stvara sveprisutnu, ali pogrešnu perspektivu da je Bitcoin većinom tehnologija koju tehnokrati trebaju unaprijeđivati, mijenjati i upravljati.
+Teknoloji sektöründeki sorun daha da kötüdür, çünkü Silikon Vadisi'nin yenilikçilik üzerinde hegemonya sahibi olduğu görünmektedir. Bu, Bitcoin'in çoğunlukla teknokratların geliştirmesi, değiştirmesi ve yönetmesi gereken bir teknoloji olduğu yanılsamasını yaratır.
 
-S time na umu, latinsko-američka perspektiva je osvježavajuća. Oni već znaju da je monetarna ekspanzija centralne banke velik problem i vide Bitcoinovo svojstvo spremišta vrijednosti (“store of value”) kao način da se maknu od toga. Oni su već prošli kroz periode ogromne devaluacije valute i naučili da ne spremaju vrijednost u svojoj lokalnoj valuti. Drugim riječima, oni imaju mukom stečenu mudrost koju Silicijska Dolina nema.
+Bu akılda tutulduğunda, Latin Amerika perspektifi ferahlatıcıdır. Merkez bankasının parasal genişlemesinin büyük bir sorun olduğunu ve Bitcoin'in değer saklama özelliğini bunun dışında bir yol olarak gördüklerini zaten biliyorlar. Zaten büyük para birimi değer kayıpları dönemleri yaşadılar ve yerel para biriminde değer saklamamanın dersini aldılar. Başka bir deyişle, Silikon Vadisi'nin sahip olmadığı zorlu bir bilgelikleri var.
